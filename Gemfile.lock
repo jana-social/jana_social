@@ -116,6 +116,8 @@ GEM
     irb (1.7.4)
       reline (>= 0.3.6)
     json (2.6.3)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
     language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
@@ -143,6 +145,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.15.3-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.15.3-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.3-x86_64-linux)
@@ -266,6 +270,7 @@ GEM
     zeitwerk (2.6.9)
 
 PLATFORMS
+  arm64-darwin-22
   x86_64-darwin-21
   x86_64-linux
 
@@ -278,6 +283,7 @@ DEPENDENCIES
   faker
   faraday
   figaro
+  jsonapi-serializer
   launchy
   orderly
   pg (~> 1.1)
