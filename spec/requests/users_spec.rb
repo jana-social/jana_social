@@ -52,13 +52,13 @@ RSpec.describe "/users", type: :request do
     context "with valid parameters" do
       it "creates a new User" do
         expect {
-          post users_url,
+          post api_v1_users_path,
                params: { user: valid_attributes }, headers: valid_headers, as: :json
         }.to change(User, :count).by(1)
       end
 
       it "renders a JSON response with the new user" do
-        post users_url,
+        post api_v1_users_path,
              params: { user: valid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including("application/json"))
@@ -68,13 +68,13 @@ RSpec.describe "/users", type: :request do
     context "with invalid parameters" do
       it "does not create a new User" do
         expect {
-          post users_url,
+          post api_v1_users_path,
                params: { user: invalid_attributes }, as: :json
         }.to change(User, :count).by(0)
       end
 
       it "renders a JSON response with errors for the new user" do
-        post users_url,
+        post api_v1_users_path,
              params: { user: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to match(a_string_including("application/json"))
@@ -90,7 +90,7 @@ RSpec.describe "/users", type: :request do
 
       it "updates the requested user" do
         user = User.create! valid_attributes
-        patch user_url(user),
+        patch api_v1_user_path(user),
               params: { user: new_attributes }, headers: valid_headers, as: :json
         user.reload
         skip("Add assertions for updated state")
@@ -98,7 +98,7 @@ RSpec.describe "/users", type: :request do
 
       it "renders a JSON response with the user" do
         user = User.create! valid_attributes
-        patch user_url(user),
+        patch api_v1_user_path(user),
               params: { user: new_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to match(a_string_including("application/json"))
@@ -108,7 +108,7 @@ RSpec.describe "/users", type: :request do
     context "with invalid parameters" do
       it "renders a JSON response with errors for the user" do
         user = User.create! valid_attributes
-        patch user_url(user),
+        patch api_v1_user_path(user),
               params: { user: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to match(a_string_including("application/json"))
@@ -120,7 +120,7 @@ RSpec.describe "/users", type: :request do
     it "destroys the requested user" do
       user = User.create! valid_attributes
       expect {
-        delete user_url(user), headers: valid_headers, as: :json
+        delete api_v1_user_path(user), headers: valid_headers, as: :json
       }.to change(User, :count).by(-1)
     end
   end
