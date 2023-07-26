@@ -1,6 +1,6 @@
 <h1> Jana Social </h1>
 
-[Render deployment](https://jana-social-be.onrender.com)
+[Render deployment](https://jana-social-be.onrender.com) <br>
 [DB schema](https://erd.dbdesigner.net/designer/schema/1690390259-jana_social) <br>
 [Full team Miro board](https://miro.com/app/board/uXjVMz_g040=/)<br>
 [Users team Miro board](https://miro.com/app/board/uXjVMz5BkDM=/)
