@@ -6,4 +6,4 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# {Model}.destroy_all add for render deployment 
+User.destroy_all 
