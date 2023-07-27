@@ -206,7 +206,6 @@ Status: 404 Not Found
 
 GET "/api/v1/events/:id/event_users"
 
-<!-- GET "/api/v1/users/:id/event/:id/event_users" -->
 This endpoint will get all of one events users/attendees.
 
 Success Response (200 OK):
@@ -220,24 +219,24 @@ Status: 200 OK
 {
   "data": [
     {
-      "user_id": "user_1.id",
-      "event_id": "event_5.id",
+      "event_title": "Casey's Baseball Funtime",
+      "user_name": "James",
       "status": "accepted",
     },
     {
-      "user_id": "user_17.id",
-      "event_id": "event_5.id",
+      "event_title": "Casey's Baseball Funtime",
+      "user_name": "Corey",
       "status": "accepted",
     },
     {
-      "user_id": "user_8.id",
-      "event_id": "event_5.id",
-      "status": "declined",
-    },
-    {
-      "user_id": "user_37.id",
-      "event_id": "event_5.id",
+      "event_title": "Casey's Baseball Funtime",
+      "user_name": "Staci",
       "status": "pending",
+    },
+    {
+      "event_title": "Casey's Baseball Funtime",
+      "user_name": "Anderson",
+      "status": "denied",
     }
   ]
 }
