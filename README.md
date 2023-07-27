@@ -32,13 +32,223 @@
  - Steven Stackhouse: [GitHub](https://github.com/stackmm) | [LinkedIn](https://www.linkedin.com/in/steven-stackhouse/)
 
  ---
+ 
 # API JSON CONTRACT
 
+Description of API endpoints for front end application
 
 ## Users
+
+Description of users endpoints
+
+### GETting users
+
+`GET /api/v1/users`
+
+Success Response (200 OK):
+
+- Status: 200 OK
+- Description: Successful response with list of users.
+- Data Format: An array of user hashes, each containing "id", "type" and "attributes".
+
+```json
+Status: 200 OK
+
+{"data":
+  [
+    {"id":"1",
+    "type":"user",
+    "attributes":
+      {
+        "username":"schroederJerde",
+        "email":"schroederJerde@gmail.com",
+        "zipcode":"80301",
+        "street_address":"123 Main Street, New York, NY",
+        "bio":"Lorem ipsum dolor sit amet",
+        "likes":"consectetur adipiscing elit",
+        "dislikes":"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "latitude":"40.712776",
+        "longitude":"-74.005974"
+      }
+    },
+    {"id":"2",
+    "type":"user",
+    "attributes":
+      {
+        "username":"bustarhymes",
+        "email":"bustarhymes@gmail.com",
+        "zipcode":"80303",
+        "street_address":"123 Main Street, Boulder, CO",
+        "bio":"Lorem ipsum dolor sit amet",
+        "likes":"consectetur adipiscing elit",
+        "dislikes":"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "latitude":"-122.3951096",
+        "longitude":"37.7941013"
+      }
+    }
+  ]
+}
+```
+
+`GET /api/v1/users/1`
+
+Success Response (200 OK):
+
+- Status: 200 OK
+- Description: Successful response with a specific user for a specific user id.
+- Data Format: A data hash, with keys "id", "type" and "attributes".
+
+```json
+GET /api/v1/users/1 HTTP/1.1
+Content-Type: application/vnd.api+json
+Accept: application/vnd.api+json
+
+{"data":
+  {
+    "id":"1",
+    "type":"user",
+    "attributes":
+    {
+      "username":"schroederJerde",
+      "email":"schroederJerde@gmail.com",
+      "zipcode":"80301",
+      "street_address":"123 Main Street, New York, NY",
+      "bio":"Lorem ipsum dolor sit amet",
+      "likes":"consectetur adipiscing elit",
+      "dislikes":"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+      "latitude":"40.712776",
+      "longitude":"-74.005974"
+    }
+  }
+}
+```
+
+Error Response (404 Not Found):
+
+- Status: 404 Not Found
+- Description: The requested user was not found.
+- Data Format: Error message for human.
+
+```json
+Status: 404 Not Found
+
+{
+  "error":
+  {
+    "code": "not_found",
+    "message": "The requested user was not found."
+  }
+}
+```
+### Creating Users
+
+`POST /api/v1/users`
+
+Client needs to supply the following attributes:
+
+```json
+POST /api/v1/users HTTP/1.1
+Content-Type: application/vnd.api+json
+Accept: application/vnd.api+json
+
+{
+  "username":"schroederJerde",
+  "email":"schroederJerde@gmail.com",
+  "zipcode":"80301"
+}
+```
+
+Success Response (201 Created):
+
+- Status: 201 Created
+- Description: Successful response with a specific user for a specific user id.
+- Data Format: A data hash, with keys "id", "type" and "attributes".
+- Location: http://localhost:3000/api/v1/users/1
+
+```json
+HTTP/1.1 201 Created
+Location: http://example.com/photos/550e8400-e29b-41d4-a716-446655440000
+Content-Type: application/vnd.api+json
+
+{
+  "data":
+  {
+    "type": "user",
+    "id": "1",
+    "attributes":
+    {
+      "username":"schroederJerde",
+      "email":"schroederJerde@gmail.com",
+      "zipcode":"80301"
+    }
+  }
+}
+```
+
+### Updating Users
+
+`PATCH /api/v1/users/{user_id}`
+
+Client may supply any of the following attributes:
+
+```json
+POST /api/v1/users/1 HTTP/1.1
+Content-Type: application/vnd.api+json
+Accept: application/vnd.api+json
+
+{
+  "zipcode":"80301",
+  "street_address":"123 Main Street, New York, NY",
+  "bio":"Lorem ipsum dolor sit amet",
+  "likes":"consectetur adipiscing elit",
+  "dislikes":"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+  "latitude":"40.712776",
+  "longitude":"-74.005974"
+}
+```
+Success Response (202 Accepted):
+
+- Status: 202 Accepted
+- Description: Successful response with a specific user for a specific user id.
+- Data Format: A data hash, with keys "id", "type" and "attributes".
+- Location: http://localhost:3000/api/v1/users/1
+
+```json
+HTTP/1.1 202 Accepted
+Location: http://localhost:3000/api/v1/users/1
+Content-Type: application/vnd.api+json
+
+{
+  "data":
+  {
+    "type": "user",
+    "id": "1",
+    "attributes":
+    {
+      "username":"schroederJerde",
+      "email":"schroederJerde@gmail.com",
+      "zipcode":"80301",
+      "zipcode":"80301",
+      "street_address":"123 Main Street, New York, NY",
+      "bio":"Lorem ipsum dolor sit amet",
+      "likes":"consectetur adipiscing elit",
+      "dislikes":"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+      "latitude":"40.712776",
+      "longitude":"-74.005974"
+    }
+  }
+}
+```
+
 <!-- GET "/api/v1/users"
 GET "/api/v1/users/:id" -->
 
+## Events
 GET "/api/v1/users/:id/events"
 
 This endpoint will get all of one user's events.
