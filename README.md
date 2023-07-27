@@ -60,7 +60,7 @@ Status: 200 OK
         "title": "Casey's Sweet Quiet Gathering",
         "description": "Movie for people with noise senesitivities",
         "street_address": "5479 William Way, East Sonnyhaven, LA",
-        "zip_code": "63637",
+        "zipcode": "63637",
         "date_time": "8-17-23, 5:25 PM",
         "private": "true",
         "host": "1",
@@ -73,7 +73,7 @@ Status: 200 OK
         "title": "Movie Title",
         "description": "This is a movie ",
         "street_address": "5479 William Way, Sonnyhaven, CO",
-        "zip_code": "84674",
+        "zipcode": "84674",
         "date_time": "10-1-23, 6:00 PM",
         "private": "false",
         "host": "1",
@@ -122,7 +122,7 @@ Status: 200 OK
         "title": "Casey's Sweet Quiet Gathering",
         "description": "Movie for people with noise senesitivities",
         "street_address": "5479 William Way, East Sonnyhaven, LA",
-        "zip_code": "63637",
+        "zipcode": "63637",
         "date_time": "8-17-23, 5:25 PM",
         "private": "true",
         "host": "1"
@@ -135,7 +135,7 @@ Status: 200 OK
         "title": "Movie Title",
         "description": "This is a movie ",
         "street_address": "5479 William Way, Sonnyhaven, CO",
-        "zip_code": "84674",
+        "zipcode": "84674",
         "date_time": "10-1-23, 6:00 PM",
         "private": "false",
         "host": "6"
@@ -180,7 +180,7 @@ Status: 200 OK
     "title": "Casey's Sweet Quiet Gathering",
     "description": "Movie for people with noise senesitivities",
     "street_address": "5479 William Way, East Sonnyhaven, LA",
-    "zip_code": "63637",
+    "zipcode": "63637",
     "date_time": "8-17-23, 5:25 PM",
     "private": "true",
     "host": "1"
@@ -264,7 +264,7 @@ Status: 201 Created
       "title": "A New Event",
       "description": "A new activity",
       "street_address": "5479 William Way, East Sonnyhaven, LA",
-      "zip_code": "63637",
+      "zipcode": "63637",
       "date_time": "8-17-23, 5:25 PM",
       "private": "true",
       "host": "1"
@@ -304,7 +304,7 @@ Status: 200 OK
     "title": "Updated Gathering",
     "description": "Updated Movie",
     "street_address": "5479 William Way, East Sonnyhaven, LA",
-    "zip_code": "63637",
+    "zipcode": "63637",
     "date_time": "8-17-23, 5:25 PM",
     "private": "true",
     "host": "1"
