@@ -11,6 +11,7 @@ RSpec.describe Friendship, type: :model do
       @user1 = create(:user)
       @user2 = create(:user)
     end
+
     describe '#process_friendship' do
       context 'when no previous friendship exists between two users' do
         it 'creates a new friendship with a status of pending if first user approves' do
@@ -30,14 +31,14 @@ RSpec.describe Friendship, type: :model do
 
       context 'when a previous pending friendship exists between two users' do
         it 'updates the status of the friendship to approved if second user also approves' do
-          Friendship.create(user: @user1, friend: @user2, status: :pending)
+          Friendship.process_friendship(@user1, @user2, :approved)
           Friendship.process_friendship(@user2, @user1, :approved)
           expect(Friendship.last.status).to eq('approved')
           expect(Friendship.where(user: @user1, friend: @user2, status: :approved)).to exist
         end
 
         it 'updates the status of the friendship to declined if second user declines' do
-          Friendship.create(user: @user1, friend: @user2, status: :pending)
+          Friendship.process_friendship(@user1, @user2, :approved)
           Friendship.process_friendship(@user2, @user1, :declined)
           expect(Friendship.last.status).to eq('declined')
           expect(Friendship.where(user: @user1, friend: @user2, status: :declined)).to exist
