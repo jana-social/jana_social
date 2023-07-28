@@ -403,3 +403,67 @@ This endpoint will return all users within the specific distance input radius
 }
 
 ```
+
+Status: 200 OK
+  "message": "Search did not return any results please adjust your distance"
+
+```JSON
+Status: 404 Not Found
+
+{
+  "error": {
+    "code": "not_found",
+    "message": "Must input a valid number of miles for distance."
+  }
+}
+```
+
+```JSON
+Status: 404 Not Found
+
+{
+  "error": {
+    "code": "not_found",
+    "message": "search field cannot be blank."
+  }
+}
+```
+
+GET "/api/v1/events/find_all?distance=#{distance}"
+```JSON
+
+- Status: 200 OK
+- Description: Successful response with list of events based on search distance.
+- Data Format: An array of event objects, each containing "id", "type", and "attributes".
+
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "event",
+      "attributes": {
+        "title": "Casey's Sweet Quiet Gathering",
+        "description": "Movie for people with noise senesitivities",
+        "street_address": "5479 William Way, East Sonnyhaven, LA",
+        "zip_code": "63637",
+        "date_time": "8-17-23, 5:25 PM",
+        "private": "true",
+        "host": "1",
+      }
+    },
+     {
+      "id": "2",
+      "type": "event",
+      "attributes": {
+        "title": "Movie Title",
+        "description": "This is a movie ",
+        "street_address": "5479 William Way, Sonnyhaven, CO",
+        "zip_code": "84674",
+        "date_time": "10-1-23, 6:00 PM",
+        "private": "false",
+        "host": "1",
+      }
+    }
+  ]
+}
+```
