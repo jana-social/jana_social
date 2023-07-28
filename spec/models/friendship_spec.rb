@@ -7,21 +7,27 @@ RSpec.describe Friendship, type: :model do
   end
 
   describe 'class methods' do
-    before(:each) do
-      @user1 = create(:user)
-      @user2 = create(:user)
-    end
-
     describe '#process_friendship' do
+      before(:each) do
+        @user1 = User.create!(
+          username: "Foo Bar",
+          zipcode: "92315"
+        )
+        @user2 = User.create!(
+          username: "John Doe",
+          zipcode: "80524"
+        )
+      end
+      
       context 'when no previous friendship exists between two users' do
-        it 'creates a new friendship with a status of pending if first user approves' do
+        it 'creates a new friendship with a status of pending if first user approves', :vcr do
           Friendship.process_friendship(@user1, @user2, :approved)
           expect(Friendship.last.status).to eq('pending')
           expect(Friendship.where(user: @user1, friend: @user2, status: :pending)).to exist
           expect(Friendship.where(user: @user2, friend: @user1)).to_not exist
         end
 
-        it 'creates a new friendship with a status of declined if first user declines' do
+        it 'creates a new friendship with a status of declined if first user declines', :vcr do
           Friendship.process_friendship(@user1, @user2, :declined)
           expect(Friendship.last.status).to eq('declined')
           expect(Friendship.where(user: @user1, friend: @user2, status: :declined)).to exist
@@ -30,14 +36,14 @@ RSpec.describe Friendship, type: :model do
       end
 
       context 'when a previous pending friendship exists between two users' do
-        it 'updates the status of the friendship to approved if second user also approves' do
+        it 'updates the status of the friendship to approved if second user also approves', :vcr do
           Friendship.process_friendship(@user1, @user2, :approved)
           Friendship.process_friendship(@user2, @user1, :approved)
           expect(Friendship.last.status).to eq('approved')
           expect(Friendship.where(user: @user1, friend: @user2, status: :approved)).to exist
         end
 
-        it 'updates the status of the friendship to declined if second user declines' do
+        it 'updates the status of the friendship to declined if second user declines', :vcr do
           Friendship.process_friendship(@user1, @user2, :approved)
           Friendship.process_friendship(@user2, @user1, :declined)
           expect(Friendship.last.status).to eq('declined')
