@@ -467,3 +467,131 @@ GET "/api/v1/events/find_all?distance=#{distance}"
   ]
 }
 ```
+
+GET "/api/v1/user/:id/friendships"
+```JSON
+
+- Status: 200 OK
+  - Description: Successful response with list of users where Returns a user's friends where both users have approved relationship
+  - Data Format: An array of user objects, each containing "user_id" and "status".
+
+   Status: 200 OK
+
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+        "username": "amyisfun",
+        "email": "am123@gmail.com",
+        "zip_code": "63637",
+        "bio": "Caretaker for 43 yo sister with learning disabilities",
+        "likes": "being outside",
+        "dislikes": "loud crowds",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+      }
+    },
+     {
+      "id": "2",
+      "type": "user",
+      "attributes": {
+        "username": "LGisgreat",
+        "email": "LG123@gmail.com",
+        "zip_code": "63637",
+        "bio": "Caretaker for sister in mid thirties with learning disabilities",
+        "likes": "quiet activities",
+        "dislikes": "lots of people",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+      }
+    }
+  ]
+}
+
+```
+
+POST "/api/v1/friendships"
+
+This endpoint will allow a user to create a friendship (the first user approves another user, but the other user has not yet approved).
+
+Success Response: (201 Created):
+  - Data Format: An array of the two user objects (the first being the person who initiated the request, the second being the person who they approved) which has been converted to json/serialized  It also returns an enum "status" of "pending"
+
+```JSON
+ Status: 201 Created
+
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+        "username": "amyisfun",
+        "email": "am123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for 43 yo sister with learning disabilities",
+        "likes": "being outside",
+        "dislikes": "loud crowds",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "status": "pending"
+      }
+    },
+     {
+      "id": "2",
+      "type": "user",
+      "attributes": {
+        "username": "LGisgreat",
+        "email": "LG123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for sister in mid thirties with learning disabilities",
+        "likes": "quiet activities",
+        "dislikes": "lots of people",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "status": "pending"
+      }
+    }
+  ]
+}
+
+```
+
+ PATCH "/api/v1/friendships/:id"
+  Success Response: 200
+  ```JSON
+
+  This endpoint will allow a user to approve a friendship (second person approves the friendship originator)
+  Data Format: A user object is created that contains their "user_id" and another user_id.  It also returns an enum "status" of "approved" 
+  {
+  "data": [
+    {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+        "username": "amyisfun",
+        "email": "am123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for 43 yo sister with learning disabilities",
+        "likes": "being outside",
+        "dislikes": "loud crowds",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "status": "approved"
+      }
+    },
+     {
+      "id": "2",
+      "type": "user",
+      "attributes": {
+        "username": "LGisgreat",
+        "email": "LG123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for sister in mid thirties with learning disabilities",
+        "likes": "quiet activities",
+        "dislikes": "lots of people",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "status": "approved"
+      }
+    }
+  ]
+}
+
+```
