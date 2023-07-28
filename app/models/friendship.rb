@@ -2,8 +2,6 @@ class Friendship < ApplicationRecord
   belongs_to :user
   belongs_to :friend, class_name: 'User', foreign_key: 'friend_id'
 
-  enum status: [:pending, :approved, :declined]
-
   def self.process_friendship(initiator, receiver, status)
     friendship = Friendship.find_by(user: initiator, friend: receiver)
 
@@ -12,6 +10,7 @@ class Friendship < ApplicationRecord
 
       if reverse_friendship.nil? # if a friendship relationship does NOT exist in the REVERSE direction
         friendship_status = status == :approved ? :pending : :declined
+ 
         Friendship.create(user: initiator, friend: receiver, status: friendship_status)
       else
         reverse_friendship.update(status: :approved) if status == :approved
