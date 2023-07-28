@@ -1,9 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Event Index Serializer' do
-  describe 'Event Index Serializer' do 
-    it 'event index serializer works' do 
-
-    end
+RSpec.describe "Event Index Serializer" do
+  describe "Event Index Serializer" do
+    pending "add some examples to (or delete) #{__FILE__}"
   end
 end

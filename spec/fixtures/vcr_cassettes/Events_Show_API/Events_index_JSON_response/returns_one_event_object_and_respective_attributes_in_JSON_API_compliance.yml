@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=231%20Hayes%20Manor,%2035553-9854
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 28 Jul 2023 03:27:35 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjMyODQ0NTA2MywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjE3NTAxMTY5LCJib3VuZGluZ2JveCI6WyI0MS40NjU2MzkzNjQ1MTEiLCI0MS40NjU3MzkzNjQ1MTEiLCItODcuMDk0ODExIiwiLTg3LjA5NDcxMSJdLCJsYXQiOiI0MS40NjU2ODkzNjQ1MTE0OCIsImxvbiI6Ii04Ny4wOTQ3NjEiLCJkaXNwbGF5X25hbWUiOiIyMzEsIEhheWVzIExlb25hcmQgUm9hZCwgV2VzdGhpbGwsIFBvcnRlciBDb3VudHksIEluZGlhbmEsIDQ2Mzg1LCBVbml0ZWQgU3RhdGVzIiwiY2xhc3MiOiJwbGFjZSIsInR5cGUiOiJob3VzZSIsImltcG9ydGFuY2UiOi0wLjk0LCJhZGRyZXNzIjp7ImhvdXNlX251bWJlciI6IjIzMSIsInJvYWQiOiJIYXllcyBMZW9uYXJkIFJvYWQiLCJoYW1sZXQiOiJXZXN0aGlsbCIsImNvdW50eSI6IlBvcnRlciBDb3VudHkiLCJzdGF0ZSI6IkluZGlhbmEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUlOIiwicG9zdGNvZGUiOiI0NjM4NSIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifX1d
+  recorded_at: Fri, 28 Jul 2023 03:27:35 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=6399%20Juana%20Hollow,%2063305
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 28 Jul 2023 03:27:36 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjEwMTQ4ODY4NywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjY2MDY5ODIsImJvdW5kaW5nYm94IjpbIjM0Ljc4NTEzNCIsIjM0Ljc4NTk2NyIsIi04Ny42MTIxODIiLCItODcuNjEyMTgiXSwibGF0IjoiMzQuNzg1OTY3IiwibG9uIjoiLTg3LjYxMjE4IiwiZGlzcGxheV9uYW1lIjoiTm9ydGhlYXN0IFRpYSBKdWFuYSBTdHJlZXQsIFN0ZWVuc29uIEhvbGxvdywgTXVzY2xlIFNob2FscywgQ29sYmVydCBDb3VudHksIEFsYWJhbWEsIDM1NjYxLCBVbml0ZWQgU3RhdGVzIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InJlc2lkZW50aWFsIiwiaW1wb3J0YW5jZSI6MC4zLCJhZGRyZXNzIjp7InJvYWQiOiJOb3J0aGVhc3QgVGlhIEp1YW5hIFN0cmVldCIsImhhbWxldCI6IlN0ZWVuc29uIEhvbGxvdyIsInRvd24iOiJNdXNjbGUgU2hvYWxzIiwiY291bnR5IjoiQ29sYmVydCBDb3VudHkiLCJzdGF0ZSI6IkFsYWJhbWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUFMIiwicG9zdGNvZGUiOiIzNTY2MSIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifX1d
+  recorded_at: Fri, 28 Jul 2023 03:27:36 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=150%20Jeremy%20Trafficway,%2073034-0587
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 28 Jul 2023 03:27:36 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Fri, 28 Jul 2023 03:27:36 GMT
+recorded_with: VCR 6.2.0
