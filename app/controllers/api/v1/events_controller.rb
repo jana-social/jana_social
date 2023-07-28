@@ -8,6 +8,6 @@ class Api::V1::EventsController < ApplicationController
   def show
     event = Event.find(params[:id])
 
-    render json: EventIndexSerializer.new(event)
+    render json: EventShowSerializer.new(event)
   end
 end
