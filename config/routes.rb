@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get "/", to: "application#welcome"
   namespace :api do
     namespace :v1 do
-      resources :users
+      resources :users, only: %i[index show create update destroy]
       resources :events, only: %i[index show]
     end
   end
