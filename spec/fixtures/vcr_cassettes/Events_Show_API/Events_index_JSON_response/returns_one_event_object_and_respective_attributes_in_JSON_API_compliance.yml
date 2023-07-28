@@ -1,0 +1,233 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=64267%20Nana%20Shoal,%2092315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 28 Jul 2023 04:18:51 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Fri, 28 Jul 2023 04:18:51 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=11020%20Bechtelar%20Spur,%2092314
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 28 Jul 2023 04:18:51 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Fri, 28 Jul 2023 04:18:51 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=51671%20Ezequiel%20Shoal,%2073505
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 28 Jul 2023 04:18:52 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Fri, 28 Jul 2023 04:18:51 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=6046%20Moore%20Mission,%2095923-2704
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 28 Jul 2023 04:18:52 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjEwNTk4MTYyNiwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjE1MjcyMTQ5LCJib3VuZGluZ2JveCI6WyIyNi4yNTEzNzk5IiwiMjYuMjYyNTUwMSIsIi05OC4zNTA4OTA2IiwiLTk4LjM0ODkwMzQiXSwibGF0IjoiMjYuMjU2NzI2OSIsImxvbiI6Ii05OC4zNDk5NjA0IiwiZGlzcGxheV9uYW1lIjoiTW9vcmUgRmllbGQgUm9hZCwgQWxleCBDYXZhem9zIENvbG9uaWEsIFZpbGxhIENhcHJpIENvbG9uaWEsIE1pc3Npb24sIEhpZGFsZ28gQ291bnR5LCBUZXhhcywgNzg1NzEsIFVuaXRlZCBTdGF0ZXMiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoidGVydGlhcnkiLCJpbXBvcnRhbmNlIjowLjMxMDAwOTk5OTk5OTk5OTk1LCJhZGRyZXNzIjp7InJvYWQiOiJNb29yZSBGaWVsZCBSb2FkIiwibmVpZ2hib3VyaG9vZCI6IkFsZXggQ2F2YXpvcyBDb2xvbmlhIiwiaGFtbGV0IjoiVmlsbGEgQ2FwcmkgQ29sb25pYSIsInRvd24iOiJNaXNzaW9uIiwiY291bnR5IjoiSGlkYWxnbyBDb3VudHkiLCJzdGF0ZSI6IlRleGFzIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1UWCIsInBvc3Rjb2RlIjoiNzg1NzEiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn19LHsicGxhY2VfaWQiOjEwNTQwNTczMiwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjE1MjcyMTQ4LCJib3VuZGluZ2JveCI6WyIyNi4yMTg2MzA2IiwiMjYuMjIxOTA1NyIsIi05OC4zNTY2NDE3IiwiLTk4LjM1NjA4MDkiXSwibGF0IjoiMjYuMjIwOTQyOSIsImxvbiI6Ii05OC4zNTYyNDYiLCJkaXNwbGF5X25hbWUiOiJNb29yZSBGaWVsZCBSb2FkLCBBbGEgQmxhbmNhIENvbG9uaWEgTnVtYmVyIDEsIE1pc3Npb24sIEhpZGFsZ28gQ291bnR5LCBUZXhhcywgNzg1NzIsIFVuaXRlZCBTdGF0ZXMiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoicmVzaWRlbnRpYWwiLCJpbXBvcnRhbmNlIjowLjMxMDAwOTk5OTk5OTk5OTk1LCJhZGRyZXNzIjp7InJvYWQiOiJNb29yZSBGaWVsZCBSb2FkIiwiaGFtbGV0IjoiQWxhIEJsYW5jYSBDb2xvbmlhIE51bWJlciAxIiwidG93biI6Ik1pc3Npb24iLCJjb3VudHkiOiJIaWRhbGdvIENvdW50eSIsInN0YXRlIjoiVGV4YXMiLCJJU08zMTY2LTItbHZsNCI6IlVTLVRYIiwicG9zdGNvZGUiOiI3ODU3MiIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifX0seyJwbGFjZV9pZCI6MTE1OTI5Nzk1LCJsaWNlbmNlIjoiRGF0YSDCqSBPcGVuU3RyZWV0TWFwIGNvbnRyaWJ1dG9ycywgT0RiTCAxLjAuIGh0dHBzOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6MzU1MDAyNzEsImJvdW5kaW5nYm94IjpbIjQ5LjE1MzYwNzUiLCI0OS4xNTQxIiwiLTEyMi4yMzczOTU5IiwiLTEyMi4yMzcxMDI2Il0sImxhdCI6IjQ5LjE1MzYwNzUiLCJsb24iOiItMTIyLjIzNzEwMjYiLCJkaXNwbGF5X25hbWUiOiJNb29yZSBBdmVudWUsIE1pc3Npb24sIEJyaXRpc2ggQ29sdW1iaWEsIFYyViA0SjUsIENhbmFkYSIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJyZXNpZGVudGlhbCIsImltcG9ydGFuY2UiOjAuMzEwMDA5OTk5OTk5OTk5OTUsImFkZHJlc3MiOnsicm9hZCI6Ik1vb3JlIEF2ZW51ZSIsInRvd24iOiJNaXNzaW9uIiwic3RhdGUiOiJCcml0aXNoIENvbHVtYmlhIiwiSVNPMzE2Ni0yLWx2bDQiOiJDQS1CQyIsInBvc3Rjb2RlIjoiVjJWIDRKNSIsImNvdW50cnkiOiJDYW5hZGEiLCJjb3VudHJ5X2NvZGUiOiJjYSJ9fSx7InBsYWNlX2lkIjoxMDY1MTUwNjIsImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cHM6Ly9vc20ub3JnL2NvcHlyaWdodCIsIm9zbV90eXBlIjoid2F5Iiwib3NtX2lkIjoxNzMzODc0MywiYm91bmRpbmdib3giOlsiMzEuNzg2MjQzIiwiMzEuNzg4NzUiLCItMTA2LjQ5ODQ0IiwiLTEwNi40OTYxOSJdLCJsYXQiOiIzMS43ODc1MTIiLCJsb24iOiItMTA2LjQ5NzYyNiIsImRpc3BsYXlfbmFtZSI6Ik1vb3JlIFN0cmVldCwgTWlzc2lvbiBIaWxscywgRWwgUGFzbywgRWwgUGFzbyBDb3VudHksIFRleGFzLCA3OTkwMiwgVW5pdGVkIFN0YXRlcyIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJyZXNpZGVudGlhbCIsImltcG9ydGFuY2UiOjAuMywiYWRkcmVzcyI6eyJyb2FkIjoiTW9vcmUgU3RyZWV0IiwiaGFtbGV0IjoiTWlzc2lvbiBIaWxscyIsImNpdHkiOiJFbCBQYXNvIiwiY291bnR5IjoiRWwgUGFzbyBDb3VudHkiLCJzdGF0ZSI6IlRleGFzIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1UWCIsInBvc3Rjb2RlIjoiNzk5MDIiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn19LHsicGxhY2VfaWQiOjIyODU0OTIzNywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjU5NDgyMzU3NCwiYm91bmRpbmdib3giOlsiMzIuNzQ4MjYxOSIsIjMyLjc0OTM4NzUiLCItMTE3LjE5NTA4MTYiLCItMTE3LjE5MzQ0MjciXSwibGF0IjoiMzIuNzQ4NzE0IiwibG9uIjoiLTExNy4xOTQxODMiLCJkaXNwbGF5X25hbWUiOiJNb29yZSBTdHJlZXQsIE9sZCBUb3duLCBTYW4gRGllZ28sIFNhbiBEaWVnbyBDb3VudHksIENhbGlmb3JuaWEsIDkyMTEwLCBVbml0ZWQgU3RhdGVzIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InNlY29uZGFyeSIsImltcG9ydGFuY2UiOjAuMTk5OTk5OTk5OTk5OTk5OTgsImFkZHJlc3MiOnsicm9hZCI6Ik1vb3JlIFN0cmVldCIsInN1YnVyYiI6Ik9sZCBUb3duIiwiY2l0eSI6IlNhbiBEaWVnbyIsImNvdW50eSI6IlNhbiBEaWVnbyBDb3VudHkiLCJzdGF0ZSI6IkNhbGlmb3JuaWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUNBIiwicG9zdGNvZGUiOiI5MjExMCIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifX0seyJwbGFjZV9pZCI6MTMxMDA1MTQ0LCJsaWNlbmNlIjoiRGF0YSDCqSBPcGVuU3RyZWV0TWFwIGNvbnRyaWJ1dG9ycywgT0RiTCAxLjAuIGh0dHBzOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6MTExMjk0MTExLCJib3VuZGluZ2JveCI6WyIzMi43NDc1NjY4IiwiMzIuNzQ3Nzg1NyIsIi0xMTcuMTkyNjkyNSIsIi0xMTcuMTkyMzUiXSwibGF0IjoiMzIuNzQ3NTk1OCIsImxvbiI6Ii0xMTcuMTkyNTUwOCIsImRpc3BsYXlfbmFtZSI6Ik1vb3JlIFN0cmVldCwgT2xkIFRvd24sIFNhbiBEaWVnbywgU2FuIERpZWdvIENvdW50eSwgQ2FsaWZvcm5pYSwgOTIxMTAsIFVuaXRlZCBTdGF0ZXMiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoicmVzaWRlbnRpYWwiLCJpbXBvcnRhbmNlIjowLjE5OTk5OTk5OTk5OTk5OTk4LCJhZGRyZXNzIjp7InJvYWQiOiJNb29yZSBTdHJlZXQiLCJzdWJ1cmIiOiJPbGQgVG93biIsImNpdHkiOiJTYW4gRGllZ28iLCJjb3VudHkiOiJTYW4gRGllZ28gQ291bnR5Iiwic3RhdGUiOiJDYWxpZm9ybmlhIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1DQSIsInBvc3Rjb2RlIjoiOTIxMTAiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn19XQ==
+  recorded_at: Fri, 28 Jul 2023 04:18:52 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=62941%20Kemmer%20Manors,%2021032
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 28 Jul 2023 04:18:53 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Fri, 28 Jul 2023 04:18:52 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=62668%20Lang%20Terrace,%2094651
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 28 Jul 2023 04:18:54 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjI0MjQyNDgxNCwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjY4MTg4MjM5NSwiYm91bmRpbmdib3giOlsiMjIuMzc1NjEyNCIsIjIyLjM3NTcyNzgiLCIxMTQuMDY3MjIwMSIsIjExNC4wNjczODM3Il0sImxhdCI6IjIyLjM3NTY0MyIsImxvbiI6IjExNC4wNjczNDAzIiwiZGlzcGxheV9uYW1lIjoiVHNpbmcgTG9uZyBIaWdod2F5LCBUc2luZyBGYWkgVG9uZyBOZXcgVmlsbGFnZSwgU2hhbSBUc2VuZyBTdW4gVHN1ZW4sIFRzdWVuIFdhbiBEaXN0cmljdCwgTmV3IFRlcnJpdG9yaWVzLCBIb25nIEtvbmcsIENoaW5hIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6Im1vdG9yd2F5IiwiaW1wb3J0YW5jZSI6MC4xMDAwMDk5OTk5OTk5OTk5MywiYWRkcmVzcyI6eyJyb2FkIjoiVHNpbmcgTG9uZyBIaWdod2F5IiwiaGFtbGV0IjoiVHNpbmcgRmFpIFRvbmcgTmV3IFZpbGxhZ2UiLCJ2aWxsYWdlIjoiU2hhbSBUc2VuZyBTdW4gVHN1ZW4iLCJjaXR5IjoiVHN1ZW4gV2FuIERpc3RyaWN0IiwibXVuaWNpcGFsaXR5IjoiTmV3IFRlcnJpdG9yaWVzIiwic3RhdGUiOiJIb25nIEtvbmciLCJJU08zMTY2LTItbHZsMyI6IkNOLUhLIiwiY291bnRyeSI6IkNoaW5hIiwiY291bnRyeV9jb2RlIjoiY24ifX0seyJwbGFjZV9pZCI6MTQyMDI0ODMyLCJsaWNlbmNlIjoiRGF0YSDCqSBPcGVuU3RyZWV0TWFwIGNvbnRyaWJ1dG9ycywgT0RiTCAxLjAuIGh0dHBzOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6MTU3OTM1Nzk4LCJib3VuZGluZ2JveCI6WyIyMi4zNzU1MiIsIjIyLjQwNzk5MDkiLCIxMTQuMDU5MzM3IiwiMTE0LjA2NjcxNSJdLCJsYXQiOiIyMi4zODEwNDIiLCJsb24iOiIxMTQuMDYzMjcxIiwiZGlzcGxheV9uYW1lIjoiVGFpIExhbSBUdW5uZWwsIFRzaW5nIEZhaSBUb25nLCBTaGFtIFRzZW5nIFN1biBUc3VlbiwgVHN1ZW4gV2FuIERpc3RyaWN0LCBOZXcgVGVycml0b3JpZXMsIEhvbmcgS29uZywgQ2hpbmEiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoibW90b3J3YXkiLCJpbXBvcnRhbmNlIjowLjEwMDAwOTk5OTk5OTk5OTkzLCJhZGRyZXNzIjp7InJvYWQiOiJUYWkgTGFtIFR1bm5lbCIsImhhbWxldCI6IlRzaW5nIEZhaSBUb25nIiwidmlsbGFnZSI6IlNoYW0gVHNlbmcgU3VuIFRzdWVuIiwiY2l0eSI6IlRzdWVuIFdhbiBEaXN0cmljdCIsIm11bmljaXBhbGl0eSI6Ik5ldyBUZXJyaXRvcmllcyIsInN0YXRlIjoiSG9uZyBLb25nIiwiSVNPMzE2Ni0yLWx2bDMiOiJDTi1ISyIsImNvdW50cnkiOiJDaGluYSIsImNvdW50cnlfY29kZSI6ImNuIn19XQ==
+  recorded_at: Fri, 28 Jul 2023 04:18:54 GMT
+recorded_with: VCR 6.2.0

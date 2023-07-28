@@ -36,9 +36,17 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
+# HTTP client library that provides a common interface over many adapters (such as Net::HTTP) and embraces the concept of Rack middleware when processing the request/response cycle.
 gem 'faraday'
+
+# Simple Rails app configuration using ENV and a single YAML file
 gem 'figaro'
+
+# A fast JSON:API serializer for Ruby Objects.
 gem 'jsonapi-serializer'
+
+# Complete Ruby geocoding solution.
+gem 'geocoder'
 
 group :test do
   gem 'capybara'
