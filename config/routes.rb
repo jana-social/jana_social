@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   # get "/", to: "application#welcome"
   namespace :api do
     namespace :v1 do
+      get "/users/:id/events/hosting", to: "users/events#hosting"
       resources :users
       resources :events, only: %i[index show]
     end
   end
+
 end
