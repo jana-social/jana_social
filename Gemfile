@@ -48,8 +48,6 @@ gem 'jsonapi-serializer'
 # Complete Ruby geocoding solution.
 gem 'geocoder'
 
-gem 'httparty'
-
 group :test do
   gem 'capybara'
   gem 'launchy'
