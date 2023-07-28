@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  has_many :event_users
+
   before_validation :geocode
 
   validates :title, presence: true

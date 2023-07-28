@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :event_users
+  
   before_validation :geocode
 
   validates :username, uniqueness: true, presence: true
