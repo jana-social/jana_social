@@ -1,14 +1,16 @@
 class User < ApplicationRecord
   before_validation :geocode
 
-  validates :username, presence: true
+  validates :username, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true
+  validates :password_digest, presence: true
   validates :zipcode, presence: true
   
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
   geocoded_by :address
-
+  has_secure_password
   private
 
   def address
