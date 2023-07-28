@@ -10,7 +10,9 @@ RSpec.describe Event, type: :model do
     it "should geocode the address with only a zipcode", :vcr do
       user = User.create!(
         username: "Mr. Test",
-        zipcode: "92315"
+        zipcode: "92315", 
+        email: "test@gmail.com",
+        password_digest: "test123"
       )
       event = Event.create!(
         title: "Beach Trip",
@@ -27,7 +29,9 @@ RSpec.describe Event, type: :model do
     it "should geocode the address with a street address and zipcode", :vcr do
       user = User.create!(
         username: "Mr. Test",
-        zipcode: "92315"
+        zipcode: "92315",
+        email: "test@gmail.com",
+        password_digest: "test123"
       )
       event = Event.create!(
         title: "Beach Trip",
@@ -45,7 +49,9 @@ RSpec.describe Event, type: :model do
     it "should not geocode the address without a zipcode", :vcr do
       user = User.create!(
         username: "Mr. Test",
-        zipcode: "92315"
+        zipcode: "92315",
+        email: "test@gmail.com",
+        password_digest: "test123"
       )
       expect { Event.create!(title: "Beach Trip", user_id: user.id) }.to raise_error(ActiveRecord::RecordInvalid)
     end
@@ -61,7 +67,9 @@ RSpec.describe Event, type: :model do
         it "should return complete address from street address and zipcode", :vcr do
           user = User.create!(
             username: "Mr. Test",
-            zipcode: "92315"
+            zipcode: "92315",
+            email: "test@gmail.com",
+            password_digest: "test123"
           )
           event = Event.create!(
             title: "Beach Trip",
@@ -76,7 +84,9 @@ RSpec.describe Event, type: :model do
         it "should return complete address from zipcode only", :vcr do
           user = User.create!(
             username: "Mr. Test",
-            zipcode: "92315"
+            zipcode: "92315", 
+            email: "test@gmail.com",
+            password_digest: "test123"
           )
           event = Event.create!(
             title: "Beach Trip",

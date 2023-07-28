@@ -565,3 +565,240 @@ Status: 404 Not Found -->
 "error":"Event not found. The event does not exist or has already been deleted."
 }
 ```
+## Locations
+
+GET "/api/v1/users/find_all?distance=#{distance}"
+
+This endpoint will return all users within the specific distance input radius  
+
+ - Status: 200 OK
+  - Description: Successful response with list of users where zipcode/address resides within radius of the distance typed in by the user typed in Returns users based on search distance.
+  - Data Format: An array of user hash objects with keys "id", "type" and "attributes".
+
+```JSON
+  Status: 200 OK
+
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+        "username": "amyisfun",
+        "email": "am123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for 43 yo sister with learning disabilities",
+        "likes": "being outside",
+        "dislikes": "loud crowds",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+      }
+    },
+     {
+      "id": "2",
+      "type": "user",
+      "attributes": {
+        "username": "LGisgreat",
+        "email": "LG123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for sister in mid thirties with learning disabilities",
+        "likes": "quiet activities",
+        "dislikes": "lots of people",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+      }
+    }
+  ]
+}
+
+```
+
+Status: 200 OK
+  "message": "Search did not return any results please adjust your distance"
+
+```JSON
+Status: 404 Not Found
+
+{
+  "error": {
+    "code": "not_found",
+    "message": "Must input a valid number of miles for distance."
+  }
+}
+```
+
+```JSON
+Status: 404 Not Found
+
+{
+  "error": {
+    "code": "not_found",
+    "message": "search field cannot be blank."
+  }
+}
+```
+
+GET "/api/v1/events/find_all?distance=#{distance}"
+```JSON
+
+- Status: 200 OK
+- Description: Successful response with list of events based on search distance.
+- Data Format: An array of event objects, each containing "id", "type", and "attributes".
+
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "event",
+      "attributes": {
+        "title": "Casey's Sweet Quiet Gathering",
+        "description": "Movie for people with noise senesitivities",
+        "street_address": "5479 William Way, East Sonnyhaven, LA",
+        "zip_code": "63637",
+        "date_time": "8-17-23, 5:25 PM",
+        "private": "true",
+        "host": "1",
+      }
+    },
+     {
+      "id": "2",
+      "type": "event",
+      "attributes": {
+        "title": "Movie Title",
+        "description": "This is a movie ",
+        "street_address": "5479 William Way, Sonnyhaven, CO",
+        "zip_code": "84674",
+        "date_time": "10-1-23, 6:00 PM",
+        "private": "false",
+        "host": "1",
+      }
+    }
+  ]
+}
+```
+
+GET "/api/v1/user/:id/friendships"
+```JSON
+
+- Status: 200 OK
+  - Description: Successful response with list of users where Returns a user's friends where both users have approved relationship
+  - Data Format: An array of user objects, each containing "user_id" and "status".
+
+   Status: 200 OK
+
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+        "username": "amyisfun",
+        "email": "am123@gmail.com",
+        "zip_code": "63637",
+        "bio": "Caretaker for 43 yo sister with learning disabilities",
+        "likes": "being outside",
+        "dislikes": "loud crowds",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+      }
+    },
+     {
+      "id": "2",
+      "type": "user",
+      "attributes": {
+        "username": "LGisgreat",
+        "email": "LG123@gmail.com",
+        "zip_code": "63637",
+        "bio": "Caretaker for sister in mid thirties with learning disabilities",
+        "likes": "quiet activities",
+        "dislikes": "lots of people",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+      }
+    }
+  ]
+}
+
+```
+
+POST "/api/v1/friendships"
+
+This endpoint will allow a user to create a friendship (the first user approves another user, but the other user has not yet approved).
+
+Success Response: (201 Created):
+  - Data Format: An array of the two user objects (the first being the person who initiated the request, the second being the person who they approved) which has been converted to json/serialized  It also returns an enum "status" of "pending"
+
+```JSON
+ Status: 201 Created
+
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+        "username": "amyisfun",
+        "email": "am123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for 43 yo sister with learning disabilities",
+        "likes": "being outside",
+        "dislikes": "loud crowds",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "status": "pending"
+      }
+    },
+     {
+      "id": "2",
+      "type": "user",
+      "attributes": {
+        "username": "LGisgreat",
+        "email": "LG123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for sister in mid thirties with learning disabilities",
+        "likes": "quiet activities",
+        "dislikes": "lots of people",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "status": "pending"
+      }
+    }
+  ]
+}
+
+```
+
+ PATCH "/api/v1/friendships/:id"
+  Success Response: 200
+  ```JSON
+
+  This endpoint will allow a user to approve a friendship (second person approves the friendship originator)
+  Data Format: A user object is created that contains their "user_id" and another user_id.  It also returns an enum "status" of "approved" 
+  {
+  "data": [
+    {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+        "username": "amyisfun",
+        "email": "am123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for 43 yo sister with learning disabilities",
+        "likes": "being outside",
+        "dislikes": "loud crowds",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "status": "approved"
+      }
+    },
+     {
+      "id": "2",
+      "type": "user",
+      "attributes": {
+        "username": "LGisgreat",
+        "email": "LG123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for sister in mid thirties with learning disabilities",
+        "likes": "quiet activities",
+        "dislikes": "lots of people",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+        "status": "approved"
+      }
+    }
+  ]
+}
+
+```
