@@ -10,7 +10,7 @@ RSpec.describe Event, type: :model do
     it "should geocode the address with only a zipcode", :vcr do
       user = User.create!(
         username: "Mr. Test",
-        zipcode: "92315", 
+        zipcode: "92315",
         email: "test@gmail.com",
         password_digest: "test123"
       )
@@ -84,7 +84,7 @@ RSpec.describe Event, type: :model do
         it "should return complete address from zipcode only", :vcr do
           user = User.create!(
             username: "Mr. Test",
-            zipcode: "92315", 
+            zipcode: "92315",
             email: "test@gmail.com",
             password_digest: "test123"
           )

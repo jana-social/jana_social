@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "POST Create User request" do    
+describe "POST Create User request" do
   it "requests to create a new user", vcr: { match_requests_on: [:method, :host, :path] } do
     user_params = {
       user: {

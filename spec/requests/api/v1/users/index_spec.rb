@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Users index request" do
   let!(:user_1) { create(:user) }
-  
+
   it "requests all the users", vcr: { match_requests_on: [:method, :host, :path] } do
     get api_v1_users_path
     expect(response).to be_successful
