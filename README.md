@@ -358,3 +358,48 @@ Status: 404 Not Found -->
 "error":"Event not found. The event does not exist or has already been deleted."
 }
 ```
+## Locations
+
+GET "/api/v1/users/find_all?distance=#{distance}"
+
+This endpoint will return all users within the specific distance input radius  
+
+ - Status: 200 OK
+  - Description: Successful response with list of users where zipcode/address resides within radius of the distance typed in by the user typed in Returns users based on search distance.
+  - Data Format: An array of user hash objects with keys "id", "type" and "attributes".
+
+```JSON
+  Status: 200 OK
+
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+        "username": "amyisfun",
+        "email": "am123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for 43 yo sister with learning disabilities",
+        "likes": "being outside",
+        "dislikes": "loud crowds",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+      }
+    },
+     {
+      "id": "2",
+      "type": "user",
+      "attributes": {
+        "username": "LGisgreat",
+        "email": "LG123@gmail.com",
+        "zipcode": "63637",
+        "bio": "Caretaker for sister in mid thirties with learning disabilities",
+        "likes": "quiet activities",
+        "dislikes": "lots of people",
+        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+      }
+    }
+  ]
+}
+
+```
