@@ -10,15 +10,21 @@ RSpec.describe Friendship, type: :model do
     describe '#process_friendship' do
       before(:each) do
         @user1 = User.create!(
-          username: "Foo Bar",
-          zipcode: "92315"
+          username: "Foo",
+          street_address: "990 Summit Blvd",
+          zipcode: "92315",
+          email: "foo@gmail.com",
+          password_digest: "test123"
         )
         @user2 = User.create!(
-          username: "John Doe",
-          zipcode: "80524"
+          username: "Barr",
+          street_address: "990 Summit Blvd",
+          zipcode: "92315",
+          email: "barr@gmail.com",
+          password_digest: "test123"
         )
       end
-      
+
       context 'when no previous friendship exists between two users' do
         it 'creates a new friendship with a status of pending if first user approves', :vcr do
           Friendship.process_friendship(@user1, @user2, :approved)
