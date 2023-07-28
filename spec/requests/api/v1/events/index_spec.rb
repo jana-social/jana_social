@@ -13,7 +13,7 @@ RSpec.describe "Events Index API" do
       get api_v1_events_path
 
       events = JSON.parse(response.body, symbolize_names: true)
-
+      
       expect(events[:data].count).to eq(3)
 
       expect(response).to be_successful
