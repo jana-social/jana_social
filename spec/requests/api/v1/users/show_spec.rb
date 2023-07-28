@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Users index request" do
+describe "User show request" do
   let!(:user_1) { create(:user) }
     
   it "requests a specific user", vcr: { match_requests_on: [:method, :host, :path] } do

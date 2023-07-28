@@ -65,12 +65,12 @@ module Api
       def index
         @users = User.all
 
-        render json: UserSerializer.new(@users)
+        render json: UserIndexSerializer.new(@users)
       end
 
       # GET /users/1
       def show
-        render json: UserSerializer.new(@user)
+        render json: UserShowSerializer.new(@user)
       end
 
       # POST /users
@@ -78,7 +78,7 @@ module Api
         @user = User.new(user_params)
 
         if @user.save
-          render json: UserSerializer.new(User.create(user_params)), status: :created
+          render json: UserCreateSerializer.new(User.create(user_params)), status: :created
         else
           render json: @user.errors, status: :unprocessable_entity
         end
