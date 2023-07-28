@@ -87,7 +87,7 @@ module Api
       # PATCH/PUT /users/1
       def update
         if @user.update(user_params)
-          render json: UserSerializer.new(@user), status: :accepted
+          render json: UserUpdateSerializer.new(@user), status: :accepted
         else
           render json: @user.errors, status: :unprocessable_entity
         end
