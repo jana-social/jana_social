@@ -32,7 +32,7 @@
  - Steven Stackhouse: [GitHub](https://github.com/stackmm) | [LinkedIn](https://www.linkedin.com/in/steven-stackhouse/)
 
  ---
- 
+
 # API JSON CONTRACT
 
 Description of API endpoints for front end application
@@ -244,9 +244,6 @@ Content-Type: application/vnd.api+json
   }
 }
 ```
-
-<!-- GET "/api/v1/users"
-GET "/api/v1/users/:id" -->
 
 ## Events
 GET "/api/v1/users/:id/events"

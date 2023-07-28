@@ -4,4 +4,10 @@ class Api::V1::EventsController < ApplicationController
 
     render json: EventIndexSerializer.new(events)
   end
+
+  def show
+    event = Event.find(params[:id])
+
+    render json: EventShowSerializer.new(event)
+  end
 end
