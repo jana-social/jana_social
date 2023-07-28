@@ -9,6 +9,6 @@ class User < ApplicationRecord
   private
 
   def address
-    [self.street_address, self.zipcode].compact.join(', ')
+    [street_address, zipcode].compact.join(", ")
   end
 end

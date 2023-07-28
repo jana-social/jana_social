@@ -3,7 +3,7 @@ class EventShowSerializer
   attributes :title, :description, :street_address, :private_status, :zipcode, :user_id
 
   attribute :date_time do |object|
-    object.date_time.strftime('%Y-%m-%d %H:%M:%S')
+    object.date_time.strftime("%Y-%m-%d %H:%M:%S")
   end
 
   attribute :host do |object|
