@@ -9,9 +9,6 @@ class Friendship < ApplicationRecord
     if friendship.nil? && reverse_friendship.nil? # if a friendship does NOT exist
       friendship_status = status == :approved ? :pending : :declined
       Friendship.create(user: initiator, friend: receiver, status: friendship_status)
-    elsif friendship&.status == 'pending' # if a friendship does exist (in the same order) and the status is pending
-      friendship.update(status: :approved) if status == :approved
-      friendship.update(status: :declined) if status == :declined
     elsif reverse_friendship&.status == 'pending' # if a friendship does exist (in the reverse order) and the status is pending
       reverse_friendship.update(status: :approved) if status == :approved
       reverse_friendship.update(status: :declined) if status == :declined
