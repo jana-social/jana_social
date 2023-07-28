@@ -20,7 +20,6 @@ describe "POST Create User request" do
     headers = { "CONTENT_TYPE" => "application/json" }
 
     post "/api/v1/users", headers: headers, params: user_params.to_json
-
     created_user = User.last
     expect(response).to have_http_status(:created)
 
