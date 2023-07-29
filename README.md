@@ -395,7 +395,7 @@ Status: 200 OK
   "data": [
     {
       "id": "1",
-      "type": "event_show",
+      "type": "event_index",
       "attributes": {
         "title": "Casey's Sweet Quiet Gathering",
         "description": "Movie for people with noise senesitivities",
@@ -408,7 +408,7 @@ Status: 200 OK
     },
      {
       "id": "2",
-      "type": "event_show",
+      "type": "event_index",
       "attributes": {
         "title": "Movie Title",
         "description": "This is a movie ",
@@ -453,7 +453,7 @@ Status: 200 OK
 
 {
   "id": "1",
-  "type": "event",
+  "type": "event_show",
   "attributes": {
     "title": "Casey's Sweet Quiet Gathering",
     "description": "Movie for people with noise senesitivities",
@@ -521,7 +521,7 @@ Status: 200 OK
 ```
 ### Creating Events
 
-POST "/api/v1/users/:id/events/new"
+POST "/api/v1/users/:id/events"
 
 This endpoint will allow a user to create an event.
 
