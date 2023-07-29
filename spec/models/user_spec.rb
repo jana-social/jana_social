@@ -1,6 +1,11 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
+  describe "associations" do
+    it { should have_many(:event_users) }
+    it { should have_many(:events).through(:event_users) }
+  end
+
   describe "validations" do
     it { should validate_presence_of(:username) }
     it { should validate_uniqueness_of(:username)}
@@ -8,6 +13,11 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of(:email)}
     it { should validate_presence_of(:password_digest) }
     it { should validate_presence_of(:zipcode) }
+  end
+
+  describe "relationships" do
+    it { should have_many(:event_users) }
+    it { should have_many(:events).through(:event_users) }
   end
 
   describe "geocoding" do

@@ -1,16 +1,24 @@
 require "rails_helper"
 
 RSpec.describe Event, type: :model do
+  describe "associations" do
+    it { should have_many(:event_users) }
+  end
   describe "validations" do
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:zipcode) }
+  end
+
+  describe "relationships" do
+    it { should have_many(:event_users) }
+    it { should have_many(:users).through(:event_users) }
   end
 
   describe "geocoding" do
     it "should geocode the address with only a zipcode", :vcr do
       user = User.create!(
         username: "Mr. Test",
-        zipcode: "92315", 
+        zipcode: "92315",
         email: "test@gmail.com",
         password_digest: "test123"
       )
@@ -84,7 +92,7 @@ RSpec.describe Event, type: :model do
         it "should return complete address from zipcode only", :vcr do
           user = User.create!(
             username: "Mr. Test",
-            zipcode: "92315", 
+            zipcode: "92315",
             email: "test@gmail.com",
             password_digest: "test123"
           )
