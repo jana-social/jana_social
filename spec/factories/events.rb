@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :event do
-    title { Faker::Space.nebula }
+    title { Faker::Book.title }
     description { Faker::Hipster.paragraph }
     date_time { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
     zipcode { Faker::Address.zip_code }
