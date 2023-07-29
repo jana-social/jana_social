@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Update Event API" do
-  let!(:user_1) { create(:user, username: "boom", street_address: "990 Summit Blvd.", zipcode: "92315") }
+  let!(:user_1) { create(:user, username: "Jason Alexander", street_address: "990 Summit Blvd.", zipcode: "92315") }
   let!(:event_1) { create(:event, street_address: "3456 State St.", zipcode: "93109", user_id: user_1.id) }
 
   describe "Can update an event api" do
