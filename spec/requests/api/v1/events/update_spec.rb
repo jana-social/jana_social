@@ -1,11 +1,13 @@
 require "rails_helper"
 
-RSpec.describe "Create Event API" do
-  let!(:user_1) { create(:user, username: "boom", street_address: "990 Summit Blvd.", zipcode: "92315") }
-  describe "Can create a new event api" do
-    it "can create a new event api", :vcr do
+RSpec.describe "Update Event API" do
+  let!(:user_1) { create(:user, username: "Jason Alexander", street_address: "990 Summit Blvd.", zipcode: "92315") }
+  let!(:event_1) { create(:event, street_address: "3456 State St.", zipcode: "93109", user_id: user_1.id) }
 
-      expect(Event.count).to eq(0)
+  describe "Can update an event api" do
+    it "can update an existing event api", :vcr do
+
+      expect(Event.count).to eq(1)
 
       event_params = ({
         title: "Event 20",
@@ -18,7 +20,7 @@ RSpec.describe "Create Event API" do
       })
 
       headers = {"CONTENT_TYPE" => "application/json"}
-      post "/api/v1/users/#{user_1.id}/events", headers: headers, params: JSON.generate(event_params)
+      patch "/api/v1/users/#{user_1.id}/events/#{event_1.id}", headers: headers, params: JSON.generate(event_params)
 
       event = Event.last
 

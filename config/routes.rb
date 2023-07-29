@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "/users/:id/events/hosting", to: "users/events#hosting"
       get "/users/:id/events/attending", to: "users/events#attending"
-      resources :users do 
-        resources :events, only: %i[create]
+      resources :users do
+        resources :events, only: %i[create update]
       end
       resources :events, only: %i[index show]
     end
