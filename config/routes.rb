@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       delete "/users/:user_id/events/:id", to: "events#delete"
       resources :users do
         resources :events, only: %i[create update]
-      end
+      end, only: %i[index show create update destroy]
       resources :events, only: %i[index show]
     end
   end

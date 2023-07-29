@@ -13,6 +13,7 @@ RSpec.describe "Events Show API" do
       get api_v1_event_path(event_1)
 
       event = JSON.parse(response.body, symbolize_names: true)
+
       expect(response).to be_successful
 
       expect(event[:data][:id]).to eq(event_1.id.to_s)

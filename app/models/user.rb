@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   geocoded_by :address
   has_secure_password
+
   private
 
   def address
