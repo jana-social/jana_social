@@ -29,6 +29,8 @@ RSpec.describe "Create Event API" do
       expect(event.date_time).to eq(event_params[:date_time])
       expect(event.private_status).to eq(event_params[:private_status])
       expect(event.user_id).to eq(event_params[:user_id])
+
+      expect(Event.count).to eq(1)
     end
   end
 end

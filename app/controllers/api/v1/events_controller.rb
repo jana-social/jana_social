@@ -18,6 +18,12 @@ class Api::V1::EventsController < ApplicationController
     end
   end
 
+  def update
+    event = Event.find(params[:id])
+    event.update(event_params)
+    render json: EventShowSerializer.new(event), status: :accepted
+  end
+
   private
 
   def event_params
