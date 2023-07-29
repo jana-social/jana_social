@@ -15,6 +15,11 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:zipcode) }
   end
 
+  describe "relationships" do
+    it { should have_many(:event_users) }
+    it { should have_many(:events).through(:event_users) }
+  end
+
   describe "geocoding" do
     it "should geocode the address with only a zipcode", :vcr do
       user = User.create!(
