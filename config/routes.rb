@@ -3,12 +3,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'application#welcome'
+  root 'application#welcome'  
   # get "/", to: "application#welcome"
   namespace :api do
     namespace :v1 do
       get "/users/:id/events/hosting", to: "users/events#hosting"
       get "/users/:id/events/attending", to: "users/events#attending"
+      delete "/users/:user_id/events/:id", to: "events#delete"
       resources :users do
         resources :events, only: %i[create update]
       end

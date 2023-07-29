@@ -23,6 +23,11 @@ class Api::V1::EventsController < ApplicationController
     event.update(event_params)
     render json: EventShowSerializer.new(event), status: :accepted
   end
+ 
+  def delete
+    event = Event.find(params[:id])
+    event.destroy
+  end
 
   private
 
