@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "photo service" do 
   it "returns a random photo", :vcr do
     search = PhotoService.new.random_photo
-require 'pry'; binding.pry
+
     expect(search).to be_a(Hash)
     expect(search).to have_key(:urls)
     expect(search[:urls]).to be_a(Hash)
