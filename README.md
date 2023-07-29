@@ -245,53 +245,6 @@ Content-Type: application/vnd.api+json
 }
 ```
 
-<!-- ## Events -->
-<!-- GET "/api/v1/users/:id/events"
-
-This endpoint will get all of one user's events.
-
-Success Response (200 OK):
-  - Status: 200 OK
-  - Description: Successful response with list of events belonging to specific user id.
-  - Data Format: An array of event objects, each containing "id", "type", and "attributes".
-
-```json
-Status: 200 OK
-
-{
-  "data": [
-    {
-      "id": "1",
-      "type": "event",
-      "attributes": {
-        "title": "Casey's Sweet Quiet Gathering",
-        "description": "Movie for people with noise senesitivities",
-        "street_address": "5479 William Way, East Sonnyhaven, LA",
-        "zipcode": "63637",
-        "date_time": "8-17-23, 5:25 PM",
-        "private": "true",
-        "host": "username",
-        "user_id": "134"
-      }
-    },
-     {
-      "id": "2",
-      "type": "event",
-      "attributes": {
-        "title": "Movie Title",
-        "description": "This is a movie ",
-        "street_address": "5479 William Way, Sonnyhaven, CO",
-        "zipcode": "84674",
-        "date_time": "10-1-23, 6:00 PM",
-        "private": "false",
-        "host": "usename",
-        "user_id": "134"
-      }
-    }
-  ]
-}
-``` -->
-
 ## User Events
 
 ### Getting Hosted Events
