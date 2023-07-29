@@ -26,6 +26,9 @@ class Api::V1::EventsController < ApplicationController
  
   def delete
     event = Event.find(params[:id])
+    # event.event_users.each do |eu|
+    #   eu.destroy
+    # end
     event.destroy
   end
 
