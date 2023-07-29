@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=8845%20Lynne%20Stravenue,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=43681%20Macejkovic%20View,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 29 Jul 2023 22:28:46 GMT
+      - Sat, 29 Jul 2023 22:32:56 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -37,10 +37,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sat, 29 Jul 2023 22:28:46 GMT
+  recorded_at: Sat, 29 Jul 2023 22:32:56 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=639%20Waelchi%20Point,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=8673%20Katerine%20Fords,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -59,7 +59,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 29 Jul 2023 22:28:46 GMT
+      - Sat, 29 Jul 2023 22:32:57 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -75,5 +75,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sat, 29 Jul 2023 22:28:46 GMT
+  recorded_at: Sat, 29 Jul 2023 22:32:57 GMT
 recorded_with: VCR 6.2.0
