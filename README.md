@@ -245,24 +245,27 @@ Content-Type: application/vnd.api+json
 }
 ```
 
-## Events
-GET "/api/v1/users/:id/events"
+## User Events
 
-This endpoint will get all of one user's events.
+### Getting Hosted Events
+
+GET "/api/v1/users/:id/events/hosting"
+
+This endpoint will get all of the events a user is hosting.
 
 Success Response (200 OK):
   - Status: 200 OK
-  - Description: Successful response with list of events belonging to specific user id.
+  - Description: Successful response with list of events a specific user is hosting.
   - Data Format: An array of event objects, each containing "id", "type", and "attributes".
 
-```
+```json
 Status: 200 OK
 
 {
   "data": [
     {
       "id": "1",
-      "type": "event",
+      "type": "event_show",
       "attributes": {
         "title": "Casey's Sweet Quiet Gathering",
         "description": "Movie for people with noise senesitivities",
@@ -270,20 +273,22 @@ Status: 200 OK
         "zipcode": "63637",
         "date_time": "8-17-23, 5:25 PM",
         "private": "true",
-        "host": "1",
+        "host": "Percival Mangst",
+        "user_id": "134"
       }
     },
      {
       "id": "2",
-      "type": "event",
+      "type": "event_show",
       "attributes": {
-        "title": "Movie Title",
-        "description": "This is a movie ",
-        "street_address": "5479 William Way, Sonnyhaven, CO",
+        "title": "Percy's Wild Journey",
+        "description": "This is a movie full of metal. Like Iron and Cobalt, even Tin",
+        "street_address": "5479 William Way, Sonnyhaven, LA",
         "zipcode": "84674",
         "date_time": "10-1-23, 6:00 PM",
         "private": "false",
-        "host": "1",
+        "host": "Percival Mangst",
+        "user_id": "134"
       }
     }
   ]
@@ -295,7 +300,71 @@ Error Response (404 Not Found):
   - Description: The requested user was not found.
   - Data Format: Error message for human.
 
+```json
+Status: 404 Not Found
+
+{
+  "error": {
+    "code": "not_found",
+    "message": "The requested user was not found."
+  }
+}
 ```
+### Getting 'Attending' Events
+
+
+GET "/api/v1/users/:id/events/attending"
+
+This endpoint will get all of the events a user is attending.
+
+Success Response (200 OK):
+  - Status: 200 OK
+  - Description: Successful response with list of events a specific user is attending.
+  - Data Format: An array of event objects, each containing "id", "type", and "attributes".
+
+```json
+Status: 200 OK
+
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "event_show",
+      "attributes": {
+        "title": "Casey's Sweet Quiet Gathering",
+        "description": "Movie for people with noise senesitivities",
+        "street_address": "5479 William Way, East Sonnyhaven, LA",
+        "zipcode": "63637",
+        "date_time": "8-17-23, 5:25 PM",
+        "private": "true",
+        "host": "Isabelle Stuart",
+        "user_id": "186"
+      }
+    },
+     {
+      "id": "2",
+      "type": "event_show",
+      "attributes": {
+        "title": "Movie Title",
+        "description": "A movie is about soft metals, like Sodium, Potassium and Silvah",
+        "street_address": "5479 William Way, Sonnyhaven, CO",
+        "zipcode": "84674",
+        "date_time": "10-1-23, 6:00 PM",
+        "private": "false",
+        "host": "Joey Jospeh Mariella",
+        "user_id": "17"
+      }
+    }
+  ]
+}
+```
+
+Error Response (404 Not Found):
+  - Status: 404 Not Found
+  - Description: The requested user was not found.
+  - Data Format: Error message for human.
+
+```json
 Status: 404 Not Found
 
 {
@@ -308,6 +377,8 @@ Status: 404 Not Found
 
 ## Events
 
+### Getting Events
+
 GET "/api/v1/events"
 
 This endpoint will get a list of all events.
@@ -317,14 +388,14 @@ Success Response (200 OK):
   - Description: Successful response with list of events.
   - Data Format: An array of event objects, each containing "id", "type", and "attributes".
 
-```
+```json
 Status: 200 OK
 
 {
   "data": [
     {
       "id": "1",
-      "type": "event",
+      "type": "event_index",
       "attributes": {
         "title": "Casey's Sweet Quiet Gathering",
         "description": "Movie for people with noise senesitivities",
@@ -337,7 +408,7 @@ Status: 200 OK
     },
      {
       "id": "2",
-      "type": "event",
+      "type": "event_index",
       "attributes": {
         "title": "Movie Title",
         "description": "This is a movie ",
@@ -357,7 +428,7 @@ Error Response (404 Not Found):
   - Description: The requested event was not found.
   - Data Format: Error message for human.
 
-```
+```json
 Status: 404 Not Found
 
 {
@@ -377,12 +448,12 @@ Success Response (200 OK):
   - Description: Successful response with one event.
   - Data Format: An object representing the event with "id", "type", and "attributes".
 
-```
+```json
 Status: 200 OK
 
 {
   "id": "1",
-  "type": "event",
+  "type": "event_show",
   "attributes": {
     "title": "Casey's Sweet Quiet Gathering",
     "description": "Movie for people with noise senesitivities",
@@ -400,7 +471,7 @@ Error Response (404 Not Found):
   - Description: The requested event was not found.
   - Data Format: Error message for human.
 
-```
+```json
 Status: 404 Not Found
 
 {
@@ -420,7 +491,7 @@ Success Response (200 OK):
   - Description: Successful response with list of users belonging to specific event.
   - Data Format: An array of user objects, each containing "user_id", "event_id", and "status".
 
-```
+```json
 Status: 200 OK
 
 {
@@ -448,8 +519,9 @@ Status: 200 OK
   ]
 }
 ```
+### Creating Events
 
-POST "/api/v1/users/:id/events/new"
+POST "/api/v1/users/:id/events"
 
 This endpoint will allow a user to create an event.
 
@@ -460,7 +532,7 @@ Success Response: (201 Created):
   - Description: An event is successfully created.
   - Data Format: The created event object, containing "id", "type", and "attributes".
 
-```
+```json
 Status: 201 Created
 
 {
@@ -485,7 +557,7 @@ Error Response (400 Bad Request):
   - Description: The request could not be understood or was missing parameters.
   - Data Format: Error message for human.
 
-```
+```json
 Status: 400 Bad Request
 
 {
@@ -495,13 +567,15 @@ Status: 400 Bad Request
 }
 ```
 
+### Updating Events
+
 PATCH "/api/v1/users/:id/events/:id"
 
 This endpoint will allow a user to update their event.
 
 OAuth return point.
 
-```
+```json
 Status: 200 OK
 
 {
@@ -524,7 +598,7 @@ Error Response (400 Bad Request):
   - Description: The request could not be understood or was missing parameters.
   - Data Format: Error message for human.
 
-```
+```json
 Status: 400 Bad Request
 
 {
@@ -534,6 +608,8 @@ Status: 400 Bad Request
 }
 ```
 
+### Deleting Events
+
 DELETE "/api/v1/users/:id/events/:id"
 
 This endpoint will allow a user to delete their event.
@@ -542,7 +618,7 @@ OAuth return point.
 
 response for successful deletion:
 
-```
+```json
 Status: 200 OK
 
 {
@@ -558,7 +634,7 @@ response for failed deletion:
 "error":"Invalid request parameters"
 } -->
 
-```
+```json
 Status: 404 Not Found -->
 
 {
@@ -569,7 +645,7 @@ Status: 404 Not Found -->
 
 GET "/api/v1/users/find_all?distance=#{distance}"
 
-This endpoint will return all users within the specific distance input radius  
+This endpoint will return all users within the specific distance input radius
 
  - Status: 200 OK
   - Description: Successful response with list of users where zipcode/address resides within radius of the distance typed in by the user typed in Returns users based on search distance.
@@ -767,7 +843,7 @@ Success Response: (201 Created):
   ```JSON
 
   This endpoint will allow a user to approve a friendship (second person approves the friendship originator)
-  Data Format: A user object is created that contains their "user_id" and another user_id.  It also returns an enum "status" of "approved" 
+  Data Format: A user object is created that contains their "user_id" and another user_id.  It also returns an enum "status" of "approved"
   {
   "data": [
     {

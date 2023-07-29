@@ -1,0 +1,120 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=990%20Summit%20Blvd.,%2092315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 29 Jul 2023 18:36:21 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjM0NzUxMDA4OCwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjExMTExNjQ5MDksImJvdW5kaW5nYm94IjpbIjM0LjI0Mjg2OTgiLCIzNC4yNDMzNjY2IiwiLTExNi44ODg0MDU0IiwiLTExNi44ODgzOTkiXSwibGF0IjoiMzQuMjQzMDk1MiIsImxvbiI6Ii0xMTYuODg4NDAxOSIsImRpc3BsYXlfbmFtZSI6IlN1bW1pdCBCb3VsZXZhcmQsIEJpZyBCZWFyIExha2UsIFNhbiBCZXJuYXJkaW5vIENvdW50eSwgQ0FMIEZpcmUgU291dGhlcm4gUmVnaW9uLCBDYWxpZm9ybmlhLCA5MjMxNSwgVW5pdGVkIFN0YXRlcyIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJ0ZXJ0aWFyeSIsImltcG9ydGFuY2UiOjAuMzEwMDA5OTk5OTk5OTk5OTUsImFkZHJlc3MiOnsicm9hZCI6IlN1bW1pdCBCb3VsZXZhcmQiLCJ0b3duIjoiQmlnIEJlYXIgTGFrZSIsImNvdW50eSI6IlNhbiBCZXJuYXJkaW5vIENvdW50eSIsInN0YXRlX2Rpc3RyaWN0IjoiQ0FMIEZpcmUgU291dGhlcm4gUmVnaW9uIiwic3RhdGUiOiJDYWxpZm9ybmlhIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1DQSIsInBvc3Rjb2RlIjoiOTIzMTUiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn19LHsicGxhY2VfaWQiOjI5MDI1MDQ5NSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjEwMTYwMTkwNDAsImJvdW5kaW5nYm94IjpbIjM0LjIzNjMxMzIiLCIzNC4yMzc1NjQ0IiwiLTExNi44ODg0ODUiLCItMTE2Ljg4ODQ2OTgiXSwibGF0IjoiMzQuMjM2ODQ1MiIsImxvbiI6Ii0xMTYuODg4NDc5MSIsImRpc3BsYXlfbmFtZSI6IlN1bW1pdCBCb3VsZXZhcmQsIEJpZyBCZWFyIExha2UsIFNhbiBCZXJuYXJkaW5vIENvdW50eSwgQ2FsaWZvcm5pYSwgOTIzMTUsIFVuaXRlZCBTdGF0ZXMiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoidGVydGlhcnkiLCJpbXBvcnRhbmNlIjowLjMxLCJhZGRyZXNzIjp7InJvYWQiOiJTdW1taXQgQm91bGV2YXJkIiwidG93biI6IkJpZyBCZWFyIExha2UiLCJjb3VudHkiOiJTYW4gQmVybmFyZGlubyBDb3VudHkiLCJzdGF0ZSI6IkNhbGlmb3JuaWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUNBIiwicG9zdGNvZGUiOiI5MjMxNSIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifX1d
+  recorded_at: Sat, 29 Jul 2023 18:36:21 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=3456%20State%20St.,%2093109
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 29 Jul 2023 18:36:22 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjMyMjg5OTM2NCwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjY5NzIwNDYxLCJib3VuZGluZ2JveCI6WyIzNC40NDA0MzE1NDg2OTgiLCIzNC40NDA1MzE1NDg2OTgiLCItMTE5LjczNzgwMTIyMjcyIiwiLTExOS43Mzc3MDEyMjI3MiJdLCJsYXQiOiIzNC40NDA0ODE1NDg2OTc2IiwibG9uIjoiLTExOS43Mzc3NTEyMjI3MjQwNiIsImRpc3BsYXlfbmFtZSI6IjM0NTYsIFN0YXRlIFN0cmVldCwgVXBwZXIgU3RhdGUsIFNhbnRhIEJhcmJhcmEsIFNhbnRhIEJhcmJhcmEgQ291bnR5LCBDQUwgRmlyZSBTb3V0aGVybiBSZWdpb24sIENhbGlmb3JuaWEsIDkzMTA1LCBVbml0ZWQgU3RhdGVzIiwiY2xhc3MiOiJwbGFjZSIsInR5cGUiOiJob3VzZSIsImltcG9ydGFuY2UiOi0wLjgzOTk5OTk5OTk5OTk5OTksImFkZHJlc3MiOnsiaG91c2VfbnVtYmVyIjoiMzQ1NiIsInJvYWQiOiJTdGF0ZSBTdHJlZXQiLCJuZWlnaGJvdXJob29kIjoiVXBwZXIgU3RhdGUiLCJjaXR5IjoiU2FudGEgQmFyYmFyYSIsImNvdW50eSI6IlNhbnRhIEJhcmJhcmEgQ291bnR5Iiwic3RhdGVfZGlzdHJpY3QiOiJDQUwgRmlyZSBTb3V0aGVybiBSZWdpb24iLCJzdGF0ZSI6IkNhbGlmb3JuaWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUNBIiwicG9zdGNvZGUiOiI5MzEwNSIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifX1d
+  recorded_at: Sat, 29 Jul 2023 18:36:22 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=3456%20State%20St.,%2093109
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 29 Jul 2023 18:36:23 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjMyMjg5OTM2NCwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjY5NzIwNDYxLCJib3VuZGluZ2JveCI6WyIzNC40NDA0MzE1NDg2OTgiLCIzNC40NDA1MzE1NDg2OTgiLCItMTE5LjczNzgwMTIyMjcyIiwiLTExOS43Mzc3MDEyMjI3MiJdLCJsYXQiOiIzNC40NDA0ODE1NDg2OTc2IiwibG9uIjoiLTExOS43Mzc3NTEyMjI3MjQwNiIsImRpc3BsYXlfbmFtZSI6IjM0NTYsIFN0YXRlIFN0cmVldCwgVXBwZXIgU3RhdGUsIFNhbnRhIEJhcmJhcmEsIFNhbnRhIEJhcmJhcmEgQ291bnR5LCBDQUwgRmlyZSBTb3V0aGVybiBSZWdpb24sIENhbGlmb3JuaWEsIDkzMTA1LCBVbml0ZWQgU3RhdGVzIiwiY2xhc3MiOiJwbGFjZSIsInR5cGUiOiJob3VzZSIsImltcG9ydGFuY2UiOi0wLjgzOTk5OTk5OTk5OTk5OTksImFkZHJlc3MiOnsiaG91c2VfbnVtYmVyIjoiMzQ1NiIsInJvYWQiOiJTdGF0ZSBTdHJlZXQiLCJuZWlnaGJvdXJob29kIjoiVXBwZXIgU3RhdGUiLCJjaXR5IjoiU2FudGEgQmFyYmFyYSIsImNvdW50eSI6IlNhbnRhIEJhcmJhcmEgQ291bnR5Iiwic3RhdGVfZGlzdHJpY3QiOiJDQUwgRmlyZSBTb3V0aGVybiBSZWdpb24iLCJzdGF0ZSI6IkNhbGlmb3JuaWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUNBIiwicG9zdGNvZGUiOiI5MzEwNSIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifX1d
+  recorded_at: Sat, 29 Jul 2023 18:36:23 GMT
+recorded_with: VCR 6.2.0

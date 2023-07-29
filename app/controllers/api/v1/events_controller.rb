@@ -10,4 +10,35 @@ class Api::V1::EventsController < ApplicationController
 
     render json: EventShowSerializer.new(event)
   end
+
+  def create
+    event = Event.new(event_params)
+    if event.save
+      render json: EventShowSerializer.new(event), status: :created
+    end
+  end
+
+  def update
+    event = Event.find(params[:id])
+    event.update(event_params)
+    render json: EventShowSerializer.new(event), status: :accepted
+  end
+ 
+  def delete
+    event = Event.find(params[:id])
+    # event.event_users.each do |eu|
+    #   eu.destroy
+    # end
+    event.destroy
+  end
+
+  private
+
+  def event_params
+    params.permit(:title, :description,
+                  :street_address,
+                  :zipcode,
+                  :date_time,
+                  :private_status, :user_id)
+  end
 end
