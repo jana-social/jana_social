@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=14105%20Howell%20Isle,%2098735-4994
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=9309%20Herzog%20Heights,%2010365
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 29 Jul 2023 19:37:57 GMT
+      - Sat, 29 Jul 2023 19:20:37 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -37,5 +37,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sat, 29 Jul 2023 19:37:57 GMT
+  recorded_at: Sat, 29 Jul 2023 19:20:37 GMT
 recorded_with: VCR 6.2.0
