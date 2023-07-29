@@ -14,4 +14,8 @@ class Friendship < ApplicationRecord
       reverse_friendship.update(status: :declined) if status == :declined
     end
   end
+
+  def self.find_friendship(user, friend)
+    Friendship.find_by(user: user, friend: friend) || Friendship.find_by(user: friend, friend: user)
+  end
 end
