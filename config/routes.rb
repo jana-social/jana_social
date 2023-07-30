@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :events, only: %i[index show] do
         resources :event_users, only: %i[index]
       end
+      resources :friendships, only: %i[create]
     end
   end
 end
