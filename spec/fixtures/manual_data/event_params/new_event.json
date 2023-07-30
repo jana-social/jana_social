@@ -1,0 +1,31 @@
+[
+  {
+      "place_id": 153472346,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 202085702,
+      "boundingbox": [
+          "29.9429901",
+          "29.9581603",
+          "-81.3459911",
+          "-81.3366852"
+      ],
+      "lat": "29.9514044",
+      "lon": "-81.3418456",
+      "display_name": "US 1, Madeira at Saint Augustine, Araquey, Saint Johns County, Florida, 32095, United States",
+      "class": "highway",
+      "type": "primary",
+      "importance": 0.91001,
+      "address": {
+          "road": "US 1",
+          "neighbourhood": "Madeira at Saint Augustine",
+          "hamlet": "Araquey",
+          "county": "Saint Johns County",
+          "state": "Florida",
+          "ISO3166-2-lvl4": "US-FL",
+          "postcode": "32095",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]
