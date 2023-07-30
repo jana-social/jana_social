@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=16152%20Yuonne%20Coves,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=80206%20Waters%20Haven,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 30 Jul 2023 02:37:20 GMT
+      - Sun, 30 Jul 2023 16:25:39 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -37,10 +37,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sun, 30 Jul 2023 02:37:20 GMT
+  recorded_at: Sun, 30 Jul 2023 16:25:39 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=38758%20Gil%20Manor,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=849%20Kam%20Shore,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -59,7 +59,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 30 Jul 2023 02:37:21 GMT
+      - Sun, 30 Jul 2023 16:25:39 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -75,5 +75,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sun, 30 Jul 2023 02:37:21 GMT
+  recorded_at: Sun, 30 Jul 2023 16:25:39 GMT
 recorded_with: VCR 6.2.0

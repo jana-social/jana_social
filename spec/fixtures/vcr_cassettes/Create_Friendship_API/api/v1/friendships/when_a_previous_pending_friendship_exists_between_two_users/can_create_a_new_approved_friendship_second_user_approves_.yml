@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=988%20Marcel%20Corner,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=48883%20Federico%20Loaf,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -21,46 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 30 Jul 2023 02:37:19 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=20
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - OPTIONS,GET
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        W3sicGxhY2VfaWQiOjEwNzYwMjE4NiwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjE3MTYwNDI1LCJib3VuZGluZ2JveCI6WyI0MS4zOTE4MTU0IiwiNDEuMzkyMDUwNSIsIi03MS45ODA2NTM4IiwiLTcxLjk3OTcyMjgiXSwibGF0IjoiNDEuMzkxOTA1MyIsImxvbiI6Ii03MS45Nzk5OTA3IiwiZGlzcGxheV9uYW1lIjoiTWFyY2VsIFJvYWQsIEJ1cm5ldHQncyBDb3JuZXIsIEdyb3RvbiwgU291dGhlYXN0ZXJuIENvbm5lY3RpY3V0IFBsYW5uaW5nIFJlZ2lvbiwgQ29ubmVjdGljdXQsIDA2MzcyLCBVbml0ZWQgU3RhdGVzIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InJlc2lkZW50aWFsIiwiaW1wb3J0YW5jZSI6MC4zMDAwMDk5OTk5OTk5OTk5NCwiYWRkcmVzcyI6eyJyb2FkIjoiTWFyY2VsIFJvYWQiLCJuZWlnaGJvdXJob29kIjoiQnVybmV0dCdzIENvcm5lciIsInRvd24iOiJHcm90b24iLCJjb3VudHkiOiJTb3V0aGVhc3Rlcm4gQ29ubmVjdGljdXQgUGxhbm5pbmcgUmVnaW9uIiwic3RhdGUiOiJDb25uZWN0aWN1dCIsIklTTzMxNjYtMi1sdmw0IjoiVVMtQ1QiLCJwb3N0Y29kZSI6IjA2MzcyIiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9fSx7InBsYWNlX2lkIjoxMTkwNjU5NTMsImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cHM6Ly9vc20ub3JnL2NvcHlyaWdodCIsIm9zbV90eXBlIjoid2F5Iiwib3NtX2lkIjo1MzE4MDQ5OSwiYm91bmRpbmdib3giOlsiNDcuMDU1NzM0NyIsIjQ3LjA1ODUyODUiLCItNjcuNzE3OTU2NyIsIi02Ny43MTQ3OTI1Il0sImxhdCI6IjQ3LjA1NzE1NzUiLCJsb24iOiItNjcuNzE2NDA0IiwiZGlzcGxheV9uYW1lIjoiTWFyY2VsIFN0cmVldCwgSGVubmlnYXIgQ29ybmVyLCBHcmFuZCBGYWxscywgRHJ1bW1vbmQgUGFyaXNoLCBWaWN0b3JpYSBDb3VudHksIE5ldyBCcnVuc3dpY2ssIEUzWSAxQjUsIENhbmFkYSIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJyZXNpZGVudGlhbCIsImltcG9ydGFuY2UiOjAuMywiYWRkcmVzcyI6eyJyb2FkIjoiTWFyY2VsIFN0cmVldCIsInN1YnVyYiI6Ikhlbm5pZ2FyIENvcm5lciIsInRvd24iOiJHcmFuZCBGYWxscyIsImNvdW50eSI6IkRydW1tb25kIFBhcmlzaCIsInN0YXRlIjoiTmV3IEJydW5zd2ljayIsIklTTzMxNjYtMi1sdmw0IjoiQ0EtTkIiLCJwb3N0Y29kZSI6IkUzWSAxQjUiLCJjb3VudHJ5IjoiQ2FuYWRhIiwiY291bnRyeV9jb2RlIjoiY2EifX1d
-  recorded_at: Sun, 30 Jul 2023 02:37:19 GMT
-- request:
-    method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=777%20Galen%20Cliffs,%2092315
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Sun, 30 Jul 2023 02:37:19 GMT
+      - Sun, 30 Jul 2023 16:25:37 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -76,5 +37,43 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sun, 30 Jul 2023 02:37:19 GMT
+  recorded_at: Sun, 30 Jul 2023 16:25:37 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=8509%20Joline%20Valley,%2092315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 30 Jul 2023 16:25:38 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Sun, 30 Jul 2023 16:25:38 GMT
 recorded_with: VCR 6.2.0

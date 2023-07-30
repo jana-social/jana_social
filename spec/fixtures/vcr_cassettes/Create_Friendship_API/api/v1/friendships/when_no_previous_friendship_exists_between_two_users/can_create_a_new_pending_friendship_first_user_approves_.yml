@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=61200%20Randall%20Overpass,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=295%20Bobbi%20Inlet,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 30 Jul 2023 02:37:17 GMT
+      - Sun, 30 Jul 2023 16:25:35 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -37,10 +37,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sun, 30 Jul 2023 02:37:17 GMT
+  recorded_at: Sun, 30 Jul 2023 16:25:35 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=1213%20Hyatt%20Lodge,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=8059%20Watsica%20Park,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -59,7 +59,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 30 Jul 2023 02:37:17 GMT
+      - Sun, 30 Jul 2023 16:25:35 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -75,5 +75,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sun, 30 Jul 2023 02:37:17 GMT
+  recorded_at: Sun, 30 Jul 2023 16:25:35 GMT
 recorded_with: VCR 6.2.0
