@@ -8,8 +8,8 @@ RSpec.describe Friendship, type: :model do
 
   describe "class methods" do
     before(:each) do
-      @user1 = User.create!(username: "Foo", street_address: "990 Summit Blvd", zipcode: "92315", email: "foo@gmail.com", password_digest: "test123")
-      @user2 = User.create!(username: "Barr", street_address: "990 Summit Blvd", zipcode: "92315", email: "barr@gmail.com", password_digest: "test123")
+      @user1 = User.create!(username: "Foo", zipcode: "80203", street_address: "505 E Colfax Ave", email: "foo@gmail.com", password_digest: "test123")
+      @user2 = User.create!(username: "Barr", zipcode: "80203", street_address: "505 E Colfax Ave", email: "barr@gmail.com", password_digest: "test123")
     end
 
     describe "#process_friendship" do

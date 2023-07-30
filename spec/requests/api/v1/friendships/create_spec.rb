@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe "Create Friendship API" do
-  let!(:user_1) { create(:user, username: "Foo", zipcode: "92315", email: "foo@gmail.com", password_digest: "test123") }
-  let!(:user_2) { create(:user, username: "Barr", zipcode: "92315", email: "barr@gmail.com", password_digest: "test123") }
+  let!(:user_1) { create(:user, username: "Foo", zipcode: "80203", street_address: "505 E Colfax Ave", email: "foo@gmail.com", password_digest: "test123") }
+  let!(:user_2) { create(:user, username: "Barr", zipcode: "80203", street_address: "505 E Colfax Ave", email: "barr@gmail.com", password_digest: "test123") }
 
   describe "/api/v1/friendships" do
     context "when no previous friendship exists between two users" do
