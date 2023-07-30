@@ -11,7 +11,7 @@ RSpec.describe "Update Event API" do
     it "can update an existing event api" do
       expect(Event.count).to eq(4)
 
-      headers = {"CONTENT_TYPE" => "application/json"}
+      headers = { "CONTENT_TYPE" => "application/json" }
       patch "/api/v1/users/#{@user1.id}/events/#{@event1.id}", headers: headers, params: JSON.generate(@new_event)
 
       event = Event.first

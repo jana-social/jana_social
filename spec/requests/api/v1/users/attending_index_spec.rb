@@ -7,7 +7,6 @@ RSpec.describe "Attending Respone", type: :request do
   end
 
   describe "Attending JSON response" do
-
     it "returns a list of user specific events to be attended with respective attributes in JSON:API compliance" do
       event_user_1 = EventUser.create!(user_id: @user1.id, event_id: @event3.id, status: 2)
       event_user_2 = EventUser.create!(user_id: @user1.id, event_id: @event2.id, status: 2)

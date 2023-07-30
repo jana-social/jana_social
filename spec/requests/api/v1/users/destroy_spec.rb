@@ -5,7 +5,7 @@ describe "request to Delete User" do
     user_data
   end
 
-  it "requests to delete an existing user"do
+  it "requests to delete an existing user" do
     expect(User.count).to eq(4)
 
     delete "/api/v1/users/#{@user1.id}"

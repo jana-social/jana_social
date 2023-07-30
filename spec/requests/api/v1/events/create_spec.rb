@@ -9,10 +9,9 @@ RSpec.describe "Create Event API" do
 
   describe "Can create a new event api" do
     it "can create a new event api" do
-
       expect(Event.count).to eq(4)
 
-      headers = {"CONTENT_TYPE" => "application/json"}
+      headers = { "CONTENT_TYPE" => "application/json" }
       post "/api/v1/users/#{@user1.id}/events", headers: headers, params: JSON.generate(@new_event)
 
       event = Event.last
