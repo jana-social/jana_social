@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=47353%20Oscar%20Stravenue,%2092315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 30 Jul 2023 00:52:07 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Sun, 30 Jul 2023 00:52:07 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=509%20Fay%20Estate,%2092315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 30 Jul 2023 00:52:07 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjk5NjQ4MDExLCJsaWNlbmNlIjoiRGF0YSDCqSBPcGVuU3RyZWV0TWFwIGNvbnRyaWJ1dG9ycywgT0RiTCAxLjAuIGh0dHBzOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6NDY5Nzc1OCwiYm91bmRpbmdib3giOlsiLTI1LjY2Mjc3NDUiLCItMjUuNjU2NDAyNiIsIjI4LjE1MzI4MTkiLCIyOC4xNTM3OTk1Il0sImxhdCI6Ii0yNS42NTkzMTYzIiwibG9uIjoiMjguMTUzNTcyIiwiZGlzcGxheV9uYW1lIjoiRmF5IEF2ZW51ZSwgRG9yYW5kaWEsIFRzaHdhbmUgV2FyZCA5OCwgUHJldG9yaWEsIENpdHkgb2YgVHNod2FuZSBNZXRyb3BvbGl0YW4gTXVuaWNpcGFsaXR5LCBHYXV0ZW5nLCAwMTU1LCBTb3V0aCBBZnJpY2EiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoicmVzaWRlbnRpYWwiLCJpbXBvcnRhbmNlIjowLjE5OTk5OTk5OTk5OTk5OTk4LCJhZGRyZXNzIjp7InJvYWQiOiJGYXkgQXZlbnVlIiwic3VidXJiIjoiRG9yYW5kaWEiLCJjaXR5IjoiUHJldG9yaWEiLCJjb3VudHkiOiJDaXR5IG9mIFRzaHdhbmUgTWV0cm9wb2xpdGFuIE11bmljaXBhbGl0eSIsInN0YXRlIjoiR2F1dGVuZyIsIklTTzMxNjYtMi1sdmw0IjoiWkEtR1AiLCJwb3N0Y29kZSI6IjAxNTUiLCJjb3VudHJ5IjoiU291dGggQWZyaWNhIiwiY291bnRyeV9jb2RlIjoiemEifX1d
+  recorded_at: Sun, 30 Jul 2023 00:52:07 GMT
+recorded_with: VCR 6.2.0

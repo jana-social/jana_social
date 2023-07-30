@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=43681%20Macejkovic%20View,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=82458%20Mack%20Freeway,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 29 Jul 2023 22:32:56 GMT
+      - Sun, 30 Jul 2023 00:52:08 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -37,10 +37,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sat, 29 Jul 2023 22:32:56 GMT
+  recorded_at: Sun, 30 Jul 2023 00:52:08 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=8673%20Katerine%20Fords,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=78541%20Conroy%20Estates,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -59,7 +59,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 29 Jul 2023 22:32:57 GMT
+      - Sun, 30 Jul 2023 00:52:09 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -73,7 +73,8 @@ http_interactions:
       Access-Control-Allow-Methods:
       - OPTIONS,GET
     body:
-      encoding: UTF-8
-      string: "[]"
-  recorded_at: Sat, 29 Jul 2023 22:32:57 GMT
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjEwNzgwNjQ5MSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjE4NDcyMzk3LCJib3VuZGluZ2JveCI6WyIzNy4xMTEwNDEiLCIzNy4xMTQxMzUyIiwiLTkzLjQ3MDA0MTkiLCItOTMuNDY5OTE1MSJdLCJsYXQiOiIzNy4xMTIxMDg4IiwibG9uIjoiLTkzLjQ2OTk5ODgiLCJkaXNwbGF5X25hbWUiOiJTb3V0aCBDb25yb3kgQXZlbnVlLCBQcmltcm9zZSBFc3RhdGVzLCBSZXB1YmxpYywgR3JlZW5lIENvdW50eSwgTWlzc291cmksIDY1NzM4LCBVbml0ZWQgU3RhdGVzIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InJlc2lkZW50aWFsIiwiaW1wb3J0YW5jZSI6MC4zLCJhZGRyZXNzIjp7InJvYWQiOiJTb3V0aCBDb25yb3kgQXZlbnVlIiwicmVzaWRlbnRpYWwiOiJQcmltcm9zZSBFc3RhdGVzIiwidG93biI6IlJlcHVibGljIiwiY291bnR5IjoiR3JlZW5lIENvdW50eSIsInN0YXRlIjoiTWlzc291cmkiLCJJU08zMTY2LTItbHZsNCI6IlVTLU1PIiwicG9zdGNvZGUiOiI2NTczOCIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifX0seyJwbGFjZV9pZCI6MTM0MTk1NDYxLCJsaWNlbmNlIjoiRGF0YSDCqSBPcGVuU3RyZWV0TWFwIGNvbnRyaWJ1dG9ycywgT0RiTCAxLjAuIGh0dHBzOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6MTIzMDQzODQ1LCJib3VuZGluZ2JveCI6WyIzNy4xMDc5NTY3IiwiMzcuMTExMDQxIiwiLTkzLjQ3MDA0MTkiLCItOTMuNDY3OTczMyJdLCJsYXQiOiIzNy4xMDkyNjY2IiwibG9uIjoiLTkzLjQ2OTY0NjQiLCJkaXNwbGF5X25hbWUiOiJDb25yb3kgQXZlbnVlLCBEaWFtb25kIFZpZXcgRXN0YXRlcywgUmVwdWJsaWMsIEdyZWVuZSBDb3VudHksIE1pc3NvdXJpLCA2NTczOCwgVW5pdGVkIFN0YXRlcyIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJyZXNpZGVudGlhbCIsImltcG9ydGFuY2UiOjAuMywiYWRkcmVzcyI6eyJyb2FkIjoiQ29ucm95IEF2ZW51ZSIsInJlc2lkZW50aWFsIjoiRGlhbW9uZCBWaWV3IEVzdGF0ZXMiLCJ0b3duIjoiUmVwdWJsaWMiLCJjb3VudHkiOiJHcmVlbmUgQ291bnR5Iiwic3RhdGUiOiJNaXNzb3VyaSIsIklTTzMxNjYtMi1sdmw0IjoiVVMtTU8iLCJwb3N0Y29kZSI6IjY1NzM4IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9fV0=
+  recorded_at: Sun, 30 Jul 2023 00:52:09 GMT
 recorded_with: VCR 6.2.0

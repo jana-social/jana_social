@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=711%20Torp%20Fort,%2092315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 30 Jul 2023 01:40:39 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Sun, 30 Jul 2023 01:40:39 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=973%20Carmine%20Parkway,%2092315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 30 Jul 2023 01:40:39 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjIxNDcwODI5OSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjQ5ODg2OTU1NCwiYm91bmRpbmdib3giOlsiMzguOTg3NDc3OSIsIjM4Ljk4NzgwNDYiLCItOTQuMjUzMDA1NyIsIi05NC4yNTEwMzU5Il0sImxhdCI6IjM4Ljk4NzUyMDMiLCJsb24iOiItOTQuMjUyNDMyMSIsImRpc3BsYXlfbmFtZSI6IlNFIENhcm1pbmUgQ291cnQsIFBhcmt3YXkgRXN0YXRlcywgSmFja3NvbiBDb3VudHksIE1pc3NvdXJpLCA2NDAxMywgVW5pdGVkIFN0YXRlcyIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJyZXNpZGVudGlhbCIsImltcG9ydGFuY2UiOjAuMywiYWRkcmVzcyI6eyJyb2FkIjoiU0UgQ2FybWluZSBDb3VydCIsInJlc2lkZW50aWFsIjoiUGFya3dheSBFc3RhdGVzIiwiY291bnR5IjoiSmFja3NvbiBDb3VudHkiLCJzdGF0ZSI6Ik1pc3NvdXJpIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1NTyIsInBvc3Rjb2RlIjoiNjQwMTMiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn19XQ==
+  recorded_at: Sun, 30 Jul 2023 01:40:39 GMT
+recorded_with: VCR 6.2.0

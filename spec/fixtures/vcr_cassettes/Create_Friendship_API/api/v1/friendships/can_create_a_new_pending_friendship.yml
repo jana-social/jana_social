@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=3861%20Imelda%20Loaf,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=790%20Gustavo%20Keys,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 29 Jul 2023 22:32:56 GMT
+      - Sun, 30 Jul 2023 00:52:06 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -37,10 +37,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sat, 29 Jul 2023 22:32:56 GMT
+  recorded_at: Sun, 30 Jul 2023 00:52:06 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=48454%20Stanton%20Radial,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=1506%20Valentine%20Knolls,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -59,7 +59,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 29 Jul 2023 22:32:56 GMT
+      - Sun, 30 Jul 2023 00:52:06 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -73,7 +73,8 @@ http_interactions:
       Access-Control-Allow-Methods:
       - OPTIONS,GET
     body:
-      encoding: UTF-8
-      string: "[]"
-  recorded_at: Sat, 29 Jul 2023 22:32:56 GMT
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjEwOTgwMjQwMSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjI0MTIzODg4LCJib3VuZGluZ2JveCI6WyI0MC43NTk3MTciLCI0MC43NTk3NDYiLCItNzMuNjg3MTMzIiwiLTczLjY4NjEyIl0sImxhdCI6IjQwLjc1OTc0NiIsImxvbiI6Ii03My42ODcxMzMiLCJkaXNwbGF5X25hbWUiOiJWYWxlbnRpbmUgRHJpdmUsIFdlc3R3b29kIEtub2xscywgTWFuaGFzc2V0IEhpbGxzLCBUb3duIG9mIE5vcnRoIEhlbXBzdGVhZCwgTmFzc2F1IENvdW50eSwgTmV3IFlvcmssIDExMDQwLCBVbml0ZWQgU3RhdGVzIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InJlc2lkZW50aWFsIiwiaW1wb3J0YW5jZSI6MC4zLCJhZGRyZXNzIjp7InJvYWQiOiJWYWxlbnRpbmUgRHJpdmUiLCJyZXNpZGVudGlhbCI6Ildlc3R3b29kIEtub2xscyIsInZpbGxhZ2UiOiJNYW5oYXNzZXQgSGlsbHMiLCJtdW5pY2lwYWxpdHkiOiJUb3duIG9mIE5vcnRoIEhlbXBzdGVhZCIsImNvdW50eSI6Ik5hc3NhdSBDb3VudHkiLCJzdGF0ZSI6Ik5ldyBZb3JrIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1OWSIsInBvc3Rjb2RlIjoiMTEwNDAiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn19XQ==
+  recorded_at: Sun, 30 Jul 2023 00:52:06 GMT
 recorded_with: VCR 6.2.0
