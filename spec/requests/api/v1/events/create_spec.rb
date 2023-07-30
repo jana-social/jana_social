@@ -1,36 +1,31 @@
 require "rails_helper"
 
 RSpec.describe "Create Event API" do
-  let!(:user_1) { create(:user, username: "boom", street_address: "990 Summit Blvd.", zipcode: "92315") }
+  before :each do
+    user_data
+    event_data
+    event_params
+  end
+
   describe "Can create a new event api" do
-    it "can create a new event api", :vcr do
+    it "can create a new event api" do
 
-      expect(Event.count).to eq(0)
-
-      event_params = ({
-        title: "Event 20",
-        description: "Lorem Ipsum",
-        street_address: "123 Mulberry Lane, Shreveport, LA",
-        zipcode: "32095",
-        date_time: "2023-10-5 4:30:00",
-        private_status: false,
-        user_id: user_1.id
-      })
+      expect(Event.count).to eq(4)
 
       headers = {"CONTENT_TYPE" => "application/json"}
-      post "/api/v1/users/#{user_1.id}/events", headers: headers, params: JSON.generate(event_params)
+      post "/api/v1/users/#{@user1.id}/events", headers: headers, params: JSON.generate(@new_event)
 
       event = Event.last
 
-      expect(event.title).to eq(event_params[:title])
-      expect(event.description).to eq(event_params[:description])
-      expect(event.street_address).to eq(event_params[:street_address])
-      expect(event.zipcode).to eq(event_params[:zipcode])
-      expect(event.date_time).to eq(event_params[:date_time])
-      expect(event.private_status).to eq(event_params[:private_status])
-      expect(event.user_id).to eq(event_params[:user_id])
+      expect(event.title).to eq(@new_event[:title])
+      expect(event.description).to eq(@new_event[:description])
+      expect(event.street_address).to eq(@new_event[:street_address])
+      expect(event.zipcode).to eq(@new_event[:zipcode])
+      expect(event.date_time).to eq(@new_event[:date_time])
+      expect(event.private_status).to eq(@new_event[:private_status])
+      expect(event.user_id).to eq(@new_event[:user_id])
 
-      expect(Event.count).to eq(1)
+      expect(Event.count).to eq(5)
     end
   end
 end
