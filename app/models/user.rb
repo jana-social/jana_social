@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :event_users
   has_many :events, through: :event_users
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
 
   before_validation :geocode
 
