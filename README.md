@@ -272,9 +272,9 @@ Status: 200 OK
         "street_address": "5479 William Way, East Sonnyhaven, LA",
         "zipcode": "63637",
         "date_time": "8-17-23, 5:25 PM",
-        "private": "true",
+        "private": true,
         "host": "Percival Mangst",
-        "user_id": "134"
+        "user_id": 134
       }
     },
      {
@@ -286,9 +286,9 @@ Status: 200 OK
         "street_address": "5479 William Way, Sonnyhaven, LA",
         "zipcode": "84674",
         "date_time": "10-1-23, 6:00 PM",
-        "private": "false",
+        "private": false,
         "host": "Percival Mangst",
-        "user_id": "134"
+        "user_id": 134
       }
     }
   ]
@@ -336,9 +336,9 @@ Status: 200 OK
         "street_address": "5479 William Way, East Sonnyhaven, LA",
         "zipcode": "63637",
         "date_time": "8-17-23, 5:25 PM",
-        "private": "true",
+        "private": true,
         "host": "Isabelle Stuart",
-        "user_id": "186"
+        "user_id": 186
       }
     },
      {
@@ -350,9 +350,9 @@ Status: 200 OK
         "street_address": "5479 William Way, Sonnyhaven, CO",
         "zipcode": "84674",
         "date_time": "10-1-23, 6:00 PM",
-        "private": "false",
+        "private": false,
         "host": "Joey Jospeh Mariella",
-        "user_id": "17"
+        "user_id": 17
       }
     }
   ]
@@ -402,8 +402,8 @@ Status: 200 OK
         "street_address": "5479 William Way, East Sonnyhaven, LA",
         "zipcode": "63637",
         "date_time": "8-17-23, 5:25 PM",
-        "private": "true",
-        "host": "1"
+        "private": true,
+        "host": 1
       }
     },
      {
@@ -415,8 +415,8 @@ Status: 200 OK
         "street_address": "5479 William Way, Sonnyhaven, CO",
         "zipcode": "84674",
         "date_time": "10-1-23, 6:00 PM",
-        "private": "false",
-        "host": "6"
+        "private": false,
+        "host": 6
       }
     }
   ]
@@ -460,8 +460,8 @@ Status: 200 OK
     "street_address": "5479 William Way, East Sonnyhaven, LA",
     "zipcode": "63637",
     "date_time": "8-17-23, 5:25 PM",
-    "private": "true",
-    "host": "1"
+    "private": true,
+    "host": 1
   }
 }
 ```
@@ -499,22 +499,22 @@ Status: 200 OK
     {
       "event_title": "Casey's Baseball Funtime",
       "user_name": "James",
-      "status": "accepted",
+      // "status": "accepted",
     },
     {
       "event_title": "Casey's Baseball Funtime",
       "user_name": "Corey",
-      "status": "accepted",
+      // "status": "accepted",
     },
     {
       "event_title": "Casey's Baseball Funtime",
       "user_name": "Staci",
-      "status": "pending",
+      // "status": "pending",
     },
     {
       "event_title": "Casey's Baseball Funtime",
       "user_name": "Anderson",
-      "status": "denied",
+      // "status": "denied",
     }
   ]
 }
@@ -545,8 +545,8 @@ Status: 201 Created
       "street_address": "5479 William Way, East Sonnyhaven, LA",
       "zipcode": "63637",
       "date_time": "8-17-23, 5:25 PM",
-      "private": "true",
-      "host": "1"
+      "private": true,
+      "host": 1
     }
   }
 }
@@ -587,8 +587,8 @@ Status: 200 OK
     "street_address": "5479 William Way, East Sonnyhaven, LA",
     "zipcode": "63637",
     "date_time": "8-17-23, 5:25 PM",
-    "private": "true",
-    "host": "1"
+    "private": true,
+    "host": 1
   }
 }
 ```
@@ -627,12 +627,6 @@ Status: 200 OK
 ```
 
 response for failed deletion:
-
-<!-- Status: 400 Bad Request
-
-{
-"error":"Invalid request parameters"
-} -->
 
 ```json
 Status: 404 Not Found -->

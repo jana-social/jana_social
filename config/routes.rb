@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'application#welcome'  
+  root 'application#welcome'
   # get "/", to: "application#welcome"
   namespace :api do
     namespace :v1 do
@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       resources :users, only: %i[index show create update destroy] do
         resources :events, only: %i[create update]
       end
-      resources :events, only: %i[index show]
+      resources :events, only: %i[index show] do
+        resources :event_users, only: %i[index]
+      end
       resources :friendships, only: %i[create]
     end
   end
