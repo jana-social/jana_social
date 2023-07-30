@@ -1,15 +1,15 @@
 class Friendship < ApplicationRecord
   belongs_to :user
-  belongs_to :friend, class_name: 'User', foreign_key: 'friend_id'
+  belongs_to :friend, class_name: "User", foreign_key: "friend_id"
 
   def self.process_friendship(user, friend, status)
     friendship = Friendship.find_by(user: user, friend: friend)
-    reverse_friendship = Friendship.find_by(user: friend, friend: user) 
-    
+    reverse_friendship = Friendship.find_by(user: friend, friend: user)
+
     if friendship.nil? && reverse_friendship.nil?
       friendship_status = status == :approved ? :pending : :declined
       Friendship.create(user: user, friend: friend, status: friendship_status)
-    elsif reverse_friendship&.status == 'pending'
+    elsif reverse_friendship&.status == "pending"
       reverse_friendship.update(status: :approved) if status == :approved
       reverse_friendship.update(status: :declined) if status == :declined
     end
