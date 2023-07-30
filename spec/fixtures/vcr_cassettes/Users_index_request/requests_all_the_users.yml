@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=9887%20Harvey%20Mountain,%2026805-5597
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 29 Jul 2023 19:20:36 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjIxODE2Mzk0NSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjUyNTUyMjkxMywiYm91bmRpbmdib3giOlsiNTQuODY5MDA4IiwiNTQuODgwMDE1IiwiLTEyNi45NzA0NjA1IiwiLTEyNi45MzcwNjciXSwibGF0IjoiNTQuODc1MDc0IiwibG9uIjoiLTEyNi45NTc1OTQiLCJkaXNwbGF5X25hbWUiOiJIYXJ2ZXkgTW91bnRhaW4gVHJhaWwsIEFyZWEgQSAoSHVkc29uIEJheSBNb3VudGFpbiksIFJlZ2lvbmFsIERpc3RyaWN0IG9mIEJ1bGtsZXktTmVjaGFrbywgQnJpdGlzaCBDb2x1bWJpYSwgQ2FuYWRhIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InBhdGgiLCJpbXBvcnRhbmNlIjowLjI3NDk5OTk5OTk5OTk5OTk3LCJhZGRyZXNzIjp7InJvYWQiOiJIYXJ2ZXkgTW91bnRhaW4gVHJhaWwiLCJjaXR5IjoiQXJlYSBBIChIdWRzb24gQmF5IE1vdW50YWluKSIsImNvdW50eSI6IlJlZ2lvbmFsIERpc3RyaWN0IG9mIEJ1bGtsZXktTmVjaGFrbyIsInN0YXRlIjoiQnJpdGlzaCBDb2x1bWJpYSIsIklTTzMxNjYtMi1sdmw0IjoiQ0EtQkMiLCJjb3VudHJ5IjoiQ2FuYWRhIiwiY291bnRyeV9jb2RlIjoiY2EifX1d
+  recorded_at: Sat, 29 Jul 2023 19:20:36 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=80788%20Bogisich%20Shoals,%2044694
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 29 Jul 2023 19:20:56 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Sat, 29 Jul 2023 19:20:56 GMT
+recorded_with: VCR 6.2.0
