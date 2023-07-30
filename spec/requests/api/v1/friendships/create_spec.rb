@@ -1,17 +1,18 @@
 require "rails_helper"
 
 RSpec.describe "Create Friendship API" do
-  let!(:user_1) { create(:user, username: "Foo", zipcode: "80203", street_address: "505 E Colfax Ave", email: "foo@gmail.com", password_digest: "test123") }
-  let!(:user_2) { create(:user, username: "Barr", zipcode: "80203", street_address: "505 E Colfax Ave", email: "barr@gmail.com", password_digest: "test123") }
+  before :each do
+    user_data
+  end
 
   describe "/api/v1/friendships" do
     context "when no previous friendship exists between two users" do
-      it "can create a new pending friendship (first user approves)", :vcr do
+      it "can create a new pending friendship (first user approves)" do
         expect(Friendship.count).to eq(0)
 
         friendship_params = {
-          user_id: user_1.id,
-          friend_id: user_2.id,
+          user_id: @user1.id,
+          friend_id: @user2.id,
           status: "approved"
         }
 
@@ -30,12 +31,12 @@ RSpec.describe "Create Friendship API" do
         expect(Friendship.count).to eq(1)
       end
 
-      it "can create a new declined friendship (first user declines)", :vcr do
+      it "can create a new declined friendship (first user declines)" do
         expect(Friendship.count).to eq(0)
 
         friendship_params = {
-          user_id: user_1.id,
-          friend_id: user_2.id,
+          user_id: @user1.id,
+          friend_id: @user2.id,
           status: "declined"
         }
 
@@ -56,12 +57,12 @@ RSpec.describe "Create Friendship API" do
     end
 
     context "when a previous pending friendship exists between two users" do
-      it "can create a new approved friendship (second user approves)", :vcr do
-        Friendship.create!(user_id: user_1.id, friend_id: user_2.id, status: "pending")
+      it "can create a new approved friendship (second user approves)" do
+        Friendship.create!(user_id: @user1.id, friend_id: @user2.id, status: "pending")
 
         friendship_params = {
-          user_id: user_2.id,
-          friend_id: user_1.id,
+          user_id: @user2.id,
+          friend_id: @user1.id,
           status: "approved"
         }
 
@@ -76,16 +77,16 @@ RSpec.describe "Create Friendship API" do
         expect(friendship.user_id).to eq(friendship_params[:friend_id])
         expect(friendship.friend_id).to eq(friendship_params[:user_id])
         expect(friendship.status).to eq("approved")
-        
+
         expect(Friendship.count).to eq(1)
       end
 
-      it "can create a new declined friendship (second user declines)", :vcr do
-        Friendship.create!(user_id: user_1.id, friend_id: user_2.id, status: "pending")
+      it "can create a new declined friendship (second user declines)" do
+        Friendship.create!(user_id: @user1.id, friend_id: @user2.id, status: "pending")
 
         friendship_params = {
-          user_id: user_2.id,
-          friend_id: user_1.id,
+          user_id: @user2.id,
+          friend_id: @user1.id,
           status: "declined"
         }
 

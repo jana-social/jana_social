@@ -1,0 +1,31 @@
+[
+  {
+      "place_id": 326479279,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 277659301,
+      "boundingbox": [
+          "37.256913253558",
+          "37.257013253558",
+          "-107.87624644849",
+          "-107.87614644849"
+      ],
+      "lat": "37.256963253558496",
+      "lon": "-107.87619644849241",
+      "display_name": "650, South Camino Del Rio, Durango, La Plata County, Colorado, 81301, United States",
+      "class": "place",
+      "type": "house",
+      "importance": -0.32999999999999996,
+      "address": {
+          "house_number": "650",
+          "road": "South Camino Del Rio",
+          "city": "Durango",
+          "county": "La Plata County",
+          "state": "Colorado",
+          "ISO3166-2-lvl4": "US-CO",
+          "postcode": "81301",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]

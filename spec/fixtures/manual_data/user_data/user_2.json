@@ -1,0 +1,62 @@
+[
+  {
+      "place_id": 177493354,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 298973428,
+      "boundingbox": [
+          "40.0192392",
+          "40.0193679",
+          "-105.2581616",
+          "-105.25776"
+      ],
+      "lat": "40.019303550000004",
+      "lon": "-105.2579608",
+      "display_name": "McDonald's, 1800, 28th Street, Boulder, Boulder County, Colorado, 80301, United States",
+      "class": "amenity",
+      "type": "fast_food",
+      "importance": 0.62001,
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/food_fastfood.p.20.png",
+      "address": {
+          "amenity": "McDonald's",
+          "house_number": "1800",
+          "road": "28th Street",
+          "city": "Boulder",
+          "county": "Boulder County",
+          "state": "Colorado",
+          "ISO3166-2-lvl4": "US-CO",
+          "postcode": "80301",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 312748919,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 106204148,
+      "boundingbox": [
+          "40.016917779817",
+          "40.017017779817",
+          "-105.2586078211",
+          "-105.2585078211"
+      ],
+      "lat": "40.01696777981651",
+      "lon": "-105.25855782110092",
+      "display_name": "1800, 28th Street, Boulder, Boulder County, Colorado, 80301, United States",
+      "class": "place",
+      "type": "house",
+      "importance": -0.5299999999999999,
+      "address": {
+          "house_number": "1800",
+          "road": "28th Street",
+          "city": "Boulder",
+          "county": "Boulder County",
+          "state": "Colorado",
+          "ISO3166-2-lvl4": "US-CO",
+          "postcode": "80301",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]
