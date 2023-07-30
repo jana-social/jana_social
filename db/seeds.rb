@@ -36,3 +36,5 @@ event_1 = Event.create!(
   longitude: -118.2437,
   user_id: 1
 )
+
+rake db:seed RAILS_ENV=production
