@@ -14,7 +14,7 @@ Rails.application.routes.draw do
         resources :events, only: %i[create update]
       end
       resources :events, only: %i[index show]
-      resources :friendships, only: %i[create update]
+      resources :friendships, only: %i[create]
     end
   end
 
