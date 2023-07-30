@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=731%20Chun%20Land,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=86574%20Haley%20Orchard,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 30 Jul 2023 01:40:37 GMT
+      - Sun, 30 Jul 2023 02:37:18 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -35,12 +35,13 @@ http_interactions:
       Access-Control-Allow-Methods:
       - OPTIONS,GET
     body:
-      encoding: UTF-8
-      string: "[]"
-  recorded_at: Sun, 30 Jul 2023 01:40:37 GMT
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjM1NTU5ODE1OCwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjE5NDU0Mjg2LCJib3VuZGluZ2JveCI6WyIzNS44OTYwNTg0IiwiMzUuOTA3Mjc3MyIsIi04NC44OTMyMTU1IiwiLTg0Ljg4NDcxODciXSwibGF0IjoiMzUuOTAxODU0NSIsImxvbiI6Ii04NC44ODgzNTM0IiwiZGlzcGxheV9uYW1lIjoiSGFsZXkgR3JvdmUgUm9hZCwgSGFsZXlzIEdyb3ZlLCBDcmFiIE9yY2hhcmQsIEN1bWJlcmxhbmQgQ291bnR5LCBFYXN0IFRlbm5lc3NlZSwgVGVubmVzc2VlLCAzNzcyMywgVW5pdGVkIFN0YXRlcyIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJ1bmNsYXNzaWZpZWQiLCJpbXBvcnRhbmNlIjowLjMwMDAwOTk5OTk5OTk5OTk0LCJhZGRyZXNzIjp7InJvYWQiOiJIYWxleSBHcm92ZSBSb2FkIiwiaGFtbGV0IjoiSGFsZXlzIEdyb3ZlIiwidG93biI6IkNyYWIgT3JjaGFyZCIsImNvdW50eSI6IkN1bWJlcmxhbmQgQ291bnR5IiwicmVnaW9uIjoiRWFzdCBUZW5uZXNzZWUiLCJzdGF0ZSI6IlRlbm5lc3NlZSIsIklTTzMxNjYtMi1sdmw0IjoiVVMtVE4iLCJwb3N0Y29kZSI6IjM3NzIzIiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9fV0=
+  recorded_at: Sun, 30 Jul 2023 02:37:18 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=85675%20Jody%20Centers,%2092315
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=831%20Kemmer%20Passage,%2092315
     body:
       encoding: US-ASCII
       string: ''
@@ -59,7 +60,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 30 Jul 2023 01:40:38 GMT
+      - Sun, 30 Jul 2023 02:37:18 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -75,5 +76,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sun, 30 Jul 2023 01:40:38 GMT
+  recorded_at: Sun, 30 Jul 2023 02:37:18 GMT
 recorded_with: VCR 6.2.0
