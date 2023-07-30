@@ -48,23 +48,94 @@ end
 
 def event_data
   event_1_location = File.read("./spec/fixtures/manual_data/event_data/event_1.json")
+  event_2_location = File.read("./spec/fixtures/manual_data/event_data/event_2.json")
+  event_3_location = File.read("./spec/fixtures/manual_data/event_data/event_3.json")
   event_4_location = File.read("./spec/fixtures/manual_data/event_data/event_4.json")
 
   stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=990%20Summit%20Blvd,%2092315,%20United%20States")
     .to_return(status: 200, body: event_1_location)
-
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=650%20S%20Camino%20Del%20Rio,%2081301,%20United%20States")
+    .to_return(status: 200, body: event_2_location)
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=2100%20E%20Iowa%20Ave,%2080210,%20United%20States")
+    .to_return(status: 200, body: event_3_location)
   stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=93109,%20United%20States")
     .to_return(status: 200, body: event_4_location)
 
+  # Complete event data
   @event1 = Event.create!(
     title: "Ski Trip",
     street_address: "990 Summit Blvd",
+    description: "Lorem Ipsum",
     zipcode: "92315",
-    user_id: @user3.id
+    date_time: "2023-10-5 4:30:00",
+    private_status: false,
+    user_id: @user1.id
   )
+  # Complete event data
+  @event2 = Event.create!(
+    title: "BBQ",
+    street_address: "650 S Camino Del Rio",
+    description: "Lorem Ipsum",
+    zipcode: "81301",
+    date_time: "2023-10-5 4:30:00",
+    private_status: false,
+    user_id: @user2.id
+  )
+  # Complete event data
+  @event3 = Event.create!(
+    title: "Hike",
+    street_address: "2100 E Iowa Ave",
+    description: "Lorem Ipsum",
+    zipcode: "80210",
+    date_time: "2023-10-5 4:30:00",
+    private_status: false,
+    user_id: @user2.id
+  )
+  # Missing street address
   @event4 = Event.create!(
     title: "Beach Trip",
+    description: "Lorem Ipsum",
     zipcode: "93109",
-    user_id: @user3.id
+    date_time: "2023-10-5 4:30:00",
+    private_status: false,
+    user_id: @user1.id
   )
+end
+
+def user_params
+  @new_user = {
+    user: {
+      username: Faker::Dessert.variety,
+      email: Faker::Internet.email,
+      password_digest: Faker::Internet.password,
+      zipcode: "80203",
+      street_address: "505 E Colfax Ave",
+      bio: Faker::Hipster.sentences(number: 5),
+      likes: Faker::Hipster.sentence,
+      dislikes: Faker::Hipster.sentence,
+      profile_image_link: Faker::Internet.url
+    }
+  }
+
+  user_1_location = File.read("./spec/fixtures/manual_data/user_data/user_1.json")
+
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=505%20E%20Colfax%20Ave,%2080203,%20United%20States")
+    .to_return(status: 200, body: user_1_location)
+end
+
+def event_params
+  @new_event = {
+    title: "Event 20",
+    description: "Kings Head British Pub",
+    street_address: "6460 US-1, St. Augustine, FL",
+    zipcode: "32095",
+    date_time: "2023-10-5 4:30:00",
+    private_status: false,
+    user_id: @user1.id
+  }
+
+  event_1_location = File.read("./spec/fixtures/manual_data/event_params/new_event.json")
+
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=6460%20US-1,%20St.%20Augustine,%20FL,%2032095,%20United%20States")
+    .to_return(status: 200, body: event_1_location)
 end
