@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root 'application#welcome'
+  get '/signin', to: 'sessions#new'
+  post '/signin', to: 'sessions#create'
+  delete '/signout', to: 'sessions#destroy'
+
   # get "/", to: "application#welcome"
   namespace :api do
     namespace :v1 do
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
         resources :event_users, only: %i[index]
       end
       resources :friendships, only: %i[create]
+      resources :rooms
     end
   end
 end
