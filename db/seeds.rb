@@ -13,7 +13,7 @@ EventUser.destroy_all
 5.times do |index|
   User.create!(username: Faker::Dessert.variety,
     email: Faker::Internet.email,
-    password_digest: Faker::Internet.password,
+    password: "test",
     zipcode: Faker::Address.zip_code,
     street_address: Faker::Address.street_address,
     bio: Faker::Hipster.sentences(number: 5),

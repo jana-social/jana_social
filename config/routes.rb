@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       delete "/users/:user_id/events/:id", to: "events#delete"
 
       get '/search', to: 'search#find'
+      post '/login', to: 'sessions#create'
 
       resources :users, only: %i[index show create update destroy] do
         resources :events, only: %i[create update]
