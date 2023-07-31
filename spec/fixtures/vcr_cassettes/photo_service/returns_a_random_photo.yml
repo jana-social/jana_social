@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/photos/random/?client_id=KXGPdzW7pghAeWUVP5oxhZcLCiDad1VPN_tBNIC8p80
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private,max-age=0,stale-if-error=3600,stale-while-revalidate=0
+      X-Unsplash-Version:
+      - v1
+      X-Powered-By:
+      - hero-app
+      Content-Language:
+      - en
+      Etag:
+      - W/"c26dcdb03c91edb8942e46c65c22878a"
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '46'
+      X-Request-Id:
+      - 471bb1ea-50fc-465c-9b6c-1af42ceb002b
+      X-Runtime:
+      - '0.035177'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 30 Jul 2023 23:24:37 GMT
+      X-Served-By:
+      - cache-iad-kjyo7100054-IAD, cache-den8228-DEN
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1690759477.262347,VS0,VE87
+      Vary:
+      - Accept-Encoding,Authorization,Accept-Language,Accept
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"PdHZST4yR24","slug":"a-roll-of-yellow-paper-with-a-small-battery-on-top-of-it-PdHZST4yR24","created_at":"2023-07-04T14:31:36Z","updated_at":"2023-07-30T12:41:35Z","promoted_at":"2023-07-11T17:32:01Z","width":3826,"height":4782,"color":"#f3c040","blur_hash":"LWR1pp0j9dJCE*D.R.xtxYt6xt$}","description":null,"alt_description":"a
+        roll of yellow paper with a small battery on top of it","breadcrumbs":[],"urls":{"raw":"https://images.unsplash.com/photo-1688481044370-26ec21ec7fd4?ixid=M3w0ODE0Nzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA3NTk0Nzd8\u0026ixlib=rb-4.0.3","full":"https://images.unsplash.com/photo-1688481044370-26ec21ec7fd4?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=M3w0ODE0Nzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA3NTk0Nzd8\u0026ixlib=rb-4.0.3\u0026q=85","regular":"https://images.unsplash.com/photo-1688481044370-26ec21ec7fd4?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=M3w0ODE0Nzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA3NTk0Nzd8\u0026ixlib=rb-4.0.3\u0026q=80\u0026w=1080","small":"https://images.unsplash.com/photo-1688481044370-26ec21ec7fd4?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=M3w0ODE0Nzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA3NTk0Nzd8\u0026ixlib=rb-4.0.3\u0026q=80\u0026w=400","thumb":"https://images.unsplash.com/photo-1688481044370-26ec21ec7fd4?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=M3w0ODE0Nzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA3NTk0Nzd8\u0026ixlib=rb-4.0.3\u0026q=80\u0026w=200","small_s3":"https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1688481044370-26ec21ec7fd4"},"links":{"self":"https://api.unsplash.com/photos/a-roll-of-yellow-paper-with-a-small-battery-on-top-of-it-PdHZST4yR24","html":"https://unsplash.com/photos/a-roll-of-yellow-paper-with-a-small-battery-on-top-of-it-PdHZST4yR24","download":"https://unsplash.com/photos/PdHZST4yR24/download?ixid=M3w0ODE0Nzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA3NTk0Nzd8","download_location":"https://api.unsplash.com/photos/PdHZST4yR24/download?ixid=M3w0ODE0Nzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA3NTk0Nzd8"},"likes":37,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"topic_submissions":{},"user":{"id":"4XkrhE1vIfY","updated_at":"2023-07-29T09:05:14Z","username":"happy_ant","name":"happy
+        ant","first_name":"happy","last_name":"ant","twitter_username":null,"portfolio_url":"https://www.instagram.com/_ant_photo_/","bio":null,"location":null,"links":{"self":"https://api.unsplash.com/users/happy_ant","html":"https://unsplash.com/@happy_ant","photos":"https://api.unsplash.com/users/happy_ant/photos","likes":"https://api.unsplash.com/users/happy_ant/likes","portfolio":"https://api.unsplash.com/users/happy_ant/portfolio","following":"https://api.unsplash.com/users/happy_ant/following","followers":"https://api.unsplash.com/users/happy_ant/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1647261837949-84d404ac778bimage?ixlib=rb-4.0.3\u0026crop=faces\u0026fit=crop\u0026w=32\u0026h=32","medium":"https://images.unsplash.com/profile-1647261837949-84d404ac778bimage?ixlib=rb-4.0.3\u0026crop=faces\u0026fit=crop\u0026w=64\u0026h=64","large":"https://images.unsplash.com/profile-1647261837949-84d404ac778bimage?ixlib=rb-4.0.3\u0026crop=faces\u0026fit=crop\u0026w=128\u0026h=128"},"instagram_username":"_ant_photo_","total_collections":0,"total_likes":13,"total_photos":25,"accepted_tos":true,"for_hire":false,"social":{"instagram_username":"_ant_photo_","portfolio_url":"https://www.instagram.com/_ant_photo_/","twitter_username":null,"paypal_email":null}},"exif":{"make":"FUJIFILM","model":"X-T200","name":"FUJIFILM,
+        X-T200","exposure_time":"1/160","aperture":"5.6","focal_length":"35.0","iso":200},"location":{"name":null,"city":null,"country":null,"position":{"latitude":0.0,"longitude":0.0}},"meta":{"index":true},"public_domain":false,"tags":[{"type":"search","title":"cylinder"},{"type":"search","title":"bottle"},{"type":"search","title":"perfume"},{"type":"search","title":"cosmetics"}],"tags_preview":[{"type":"search","title":"cylinder"},{"type":"search","title":"bottle"},{"type":"search","title":"perfume"}],"views":305947,"downloads":2720,"topics":[]}'
+  recorded_at: Sun, 30 Jul 2023 23:24:37 GMT
+recorded_with: VCR 6.2.0
