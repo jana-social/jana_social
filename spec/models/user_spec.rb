@@ -47,7 +47,26 @@ RSpec.describe User, type: :model do
     end
 
     context "public methods" do
-      pending "add some examples to (or delete) #{__FILE__}"
+      describe "#pending_friends" do
+        it "should return all users with a pending friendship and where the user was not the initiator of the friendship" do
+          Friendship.process_friendship(@user1, @user2, :approved)
+          expect(@user1.pending_friends).to eq([])
+          expect(@user2.pending_friends).to eq([@user1])
+
+          Friendship.process_friendship(@user2, @user1, :approved)
+          expect(@user1.pending_friends).to eq([])
+          expect(@user2.pending_friends).to eq([])
+
+          Friendship.process_friendship(@user1, @user3, :declined)
+          expect(@user1.pending_friends).to eq([])
+          expect(@user3.pending_friends).to eq([])
+
+          Friendship.process_friendship(@user1, @user4, :approved)
+          expect(@user4.pending_friends).to eq([@user1])
+          Friendship.process_friendship(@user4, @user1, :declined)
+          expect(@user4.pending_friends).to eq([])
+        end
+      end
     end
 
     context "private methods" do
