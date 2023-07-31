@@ -24,13 +24,13 @@ RSpec.describe User, type: :model do
 
     it "should geocode the address with a street address and zipcode" do
       @user3.valid?
-
+      
       expect(@user3.latitude).to be_a(Float)
       expect(@user3.longitude).to be_a(Float)
     end
-
     it "should geocode the address with only a zipcode" do
       @user4.valid?
+      require 'pry'; binding.pry
 
       expect(@user4.latitude).to be_a(Float)
       expect(@user4.longitude).to be_a(Float)
@@ -55,11 +55,19 @@ RSpec.describe User, type: :model do
         it "should return complete address from street address and zipcode" do
           expect(@user3.send(:address)).to eq("990 Summit Blvd, 92315, United States")
         end
-
+        
         it "should return complete address from zipcode only" do
           expect(@user4.send(:address)).to eq("90210, United States")
         end
       end
     end
+  end
+  
+    describe "instance method to find friends within a distance radius" do
+      it "#find_friends_within_distance" do
+        current_user = @user1
+        require 'pry'; binding.pry
+        expect(@user3.find_friends_within_distance(100))
+      end
   end
 end
