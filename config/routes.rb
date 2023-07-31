@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       get "/users/:id/events/hosting", to: "users/events#hosting"
       get "/users/:id/events/attending", to: "users/events#attending"
       delete "/users/:user_id/events/:id", to: "events#delete"
+
+      get '/search', to: 'search#find'
+
       resources :users, only: %i[index show create update destroy] do
         resources :events, only: %i[create update]
       end
