@@ -10,19 +10,21 @@ User.destroy_all
 Event.destroy_all
 EventUser.destroy_all
 
-5.times do |index|
-  User.create!(username: Faker::Dessert.variety,
-    email: Faker::Internet.email,
-    password: "test",
-    zipcode: Faker::Address.zip_code,
-    street_address: Faker::Address.street_address,
-    bio: Faker::Hipster.sentences(number: 5),
-    likes: Faker::Hipster.sentence,
-    dislikes: Faker::Hipster.sentence,
-    profile_image_link: Faker::Internet.url,
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude)
-end
+<<<<<<<<< Temporary merge branch 1
+user_1 = User.create!(
+  username: "Billy Villian",
+  email: "billsvills@gmail.com",
+  password: "test",
+  zipcode: "32492",
+  street_address: "324 Blickford Drive",
+  bio: "I am Billy!",
+  likes: ["walks", "beaches", "beach-walks"],
+  dislikes: ["sand", "water", "legs"],
+  profile_image_link: "https://example.com/profiles/billy.jpg",
+  latitude: 40.7185,
+  longitude: -74.0056
+)
+
 
 event_1 = Event.create!(
   title: "Movies For People Who Don't Like Movies",
@@ -37,3 +39,4 @@ event_1 = Event.create!(
 )
 
 rake db:seed RAILS_ENV=production
+
