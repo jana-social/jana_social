@@ -18,68 +18,46 @@ RSpec.describe User, type: :model do
   end
 
   describe "geocoding" do
-    it "should geocode the address with only a zipcode", :vcr do
-      user = User.create!(
-        username: "Mr. Test",
-        zipcode: "92315",
-        email: "test@gmail.com",
-        password_digest: "test123"
-      )
-
-      user.valid?
-
-      expect(user.latitude).to be_a(Float)
-      expect(user.longitude).to be_a(Float)
+    before(:each) do
+      user_data
     end
 
-    it "should geocode the address with a street address and zipcode", :vcr do
-      user = User.create!(
-        username: "Mr. Test",
-        street_address: "990 Summit Blvd",
-        zipcode: "92315",
-        email: "test@gmail.com",
-        password_digest: "test123"
-      )
+    it "should geocode the address with a street address and zipcode" do
+      @user3.valid?
 
-      user.valid?
-
-      expect(user.latitude).to be_a(Float)
-      expect(user.longitude).to be_a(Float)
+      expect(@user3.latitude).to be_a(Float)
+      expect(@user3.longitude).to be_a(Float)
     end
 
-    it "should not geocode the address without a zipcode", :vcr do
-      expect { User.create!(username: "Mr. Test") }.to raise_error(ActiveRecord::RecordInvalid)
+    it "should geocode the address with only a zipcode" do
+      @user4.valid?
+
+      expect(@user4.latitude).to be_a(Float)
+      expect(@user4.longitude).to be_a(Float)
+    end
+
+    it "should not geocode the address without a zipcode" do
+      expect { User.create!(username: "Mrs. Test") }.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
 
   describe "instance methods" do
+    before(:each) do
+      user_data
+    end
+
     context "public methods" do
       pending "add some examples to (or delete) #{__FILE__}"
     end
 
     context "private methods" do
       describe "#address" do
-        it "should return complete address from street address and zipcode", :vcr do
-          user = User.create!(
-            username: "Mr. Test",
-            street_address: "990 Summit Blvd",
-            zipcode: "92315",
-            email: "test@gmail.com",
-            password_digest: "test123"
-          )
-
-          expect(user.send(:address)).to eq("990 Summit Blvd, 92315")
+        it "should return complete address from street address and zipcode" do
+          expect(@user3.send(:address)).to eq("990 Summit Blvd, 92315, United States")
         end
 
-        it "should return complete address from zipcode only", :vcr do
-          user = User.create!(
-            username: "Mr. Test",
-            zipcode: "92315",
-            email: "test@gmail.com",
-            password_digest: "test123"
-          )
-
-          expect(user.send(:address)).to eq("92315")
+        it "should return complete address from zipcode only" do
+          expect(@user4.send(:address)).to eq("90210, United States")
         end
       end
     end

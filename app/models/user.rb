@@ -21,6 +21,6 @@ class User < ApplicationRecord
   private
 
   def address
-    [street_address, zipcode].compact.join(", ")
+    [street_address, "#{zipcode}, United States"].compact.join(", ") if zipcode.present?
   end
 end

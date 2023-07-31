@@ -1,0 +1,59 @@
+[
+  {
+      "place_id": 347510088,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1111164909,
+      "boundingbox": [
+          "34.2428698",
+          "34.2433666",
+          "-116.8884054",
+          "-116.888399"
+      ],
+      "lat": "34.2430952",
+      "lon": "-116.8884019",
+      "display_name": "Summit Boulevard, Big Bear Lake, San Bernardino County, CAL Fire Southern Region, California, 92315, United States",
+      "class": "highway",
+      "type": "tertiary",
+      "importance": 0.5100099999999999,
+      "address": {
+          "road": "Summit Boulevard",
+          "town": "Big Bear Lake",
+          "county": "San Bernardino County",
+          "state_district": "CAL Fire Southern Region",
+          "state": "California",
+          "ISO3166-2-lvl4": "US-CA",
+          "postcode": "92315",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 290250495,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1016019040,
+      "boundingbox": [
+          "34.2363132",
+          "34.2375644",
+          "-116.888485",
+          "-116.8884698"
+      ],
+      "lat": "34.2368452",
+      "lon": "-116.8884791",
+      "display_name": "Summit Boulevard, Big Bear Lake, San Bernardino County, California, 92315, United States",
+      "class": "highway",
+      "type": "tertiary",
+      "importance": 0.51,
+      "address": {
+          "road": "Summit Boulevard",
+          "town": "Big Bear Lake",
+          "county": "San Bernardino County",
+          "state": "California",
+          "ISO3166-2-lvl4": "US-CA",
+          "postcode": "92315",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]
