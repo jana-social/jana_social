@@ -14,6 +14,12 @@ class User < ApplicationRecord
   geocoded_by :address
   has_secure_password
 
+  # returns all users that have a pending friendship with that user 
+  # and the user is the friend_id in the friendship (the user is not the one who originally accepted the friendship)
+  def pending_friends
+    User.joins(:friendships).where(friendships: { status: "pending", friend_id: id })
+  end
+
   private
 
   def address
