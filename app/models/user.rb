@@ -14,10 +14,14 @@ class User < ApplicationRecord
   geocoded_by :address
   has_secure_password
 
-  # returns all users that have a pending friendship with that user 
-  # and the user is the friend_id in the friendship (the user is not the one who originally accepted the friendship)
+  # returns all users that have a pending friendship with that user (and are waiting for that user to respond)
   def pending_friends
     User.joins(:friendships).where(friendships: { status: "pending", friend_id: id })
+  end
+
+  # returns all users that have an approved friendship with that user
+  def approved_friends
+    friends.where(friendships: { status: "approved" })
   end
 
   private
