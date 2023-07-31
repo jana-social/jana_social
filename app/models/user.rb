@@ -21,8 +21,11 @@ class User < ApplicationRecord
 
   # returns all users that have an approved friendship with that user
   def approved_friends
-    friends.where(friendships: { status: "approved" })
+    friendships_as_user = self.friendships.where(status: "approved").map(&:friend)
+    friendships_as_friend = Friendship.where(friend: self, status: "approved").map(&:user)
+    (friendships_as_user + friendships_as_friend).uniq
   end
+
 
   private
 
