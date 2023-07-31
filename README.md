@@ -272,9 +272,9 @@ Status: 200 OK
         "street_address": "5479 William Way, East Sonnyhaven, LA",
         "zipcode": "63637",
         "date_time": "8-17-23, 5:25 PM",
-        "private": "true",
+        "private": true,
         "host": "Percival Mangst",
-        "user_id": "134"
+        "user_id": 134
       }
     },
      {
@@ -286,9 +286,9 @@ Status: 200 OK
         "street_address": "5479 William Way, Sonnyhaven, LA",
         "zipcode": "84674",
         "date_time": "10-1-23, 6:00 PM",
-        "private": "false",
+        "private": false,
         "host": "Percival Mangst",
-        "user_id": "134"
+        "user_id": 134
       }
     }
   ]
@@ -336,9 +336,9 @@ Status: 200 OK
         "street_address": "5479 William Way, East Sonnyhaven, LA",
         "zipcode": "63637",
         "date_time": "8-17-23, 5:25 PM",
-        "private": "true",
+        "private": true,
         "host": "Isabelle Stuart",
-        "user_id": "186"
+        "user_id": 186
       }
     },
      {
@@ -350,9 +350,9 @@ Status: 200 OK
         "street_address": "5479 William Way, Sonnyhaven, CO",
         "zipcode": "84674",
         "date_time": "10-1-23, 6:00 PM",
-        "private": "false",
+        "private": false,
         "host": "Joey Jospeh Mariella",
-        "user_id": "17"
+        "user_id": 17
       }
     }
   ]
@@ -402,8 +402,8 @@ Status: 200 OK
         "street_address": "5479 William Way, East Sonnyhaven, LA",
         "zipcode": "63637",
         "date_time": "8-17-23, 5:25 PM",
-        "private": "true",
-        "host": "1"
+        "private": true,
+        "host": 1
       }
     },
      {
@@ -415,8 +415,8 @@ Status: 200 OK
         "street_address": "5479 William Way, Sonnyhaven, CO",
         "zipcode": "84674",
         "date_time": "10-1-23, 6:00 PM",
-        "private": "false",
-        "host": "6"
+        "private": false,
+        "host": 6
       }
     }
   ]
@@ -460,8 +460,8 @@ Status: 200 OK
     "street_address": "5479 William Way, East Sonnyhaven, LA",
     "zipcode": "63637",
     "date_time": "8-17-23, 5:25 PM",
-    "private": "true",
-    "host": "1"
+    "private": true,
+    "host": 1
   }
 }
 ```
@@ -499,22 +499,22 @@ Status: 200 OK
     {
       "event_title": "Casey's Baseball Funtime",
       "user_name": "James",
-      "status": "accepted",
+      // "status": "accepted",
     },
     {
       "event_title": "Casey's Baseball Funtime",
       "user_name": "Corey",
-      "status": "accepted",
+      // "status": "accepted",
     },
     {
       "event_title": "Casey's Baseball Funtime",
       "user_name": "Staci",
-      "status": "pending",
+      // "status": "pending",
     },
     {
       "event_title": "Casey's Baseball Funtime",
       "user_name": "Anderson",
-      "status": "denied",
+      // "status": "denied",
     }
   ]
 }
@@ -545,8 +545,8 @@ Status: 201 Created
       "street_address": "5479 William Way, East Sonnyhaven, LA",
       "zipcode": "63637",
       "date_time": "8-17-23, 5:25 PM",
-      "private": "true",
-      "host": "1"
+      "private": true,
+      "host": 1
     }
   }
 }
@@ -587,8 +587,8 @@ Status: 200 OK
     "street_address": "5479 William Way, East Sonnyhaven, LA",
     "zipcode": "63637",
     "date_time": "8-17-23, 5:25 PM",
-    "private": "true",
-    "host": "1"
+    "private": true,
+    "host": 1
   }
 }
 ```
@@ -627,12 +627,6 @@ Status: 200 OK
 ```
 
 response for failed deletion:
-
-<!-- Status: 400 Bad Request
-
-{
-"error":"Invalid request parameters"
-} -->
 
 ```json
 Status: 404 Not Found -->
@@ -795,7 +789,7 @@ GET "/api/v1/user/:id/friendships"
 
 POST "/api/v1/friendships"
 
-This endpoint will allow a user to create a friendship (the first user approves another user, but the other user has not yet approved).
+This endpoint will allow a user to create or modify a friendship relationship.
 
 Success Response: (201 Created):
   - Data Format: An array of the two user objects (the first being the person who initiated the request, the second being the person who they approved) which has been converted to json/serialized  It also returns an enum "status" of "pending"
@@ -831,47 +825,6 @@ Success Response: (201 Created):
         "dislikes": "lots of people",
         "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
         "status": "pending"
-      }
-    }
-  ]
-}
-
-```
-
- PATCH "/api/v1/friendships/:id"
-  Success Response: 200
-  ```JSON
-
-  This endpoint will allow a user to approve a friendship (second person approves the friendship originator)
-  Data Format: A user object is created that contains their "user_id" and another user_id.  It also returns an enum "status" of "approved"
-  {
-  "data": [
-    {
-      "id": "1",
-      "type": "user",
-      "attributes": {
-        "username": "amyisfun",
-        "email": "am123@gmail.com",
-        "zipcode": "63637",
-        "bio": "Caretaker for 43 yo sister with learning disabilities",
-        "likes": "being outside",
-        "dislikes": "loud crowds",
-        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
-        "status": "approved"
-      }
-    },
-     {
-      "id": "2",
-      "type": "user",
-      "attributes": {
-        "username": "LGisgreat",
-        "email": "LG123@gmail.com",
-        "zipcode": "63637",
-        "bio": "Caretaker for sister in mid thirties with learning disabilities",
-        "likes": "quiet activities",
-        "dislikes": "lots of people",
-        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
-        "status": "approved"
       }
     }
   ]

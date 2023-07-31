@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :event_users
   has_many :events, through: :event_users
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
 
   before_validation :geocode
 
@@ -15,6 +17,6 @@ class User < ApplicationRecord
   private
 
   def address
-    [street_address, zipcode].compact.join(", ")
+    [street_address, "#{zipcode}, United States"].compact.join(", ") if zipcode.present?
   end
 end

@@ -1,0 +1,28 @@
+[
+  {
+      "place_id": 302605302,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "boundingbox": [
+          "34.243717386696",
+          "34.563717386696",
+          "-119.88072573634",
+          "-119.56072573634"
+      ],
+      "lat": "34.40371738669641",
+      "lon": "-119.72072573634217",
+      "display_name": "Santa Barbara, Santa Barbara County, CAL Fire Contract Counties, California, 93109, United States",
+      "class": "place",
+      "type": "postcode",
+      "importance": 0.535,
+      "address": {
+          "city": "Santa Barbara",
+          "county": "Santa Barbara County",
+          "state_district": "CAL Fire Contract Counties",
+          "state": "California",
+          "ISO3166-2-lvl4": "US-CA",
+          "postcode": "93109",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]

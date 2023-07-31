@@ -2,19 +2,17 @@ require "rails_helper"
 
 RSpec.describe "Events Index API" do
   describe "Events index JSON response" do
-    let!(:user_1) { create(:user, username: "Joey", street_address: "990 Summit Blvd.", zipcode: "92315") }
-    let!(:user_2) { create(:user, username: "Andrew", street_address: "1234 Main St.", zipcode: "93109") }
-    let!(:user_3) { create(:user, username: "Rickford", street_address: "5678 Broadway", zipcode: "90210") }
-    let!(:event_1) { create(:event, street_address: "3456 State St.", zipcode: "93109", user_id: user_1.id) }
-    let!(:event_2) { create(:event, street_address: "7890 Hollister Ave.", zipcode: "93117", user_id: user_1.id) }
-    let!(:event_3) { create(:event, street_address: "9012 Cathedral Oaks Rd.", zipcode: "93117", user_id: user_2.id) }
+    before :each do
+      user_data
+      event_data
+    end
 
-    it "returns a list of events and respective attributes in JSON:API compliance", :vcr do
+    it "returns a list of events and respective attributes in JSON:API compliance" do
       get api_v1_events_path
 
       events = JSON.parse(response.body, symbolize_names: true)
 
-      expect(events[:data].count).to eq(3)
+      expect(events[:data].count).to eq(4)
 
       expect(response).to be_successful
       events[:data].each do |event|
