@@ -1,0 +1,30 @@
+[
+  {
+      "place_id": 315946264,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 16987735,
+      "boundingbox": [
+          "39.687392",
+          "39.687492",
+          "-104.962699",
+          "-104.962599"
+      ],
+      "lat": "39.687442",
+      "lon": "-104.962649",
+      "display_name": "2100, East Iowa Avenue, Denver, Colorado, 80210, United States",
+      "class": "place",
+      "type": "house",
+      "importance": -0.42999999999999994,
+      "address": {
+          "house_number": "2100",
+          "road": "East Iowa Avenue",
+          "city": "Denver",
+          "state": "Colorado",
+          "ISO3166-2-lvl4": "US-CO",
+          "postcode": "80210",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]

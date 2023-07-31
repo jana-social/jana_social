@@ -1,0 +1,91 @@
+[
+  {
+      "place_id": 153114711,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 200995273,
+      "boundingbox": [
+          "39.7401412",
+          "39.7402772",
+          "-104.9809756",
+          "-104.9806626"
+      ],
+      "lat": "39.740199000000004",
+      "lon": "-104.98081935578577",
+      "display_name": "505, East Colfax Avenue, Uptown, Denver, Colorado, 80203, United States",
+      "class": "building",
+      "type": "commercial",
+      "importance": 0.7201,
+      "address": {
+          "house_number": "505",
+          "road": "East Colfax Avenue",
+          "neighbourhood": "Uptown",
+          "city": "Denver",
+          "state": "Colorado",
+          "ISO3166-2-lvl4": "US-CO",
+          "postcode": "80203",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 5185419,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 637820283,
+      "boundingbox": [
+          "39.7401478",
+          "39.7402478",
+          "-104.9808385",
+          "-104.9807385"
+      ],
+      "lat": "39.7401978",
+      "lon": "-104.9807885",
+      "display_name": "McDonald's, 505, East Colfax Avenue, Uptown, Denver, Colorado, 80203, United States",
+      "class": "amenity",
+      "type": "fast_food",
+      "importance": 0.7200099999999999,
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/food_fastfood.p.20.png",
+      "address": {
+          "amenity": "McDonald's",
+          "house_number": "505",
+          "road": "East Colfax Avenue",
+          "neighbourhood": "Uptown",
+          "city": "Denver",
+          "state": "Colorado",
+          "ISO3166-2-lvl4": "US-CO",
+          "postcode": "80203",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 315972346,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 628643784,
+      "boundingbox": [
+          "39.740057694108",
+          "39.740157694108",
+          "-104.98096683454",
+          "-104.98086683454"
+      ],
+      "lat": "39.740107694108154",
+      "lon": "-104.9809168345444",
+      "display_name": "505, East Colfax Avenue, Uptown, Denver, Colorado, 80203, United States",
+      "class": "place",
+      "type": "house",
+      "importance": -0.42999999999999994,
+      "address": {
+          "house_number": "505",
+          "road": "East Colfax Avenue",
+          "neighbourhood": "Uptown",
+          "city": "Denver",
+          "state": "Colorado",
+          "ISO3166-2-lvl4": "US-CO",
+          "postcode": "80203",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]
