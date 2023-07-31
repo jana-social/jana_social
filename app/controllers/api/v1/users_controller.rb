@@ -34,7 +34,7 @@ module Api
       #   else
       #     render json: @user.errors, status: :unprocessable_entity
       #   end
-      end
+      end 
 
       # DELETE /users/1
       def destroy
