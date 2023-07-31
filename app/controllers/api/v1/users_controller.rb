@@ -28,6 +28,7 @@ module Api
 
       # PATCH/PUT /users/1
       def update
+        # require 'pry'; binding.pry
         if @user.update(user_params)
           render json: UserSerializer.new(@user), status: :accepted
         else
