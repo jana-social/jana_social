@@ -19,7 +19,7 @@ class User < ApplicationRecord
     User.joins(:friendships).where(friendships: { status: "pending", friend_id: id })
   end
 
-  # returns all users that have an approved friendship with that user
+  # returns all unique users that the current user has an approved friendship with
   def approved_friends
     friendships_as_user = self.friendships.where(status: "approved").map(&:friend)
     friendships_as_friend = Friendship.where(friend: self, status: "approved").map(&:user)

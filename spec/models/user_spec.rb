@@ -69,7 +69,7 @@ RSpec.describe User, type: :model do
       end
 
       describe "#approved_friends" do
-        it "should return all users with an approved friendship" do
+        it "should return all unique users that the current user has an approved friendship with" do
           Friendship.process_friendship(@user1, @user2, :approved)
           expect(@user1.approved_friends).to eq([])
           expect(@user2.approved_friends).to eq([])
