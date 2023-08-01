@@ -26,6 +26,12 @@ class User < ApplicationRecord
     (friendships_as_user + friendships_as_friend).uniq
   end
 
+  # returns all users that the current user has a declined friendship with
+  def declined_friends
+    friendships_as_user = self.friendships.where(status: "declined").map(&:friend)
+    friendships_as_friend = Friendship.where(friend: self, status: "declined").map(&:user)
+    (friendships_as_user + friendships_as_friend).uniq
+  end
 
   private
 
