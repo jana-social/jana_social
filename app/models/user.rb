@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
-  validates :password, presence: true
+  validates :password_digest, presence: true
   validates :zipcode, presence: true
 
   geocoded_by :address
