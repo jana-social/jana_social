@@ -1,0 +1,8 @@
+<h1>Upload a file</h1>
+
+<%= form_tag api_v1_uploads_path, enctype: 'multipart/form-data' do %>
+	<%= file_field_tag :file  %>
+  <br>
+  <br>
+	<%= submit_tag 'Upload file' %>
+<% end %>
