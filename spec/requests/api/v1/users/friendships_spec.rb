@@ -19,18 +19,25 @@ RSpec.describe "User Friendships API", type: :request do
       expect(response).to be_successful
       expect(response.status).to eq(200)
 
-      friendships = JSON.parse(response.body, symbolize_names: true)
+      friends = JSON.parse(response.body, symbolize_names: true)
 
-      expect(friendships[:data].count).to eq(2)
+      expect(friends[:data].count).to eq(2)
 
-      friendships[:data].each do |friendship|
-        expect(friendship).to have_key(:id)
-        expect(friendship).to have_key(:type)
-        expect(friendship).to have_key(:attributes)
+      friends[:data].each do |user|
+        expect(user).to have_key(:id)
+        expect(user).to have_key(:type)
+        expect(user).to have_key(:attributes)
 
-        expect(friendship[:attributes]).to have_key(:user_id)
-        expect(friendship[:attributes]).to have_key(:friend_id)
-        expect(friendship[:attributes]).to have_key(:status)
+        expect(user[:attributes]).to have_key(:username)
+        expect(user[:attributes]).to have_key(:email)
+        expect(user[:attributes]).to have_key(:zipcode)
+        expect(user[:attributes]).to have_key(:street_address)
+        expect(user[:attributes]).to have_key(:bio)
+        expect(user[:attributes]).to have_key(:likes)
+        expect(user[:attributes]).to have_key(:dislikes)
+        expect(user[:attributes]).to have_key(:profile_image_link)
+        expect(user[:attributes]).to have_key(:latitude)
+        expect(user[:attributes]).to have_key(:longitude)
       end
     end
   end
