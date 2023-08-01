@@ -17,12 +17,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def find_friends_within_distance(distance)
-  nearby_users = User.near([latitude, longitude], distance)
-   # returns users within 'distance' miles of a point
-  nearby_friends = nearby_users.where.not(id: id)
-  nearby_friends
-    # will return a collection of users who are located near the current user's 
-    # geolocation, excluding the current user from the results.
+    User.near(self, distance)
   end
 
   def self.search_by_email(email)
