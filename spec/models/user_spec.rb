@@ -28,7 +28,6 @@ RSpec.describe User, type: :model do
       expect(@user3.latitude).to be_a(Float)
       expect(@user3.longitude).to be_a(Float)
     end
-
     it "should geocode the address with only a zipcode" do
       @user4.valid?
 
@@ -47,7 +46,18 @@ RSpec.describe User, type: :model do
     end
 
     context "public methods" do
-      pending "add some examples to (or delete) #{__FILE__}"
+      describe "instance method to find friends within a distance radius" do
+        it "#find_friends_within_distance" do
+         current_user = @user1
+          expect(current_user.find_friends_within_distance(50)).to eq([@user1, @user2])
+          expect(current_user.find_friends_within_distance(50)).not_to include([@user3, @user4])
+        end
+
+        it "#find_friends_within_distance" do
+          current_user = @user1
+          expect(current_user.find_friends_within_distance(5)).to eq([@user1])
+        end
+      end
     end
 
     context "private methods" do
