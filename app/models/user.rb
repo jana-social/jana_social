@@ -14,6 +14,11 @@ class User < ApplicationRecord
   geocoded_by :address
   has_secure_password
 
+  def find_friends_within_distance(distance)
+    # require 'pry'; binding.pry
+   User.near([latitude, longitude], distance, units: :km)
+  end
+
   private
 
   def address
