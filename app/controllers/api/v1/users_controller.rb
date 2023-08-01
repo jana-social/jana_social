@@ -18,7 +18,8 @@ module Api
       # POST /users
       def create
         @user = User.new(user_params)
-
+        @photo = PhotoFacade.new.get_photo
+        @user.update(profile_image_link: @photo.url)
         if @user.save
           render json: UserSerializer.new(@user), status: :created
         else
@@ -26,14 +27,18 @@ module Api
         end
       end
 
+      # if @user.update(user_params)
+      # if @user.update(username: params[:user][:username])
       # PATCH/PUT /users/1
       def update
+        # require 'pry'; binding.pry
         if @user.update(user_params)
           render json: UserSerializer.new(@user), status: :accepted
         else
           render json: @user.errors, status: :unprocessable_entity
         end
       end
+
 
       # DELETE /users/1
       def destroy
@@ -49,7 +54,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def user_params
-        params.require(:user).permit(:username, :email, :password_digest, :zipcode, :street_address, :bio, :likes, :dislikes, :profile_image_link, :latitude, :longitude)
+        params.require(:user).permit(:username, :email, :password, :zipcode, :street_address, :bio, :likes, :dislikes, :profile_image_link, :latitude, :longitude)
       end
     end
   end

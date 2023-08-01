@@ -10,6 +10,7 @@ User.destroy_all
 Event.destroy_all
 EventUser.destroy_all
 
+<<<<<<<<< Temporary merge branch 1
 user_1 = User.create!(
   username: "Billy Villian",
   email: "billsvills@gmail.com",
@@ -38,3 +39,4 @@ event_1 = Event.create!(
 )
 
 rake db:seed RAILS_ENV=production
+
