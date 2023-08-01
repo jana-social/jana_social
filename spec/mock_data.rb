@@ -19,7 +19,7 @@ def user_data
     zipcode: "80203",
     street_address: "505 E Colfax Ave",
     email: "foo@gmail.com",
-    password_digest: "test123"
+    password: "test123"
   )
   # Complete user data
   @user2 = User.create!(
@@ -27,7 +27,7 @@ def user_data
     zipcode: "80301",
     street_address: "1800 28th St",
     email: "barr@gmail.com",
-    password_digest: "password321"
+    password: "password321"
   )
   # Complete user data
   @user3 = User.create!(
@@ -35,14 +35,14 @@ def user_data
     zipcode: "92315",
     street_address: "990 Summit Blvd",
     email: "test@gmail.com",
-    password_digest: "secret123"
+    password: "secret123"
   )
   # Missing street address
   @user4 = User.create!(
     username: "Tupac Shakur",
     zipcode: "90210",
     email: "tupac@aol.com",
-    password_digest: "all_eyez_on_me"
+    password: "all_eyez_on_me"
   )
 end
 
@@ -107,7 +107,7 @@ def user_params
     user: {
       username: Faker::Dessert.variety,
       email: Faker::Internet.email,
-      password_digest: Faker::Internet.password,
+      password: Faker::Internet.password,
       zipcode: "80203",
       street_address: "505 E Colfax Ave",
       bio: Faker::Hipster.sentences(number: 5),
