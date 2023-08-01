@@ -20,6 +20,10 @@ class User < ApplicationRecord
     User.near(self, distance)
   end
 
+  def find_events_within_distance(distance)
+    Event.near(self, distance)
+  end
+
   def self.search_by_email(email)
     find_by(:email == email)
   end
