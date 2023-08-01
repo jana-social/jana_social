@@ -46,21 +46,16 @@ RSpec.describe User, type: :model do
     end
 
     context "public methods" do
-      describe "instance method to find friends within a distance radius" do
-        it "#find_friends_within_distance" do
-         current_user = @user1
-          expect(current_user.find_friends_within_distance(50)).to eq([@user1, @user2])
-          expect(current_user.find_friends_within_distance(50)).not_to include([@user3, @user4])
-        end
-
-        it "#find_friends_within_distance" do
-          current_user = @user1
-          expect(current_user.find_friends_within_distance(5)).to eq([@user1])
+      describe "#find_friends_within_distance" do
+        it "should return friends within a distance radius" do
+          expect(@user1.find_friends_within_distance(50)).to eq([@user1, @user2])
+          expect(@user1.find_friends_within_distance(50)).not_to include([@user3, @user4])
+          expect(@user1.find_friends_within_distance(5)).to eq([@user1])
         end
       end
 
       describe "#pending_friends" do
-        it "should return all users with a pending friendship and where the user was not the initiator of the friendship" do
+        it "should return all users with a pending friendship where the user was not the initiator of the friendship" do
           Friendship.process_friendship(@user1, @user2, :approved)
           expect(@user1.pending_friends).to eq([])
           expect(@user2.pending_friends).to eq([@user1])
