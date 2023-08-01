@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
     end
 
     context "public methods" do
-      describe "#find_friends_within_distance" do
+      describe "#nearby_users" do
         it "should return friends within a distance radius" do
           expect(@user1.nearby_users(50)).to eq([@user1, @user2])
           expect(@user1.nearby_users(50)).not_to include([@user3, @user4])
