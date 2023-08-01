@@ -91,6 +91,34 @@ RSpec.describe User, type: :model do
           expect(@user4.approved_friends).to eq([@user1])
         end
       end
+
+      describe "#declined_friends" do
+        it "should return all users that the current user has a declined friendship with" do
+          Friendship.process_friendship(@user1, @user2, :approved)
+          expect(@user1.declined_friends).to eq([])
+          expect(@user2.declined_friends).to eq([])
+
+          Friendship.process_friendship(@user2, @user1, :approved)
+          expect(@user1.declined_friends).to eq([])
+          expect(@user2.declined_friends).to eq([])
+
+          Friendship.process_friendship(@user1, @user3, :declined)
+          expect(@user1.declined_friends).to eq([@user3])
+          expect(@user3.declined_friends).to eq([@user1])
+
+          Friendship.process_friendship(@user1, @user4, :approved)
+          expect(@user1.declined_friends).to eq([@user3])
+          expect(@user4.declined_friends).to eq([])
+
+          Friendship.process_friendship(@user4, @user1, :declined)
+          expect(@user1.declined_friends).to eq([@user3, @user4])
+          expect(@user4.declined_friends).to eq([@user1])
+
+          Friendship.process_friendship(@user3, @user4, :declined)
+          expect(@user3.declined_friends).to eq([@user4, @user1])
+          expect(@user4.declined_friends).to eq([@user1, @user3])
+        end
+      end
     end
 
     context "private methods" do
