@@ -65,14 +65,14 @@ RSpec.describe User, type: :model do
       it "#find_friends_within_distance" do
         current_user = @user1
         # require 'pry'; binding.pry
-        expect(current_user.find_friends_within_distance(100)).to eq([@user1,@user2])
-        expect(current_user.find_friends_within_distance(100)).not_to include([@user3, @user4])
+        expect(current_user.find_friends_within_distance(50)).to eq([@user2])
+        expect(current_user.find_friends_within_distance(50)).not_to include([@user3, @user4])
       end
       
       it "#find_friends_within_distance" do
         current_user = @user1
-        expect(current_user.find_friends_within_distance(5)).to eq([@user1])
-        # expect(current_user.find_friends_within_distance(5)).to be_empty
+        # expect(current_user.find_friends_within_distance(5)).to eq([@user1])
+        expect(current_user.find_friends_within_distance(5)).to be_empty
 
       end
     end
