@@ -7,37 +7,42 @@ module Api
       def index
         @users = User.all
 
-        render json: @users
+        render json: UserSerializer.new(@users)
       end
 
       # GET /users/1
       def show
-        render json: @user
+        render json: UserSerializer.new(@user)
       end
 
       # POST /users
       def create
         @user = User.new(user_params)
-
+        @photo = PhotoFacade.new.get_photo
+        @user.update(profile_image_link: @photo.url)
         if @user.save
-          render json: @user, status: :created, location: @user
+          render json: UserSerializer.new(@user), status: :created
         else
           render json: @user.errors, status: :unprocessable_entity
         end
       end
 
+      # if @user.update(user_params)
+      # if @user.update(username: params[:user][:username])
       # PATCH/PUT /users/1
       def update
+        # require 'pry'; binding.pry
         if @user.update(user_params)
-          render json: @user
+          render json: UserSerializer.new(@user), status: :accepted
         else
           render json: @user.errors, status: :unprocessable_entity
         end
       end
+
 
       # DELETE /users/1
       def destroy
-        @user.destroy
+        render json: User.delete(@user)
       end
 
       private
@@ -49,7 +54,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def user_params
-        params.require(:user).permit(:username, :email, :password_digest, :zipcode, :street_address, :bio, :likes, :dislikes, :profile_image_link, :latitude, :longitude)
+        params.require(:user).permit(:username, :email, :password, :zipcode, :street_address, :bio, :likes, :dislikes, :profile_image_link, :latitude, :longitude)
       end
     end
   end

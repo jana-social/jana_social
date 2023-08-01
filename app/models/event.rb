@@ -1,4 +1,7 @@
 class Event < ApplicationRecord
+  has_many :event_users, dependent: :destroy
+  has_many :users, through: :event_users
+
   before_validation :geocode
 
   validates :title, presence: true
@@ -9,6 +12,6 @@ class Event < ApplicationRecord
   private
 
   def address
-    [street_address, zipcode].compact.join(", ")
+    [street_address, "#{zipcode}, United States"].compact.join(", ") if zipcode.present?
   end
 end
