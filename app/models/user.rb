@@ -16,6 +16,10 @@ class User < ApplicationRecord
   geocoded_by :address
   has_secure_password
 
+  def find_friends_within_distance(distance)
+    User.near(self, distance)
+  end
+
   def self.search_by_email(email)
     find_by(:email == email)
   end
