@@ -27,14 +27,16 @@ class User < ApplicationRecord
 
   # returns all users that the current user has an approved friendship with
   def approved_friends
-    approved_friendships_as_users = self.friendships.where(status: "approved").map(&:friend)
-    approved_friendships_as_friend = Friendship.where(friend: self, status: "approved").map(&:user)
+    approved_friendships_as_user = User.where(id: Friendship.where(user_id: self.id, status: "approved").select(:friend_id))
+    approved_friendships_as_friend = User.where(id: Friendship.where(friend_id: self.id, status: "approved").select(:user_id))
+    (approved_friendships_as_user + approved_friendships_as_friend).uniq
   end
 
   # returns all users that the current user has a declined friendship with
   def declined_friends
     declined_friendships_as_user = self.friendships.where(status: "declined").map(&:friend)
     declined_friendships_as_friend = Friendship.where(friend: self, status: "declined").map(&:user)
+    (declined_friendships_as_user + declined_friendships_as_friend).uniq
   end
 
   # returns all users that the current user could approve or deny for friendship
