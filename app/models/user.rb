@@ -61,6 +61,10 @@ class User < ApplicationRecord
     User.where.not(id: excluded_users)
   end
 
+  def potential_friends_nearby(distance)
+    potential_friends.near(self, distance)
+  end
+  
   private
 
   def address
