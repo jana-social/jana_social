@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=2398%20Hintz%20Circle,%2039488-7404,%20United%20States
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=44684%20Cletus%20Springs,%2082046,%20United%20States
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 01 Aug 2023 20:04:17 GMT
+      - Tue, 01 Aug 2023 21:04:26 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -37,5 +37,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Tue, 01 Aug 2023 20:04:17 GMT
+  recorded_at: Tue, 01 Aug 2023 21:04:26 GMT
 recorded_with: VCR 6.2.0
