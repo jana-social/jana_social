@@ -27,15 +27,15 @@ class User < ApplicationRecord
 
   # returns all users that the current user has an approved friendship with
   def approved_friends
-    approved_friendships_as_user = User.where(id: Friendship.where(user_id: self.id, status: "approved").select(:friend_id))
-    approved_friendships_as_friend = User.where(id: Friendship.where(friend_id: self.id, status: "approved").select(:user_id))
+    approved_friendships_as_user = User.where(id: Friendship.where(user_id: self.id, status: "approved").pluck(:friend_id))
+    approved_friendships_as_friend = User.where(id: Friendship.where(friend_id: self.id, status: "approved").pluck(:user_id))
     (approved_friendships_as_user + approved_friendships_as_friend).uniq
   end
 
   # returns all users that the current user has a declined friendship with
   def declined_friends
-    declined_friendships_as_user = User.where(id: Friendship.where(user_id: self.id, status: "declined").select(:friend_id))
-    declined_friendships_as_friend = User.where(id: Friendship.where(friend_id: self.id, status: "declined").select(:user_id))
+    declined_friendships_as_user = User.where(id: Friendship.where(user_id: self.id, status: "declined").pluck(:friend_id))
+    declined_friendships_as_friend = User.where(id: Friendship.where(friend_id: self.id, status: "declined").pluck(:user_id))
     (declined_friendships_as_user + declined_friendships_as_friend).uniq
   end
 
@@ -56,7 +56,6 @@ class User < ApplicationRecord
   
     User.where.not(id: excluded_users)
   end
-
 
   private
 
