@@ -1,0 +1,6 @@
+<h1>Uploads</h1>
+
+<%= link_to "Upload a file", "uploads/new" %>
+<% @uploads.each do |upload| %>
+  <p><%= image_tag upload.link %></p>
+<% end %>

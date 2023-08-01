@@ -25,7 +25,7 @@ Rails.application.routes.draw do
         resources :event_users, only: %i[index]
       end
       resources :friendships, only: %i[create]
-      
+      resources :uploads, only: [:index, :create, :new]
     end
   end
 end
