@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=671%20Kaycee%20Centers,%2072849-9283,%20United%20States
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=992%20Bode%20Fields,%2037217-5107,%20United%20States
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 31 Jul 2023 21:54:58 GMT
+      - Tue, 01 Aug 2023 18:10:51 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -37,5 +37,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Mon, 31 Jul 2023 21:54:58 GMT
+  recorded_at: Tue, 01 Aug 2023 18:10:51 GMT
 recorded_with: VCR 6.2.0
