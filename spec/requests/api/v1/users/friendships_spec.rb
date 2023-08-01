@@ -29,15 +29,15 @@ RSpec.describe "User Friendships API", type: :request do
         expect(user).to have_key(:attributes)
 
         expect(user[:attributes]).to have_key(:username)
-        expect(user[:attributes]).to have_key(:email)
-        expect(user[:attributes]).to have_key(:zipcode)
-        expect(user[:attributes]).to have_key(:street_address)
+        expect(user[:attributes]).to_not have_key(:email)
+        expect(user[:attributes]).to_not have_key(:zipcode)
+        expect(user[:attributes]).to_not have_key(:street_address)
         expect(user[:attributes]).to have_key(:bio)
         expect(user[:attributes]).to have_key(:likes)
         expect(user[:attributes]).to have_key(:dislikes)
         expect(user[:attributes]).to have_key(:profile_image_link)
-        expect(user[:attributes]).to have_key(:latitude)
-        expect(user[:attributes]).to have_key(:longitude)
+        expect(user[:attributes]).to_not have_key(:latitude)
+        expect(user[:attributes]).to_not have_key(:longitude)
       end
     end
   end
