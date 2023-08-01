@@ -10,7 +10,6 @@ User.destroy_all
 Event.destroy_all
 EventUser.destroy_all
 
-<<<<<<<<< Temporary merge branch 1
 user_1 = User.create!(
   username: "Billy Villian",
   email: "billsvills@gmail.com",
@@ -18,8 +17,8 @@ user_1 = User.create!(
   zipcode: "32492",
   street_address: "324 Blickford Drive",
   bio: "I am Billy!",
-  likes: ["walks", "beaches", "beach-walks"],
-  dislikes: ["sand", "water", "legs"],
+  likes: "Billy likes walks, beaches and beach-walks",
+  dislikes: "Billy does not like sand, water or legs",
   profile_image_link: "https://example.com/profiles/billy.jpg",
   latitude: 40.7185,
   longitude: -74.0056
@@ -38,5 +37,5 @@ event_1 = Event.create!(
   user_id: 1
 )
 
-rake db:seed RAILS_ENV=production
+# rake db:seed RAILS_ENV=production
 
