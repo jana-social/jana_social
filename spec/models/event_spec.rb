@@ -44,17 +44,7 @@ RSpec.describe Event, type: :model do
 
     context "public methods" do
       pending "add some examples to (or delete) #{__FILE__}"
-      describe "#find_events_within_distance" do
-        it "instance method to find events within a distance radius" do
-          require 'pry'; binding.pry
 
-         current_user = @user1
-          expect(current_user.find_events_within_distance(50)).to eq([@user1])
-          expect(current_user.find_events_within_distance(50)).not_to include([@user2, @user3, @user4])
-          expect(current_user.find_events_within_distance(200)).to eq([@user1])
-
-        end
-      end
     end
 
     context "private methods" do

@@ -9,6 +9,8 @@ class Event < ApplicationRecord
 
   geocoded_by :address
 
+
+
   private
 
   def address
