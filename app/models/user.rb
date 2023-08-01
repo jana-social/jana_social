@@ -16,7 +16,7 @@ class User < ApplicationRecord
   geocoded_by :address
   has_secure_password
 
-  def find_friends_within_distance(distance)
+  def nearby_users(distance)
     User.near(self, distance)
   end
 
@@ -50,14 +50,14 @@ class User < ApplicationRecord
     declined_friendships_as_friend = Friendship.where(friend_id: self.id, status: "declined").pluck(:user_id)
     approved_friendships_as_user = Friendship.where(user_id: self.id, status: "approved").pluck(:friend_id)
     approved_friendships_as_friend = Friendship.where(friend_id: self.id, status: "approved").pluck(:user_id)
-  
-    excluded_users = my_pending_approvals + 
-                    declined_friendships_as_user + 
-                    declined_friendships_as_friend + 
-                    approved_friendships_as_user + 
-                    approved_friendships_as_friend + 
+
+    excluded_users = my_pending_approvals +
+                    declined_friendships_as_user +
+                    declined_friendships_as_friend +
+                    approved_friendships_as_user +
+                    approved_friendships_as_friend +
                     [self.id]
-  
+
     User.where.not(id: excluded_users)
   end
 
