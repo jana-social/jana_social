@@ -61,10 +61,11 @@ class User < ApplicationRecord
     User.where.not(id: excluded_users)
   end
 
+  # returns all user within a certain distance that the current user could approve or deny for friendship
   def potential_friends_nearby(distance)
     potential_friends.near(self, distance)
   end
-  
+
   private
 
   def address
