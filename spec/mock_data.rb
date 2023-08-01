@@ -44,14 +44,7 @@ def user_data
     email: "tupac@aol.com",
     password: "all_eyez_on_me"
   )
-  # User in @user1 search radius same zip
-  # @user5 = User.create!(
-  #   username: "Fighters",
-  #   zipcode: "80203",
-  #   street_address: "206 E 13th Ave",
-  #   email: "fighter@gmail.com",
-  #   password_digest: "test321"
-  # )
+  
 end
 
 def event_data
