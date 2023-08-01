@@ -134,17 +134,17 @@ RSpec.describe User, type: :model do
           expect(@user1.potential_friends).to eq([@user4])
           expect(@user3.potential_friends).to eq([@user2, @user4])
 
-          # Friendship.process_friendship(@user1, @user4, :approved)
-          # expect(@user1.potential_friends).to eq([])
-          # expect(@user1.potential_friends).to eq([@user1, @user2, @user3])
+          Friendship.process_friendship(@user1, @user4, :approved)
+          expect(@user1.potential_friends).to eq([])
+          expect(@user4.potential_friends).to eq([@user1, @user2, @user3])
 
-          # Friendship.process_friendship(@user4, @user1, :declined)
-          # expect(@user1.potential_friends).to eq([])
-          # expect(@user4.potential_friends).to eq([@user2, @user3])
+          Friendship.process_friendship(@user4, @user1, :declined)
+          expect(@user1.potential_friends).to eq([])
+          expect(@user4.potential_friends).to eq([@user2, @user3])
 
-          # Friendship.process_friendship(@user3, @user4, :declined)
-          # expect(@user3.potential_friends).to eq([@user2])
-          # expect(@user4.potential_friends).to eq([@user2])
+          Friendship.process_friendship(@user3, @user4, :declined)
+          expect(@user3.potential_friends).to eq([@user2])
+          expect(@user4.potential_friends).to eq([@user2])
         end
       end
     end
