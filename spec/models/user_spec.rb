@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
 
     it "should geocode the address with a street address and zipcode" do
       @user3.valid?
-      
+
       expect(@user3.latitude).to be_a(Float)
       expect(@user3.longitude).to be_a(Float)
     end
@@ -48,14 +48,14 @@ RSpec.describe User, type: :model do
     context "public methods" do
       describe "instance method to find friends within a distance radius" do
         it "#find_friends_within_distance" do
-         current_user =  @user1
+         current_user = @user1
           expect(current_user.find_friends_within_distance(50)).to eq([@user1, @user2])
           expect(current_user.find_friends_within_distance(50)).not_to include([@user3, @user4])
         end
-        
+
         it "#find_friends_within_distance" do
           current_user = @user1
-          expect(current_user.find_friends_within_distance(5)).to eq([@user1])  
+          expect(current_user.find_friends_within_distance(5)).to eq([@user1])
         end
       end
     end
@@ -65,12 +65,11 @@ RSpec.describe User, type: :model do
         it "should return complete address from street address and zipcode" do
           expect(@user3.send(:address)).to eq("990 Summit Blvd, 92315, United States")
         end
-        
+
         it "should return complete address from zipcode only" do
           expect(@user4.send(:address)).to eq("90210, United States")
         end
       end
     end
-    
   end
 end
