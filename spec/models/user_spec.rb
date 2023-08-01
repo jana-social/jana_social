@@ -154,6 +154,40 @@ RSpec.describe User, type: :model do
           expect(@user4.potential_friends).to eq([@user2])
         end
       end
+
+      describe "#potential_friends_nearby" do
+        it "should return all users that could be approved/denied for friendship within a distance radius" do
+          expect(@user1.potential_friends_nearby(50)).to eq([@user2])
+          expect(@user2.potential_friends_nearby(50)).to eq([@user1])
+          expect(@user3.potential_friends_nearby(50)).to eq([])
+          expect(@user4.potential_friends_nearby(50)).to eq([])
+
+          Friendship.process_friendship(@user1, @user2, :approved)
+
+          expect(@user1.potential_friends_nearby(50)).to eq([])
+          expect(@user2.potential_friends_nearby(50)).to eq([@user1])
+          expect(@user3.potential_friends_nearby(50)).to eq([])
+          expect(@user4.potential_friends_nearby(50)).to eq([])
+
+          Friendship.process_friendship(@user2, @user1, :approved)
+
+          expect(@user1.potential_friends_nearby(50)).to eq([])
+          expect(@user2.potential_friends_nearby(50)).to eq([])
+          expect(@user3.potential_friends_nearby(50)).to eq([])
+          expect(@user4.potential_friends_nearby(50)).to eq([])
+
+          Friendship.process_friendship(@user1, @user3, :approved)
+
+          expect(@user1.potential_friends_nearby(50)).to eq([])
+          expect(@user2.potential_friends_nearby(50)).to eq([])
+          expect(@user3.potential_friends_nearby(50)).to eq([])
+          expect(@user4.potential_friends_nearby(50)).to eq([])
+
+          Friendship.process_friendship(@user3, @user4, :approved)
+
+          expect(@user4.potential_friends_nearby(250)).to eq([@user3])
+        end
+      end
     end
 
     context "private methods" do
