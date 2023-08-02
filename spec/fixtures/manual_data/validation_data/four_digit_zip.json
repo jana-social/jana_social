@@ -1,0 +1,303 @@
+[
+  {
+      "place_id": 108072815,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 18502147,
+      "boundingbox": [
+          "36.74613",
+          "36.746182",
+          "-91.799545",
+          "-91.796451"
+      ],
+      "lat": "36.746143",
+      "lon": "-91.797072",
+      "display_name": "8020, Howell County, Missouri, United States",
+      "class": "highway",
+      "type": "residential",
+      "importance": 0.41000000000000003,
+      "address": {
+          "road": "8020",
+          "county": "Howell County",
+          "state": "Missouri",
+          "ISO3166-2-lvl4": "US-MO",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 106247909,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 16846869,
+      "boundingbox": [
+          "34.3299313",
+          "34.3430779",
+          "-109.7521615",
+          "-109.7390463"
+      ],
+      "lat": "34.3347089",
+      "lon": "-109.7443892",
+      "display_name": "8020, Apache County, Arizona, 86924, United States",
+      "class": "highway",
+      "type": "residential",
+      "importance": 0.41000000000000003,
+      "address": {
+          "road": "8020",
+          "county": "Apache County",
+          "state": "Arizona",
+          "ISO3166-2-lvl4": "US-AZ",
+          "postcode": "86924",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 40678722,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 3254727016,
+      "boundingbox": [
+          "38.6408049",
+          "38.6409049",
+          "-90.258517",
+          "-90.258417"
+      ],
+      "lat": "38.6408549",
+      "lon": "-90.258467",
+      "display_name": "Taylor at West Pine, North Taylor Avenue, Central West End, St. Louis, Missouri, 63113, United States",
+      "class": "highway",
+      "type": "bus_stop",
+      "importance": 0.2001,
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/transport_bus_stop2.p.20.png",
+      "address": {
+          "highway": "Taylor at West Pine",
+          "road": "North Taylor Avenue",
+          "neighbourhood": "Central West End",
+          "city": "St. Louis",
+          "state": "Missouri",
+          "ISO3166-2-lvl4": "US-MO",
+          "postcode": "63113",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 99243685,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 9670759262,
+      "boundingbox": [
+          "40.8331484",
+          "40.8332484",
+          "-83.2448227",
+          "-83.2447227"
+      ],
+      "lat": "40.8331984",
+      "lon": "-83.2447727",
+      "display_name": "Speedway, 1605, East Wyandot Avenue, Upper Sandusky, Crane Township, Wyandot County, Ohio, 43351, United States",
+      "class": "shop",
+      "type": "convenience",
+      "importance": 0.2001,
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/shopping_convenience.p.20.png",
+      "address": {
+          "shop": "Speedway",
+          "house_number": "1605",
+          "road": "East Wyandot Avenue",
+          "town": "Upper Sandusky",
+          "municipality": "Crane Township",
+          "county": "Wyandot County",
+          "state": "Ohio",
+          "ISO3166-2-lvl4": "US-OH",
+          "postcode": "43351",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 98350408,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 9670759260,
+      "boundingbox": [
+          "40.8333514",
+          "40.8334514",
+          "-83.2449461",
+          "-83.2448461"
+      ],
+      "lat": "40.8334014",
+      "lon": "-83.2448961",
+      "display_name": "Speedway, 1605, East Wyandot Avenue, Upper Sandusky, Crane Township, Wyandot County, Ohio, 43351, United States",
+      "class": "amenity",
+      "type": "fuel",
+      "importance": 0.2001,
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/transport_fuel.p.20.png",
+      "address": {
+          "amenity": "Speedway",
+          "house_number": "1605",
+          "road": "East Wyandot Avenue",
+          "town": "Upper Sandusky",
+          "municipality": "Crane Township",
+          "county": "Wyandot County",
+          "state": "Ohio",
+          "ISO3166-2-lvl4": "US-OH",
+          "postcode": "43351",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 13681741,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1408372924,
+      "boundingbox": [
+          "42.337638",
+          "42.337738",
+          "-72.60648",
+          "-72.60638"
+      ],
+      "lat": "42.337688",
+      "lon": "-72.60643",
+      "display_name": "Bay Road DC (W), Bay Road, Hadley, Hampshire County, Massachusetts, 01035, United States",
+      "class": "highway",
+      "type": "bus_stop",
+      "importance": 0.2001,
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/transport_bus_stop2.p.20.png",
+      "address": {
+          "highway": "Bay Road DC (W)",
+          "road": "Bay Road",
+          "town": "Hadley",
+          "county": "Hampshire County",
+          "state": "Massachusetts",
+          "ISO3166-2-lvl4": "US-MA",
+          "postcode": "01035",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 69744987,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 6506967125,
+      "boundingbox": [
+          "35.8203919",
+          "35.8204919",
+          "-78.5921757",
+          "-78.5920757"
+      ],
+      "lat": "35.8204419",
+      "lon": "-78.5921257",
+      "display_name": "Capital Boulevard & Trawick Road, Capital Boulevard, Raleigh, Wake County, North Carolina, 27604, United States",
+      "class": "highway",
+      "type": "bus_stop",
+      "importance": 0.20000999999999997,
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/transport_bus_stop2.p.20.png",
+      "address": {
+          "highway": "Capital Boulevard & Trawick Road",
+          "road": "Capital Boulevard",
+          "city": "Raleigh",
+          "county": "Wake County",
+          "state": "North Carolina",
+          "ISO3166-2-lvl4": "US-NC",
+          "postcode": "27604",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 352812776,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 10312229792,
+      "boundingbox": [
+          "33.7533794",
+          "33.7534794",
+          "-117.8591445",
+          "-117.8590445"
+      ],
+      "lat": "33.7534294",
+      "lon": "-117.8590945",
+      "display_name": "Civic Center-Santiago, Civic Center Drive East, Logan, Santa Ana, Orange County, CAL Fire Southern Region, California, 92701, United States",
+      "class": "highway",
+      "type": "bus_stop",
+      "importance": 0.20000999999999997,
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/transport_bus_stop2.p.20.png",
+      "address": {
+          "highway": "Civic Center-Santiago",
+          "road": "Civic Center Drive East",
+          "suburb": "Logan",
+          "city": "Santa Ana",
+          "county": "Orange County",
+          "state_district": "CAL Fire Southern Region",
+          "state": "California",
+          "ISO3166-2-lvl4": "US-CA",
+          "postcode": "92701",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 47680746,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 4160217216,
+      "boundingbox": [
+          "41.8175829",
+          "41.8176829",
+          "-87.6456275",
+          "-87.6455275"
+      ],
+      "lat": "41.8176329",
+      "lon": "-87.6455775",
+      "display_name": "42nd Street & Halsted, West 42nd Street, Canaryville, New City, Chicago, Lake Township, Cook County, Illinois, 60609, United States",
+      "class": "highway",
+      "type": "bus_stop",
+      "importance": 0.20000999999999997,
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/transport_bus_stop2.p.20.png",
+      "address": {
+          "highway": "42nd Street & Halsted",
+          "road": "West 42nd Street",
+          "neighbourhood": "Canaryville",
+          "quarter": "New City",
+          "city": "Chicago",
+          "municipality": "Lake Township",
+          "county": "Cook County",
+          "state": "Illinois",
+          "ISO3166-2-lvl4": "US-IL",
+          "postcode": "60609",
+          "country": "United States",
+          "country_code": "us"
+      }
+  },
+  {
+      "place_id": 361903824,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1160624620,
+      "boundingbox": [
+          "41.9478786",
+          "41.9479682",
+          "-83.3879978",
+          "-83.3878571"
+      ],
+      "lat": "41.94792735",
+      "lon": "-83.38792803785404",
+      "display_name": "Castaway Eats & Treats, Mall Road, Frenchtown Charter Township, Monroe County, Michigan, 48161, United States",
+      "class": "shop",
+      "type": "yes",
+      "importance": 0.20000999999999997,
+      "address": {
+          "shop": "Castaway Eats & Treats",
+          "road": "Mall Road",
+          "town": "Frenchtown Charter Township",
+          "county": "Monroe County",
+          "state": "Michigan",
+          "ISO3166-2-lvl4": "US-MI",
+          "postcode": "48161",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]

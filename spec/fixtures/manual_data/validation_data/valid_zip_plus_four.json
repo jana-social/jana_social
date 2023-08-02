@@ -1,0 +1,26 @@
+[
+  {
+      "place_id": 302602711,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "boundingbox": [
+          "39.570820766783",
+          "39.890820766783",
+          "-105.14332381086",
+          "-104.82332381086"
+      ],
+      "lat": "39.73082076678349",
+      "lon": "-104.98332381086449",
+      "display_name": "Denver, Colorado, 80203, United States",
+      "class": "place",
+      "type": "postcode",
+      "importance": 0.535,
+      "address": {
+          "city": "Denver",
+          "state": "Colorado",
+          "ISO3166-2-lvl4": "US-CO",
+          "postcode": "80203",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]
