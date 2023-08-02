@@ -45,7 +45,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '50'
       X-Ratelimit-Remaining:
-      - '44'
+      - '48'
       X-Request-Id:
       - 524020f3-351c-4ad2-90da-5dffd4836442
       X-Runtime:
