@@ -33,8 +33,4 @@ class User < ApplicationRecord
   def address
     [street_address, "#{zipcode}, United States"].compact.join(", ") if zipcode.present?
   end
-
-  # def unsplash_photo
-  #   @photo = PhotoFacade.new.get_photo
-  # end
 end
