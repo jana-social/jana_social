@@ -15,7 +15,6 @@ class User < ApplicationRecord
   validates :latitude, presence: true
   validates :longitude, presence: true
 
-
   geocoded_by :address
   has_secure_password
 
@@ -24,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def self.search_by_email(email)
-    find_by(:email == email)
+    find_by(email == :email)
   end
 
   private

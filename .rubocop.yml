@@ -67,6 +67,9 @@ Style/BlockDelimiters:
 Naming/VariableNumber:
   Enabled: false
 
+Naming/AccessorMethodName:
+  Enabled: false
+
 Style/StringLiterals:
   Description: 'Checks if uses of quotes match the configured preference.'
   StyleGuide: '#consistent-string-literals'
