@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
-  validates :password, presence: true
+  validates :password_digest, presence: true
   validates :zipcode, presence: true
 
   before_create do
@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   geocoded_by :address
   has_secure_password
+
+  def find_friends_within_distance(distance)
+    User.near(self, distance)
+  end
 
   def self.search_by_email(email)
     find_by(:email == email)
