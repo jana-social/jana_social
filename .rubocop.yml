@@ -21,6 +21,7 @@ AllCops:
     - 'app/controllers/users/viewing_party_controller.rb'
     - 'config/environments/production.rb'
     - 'spec/spec_helper.rb'
+    - 'db/migrate/**'
 
 Style/StringLiterals:
   Enabled: false
@@ -71,11 +72,7 @@ Naming/AccessorMethodName:
   Enabled: false
 
 Style/StringLiterals:
-  Description: 'Checks if uses of quotes match the configured preference.'
-  StyleGuide: '#consistent-string-literals'
   Enabled: true
-  VersionAdded: '0.9'
-  VersionChanged: '0.36'
   EnforcedStyle: double_quotes
   SupportedStyles:
     - single_quotes
@@ -83,3 +80,14 @@ Style/StringLiterals:
   # If `true`, strings which span multiple lines using `\` for continuation must
   # use the same type of quotes on each line.
   ConsistentQuotesInMultiline: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: true
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Enabled: true
+  Max: 10
+
+Lint/UselessAssignment:
+  Enabled: false
