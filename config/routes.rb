@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
       resources :users, only: %i[index show create update destroy] do
         resources :events, only: %i[create update]
+        get "friendships", to: "users/friendships#index", on: :member
+        get "find_friends", to: "users/search#index", on: :member
       end
       resources :events, only: %i[index show] do
         resources :event_users, only: %i[index]

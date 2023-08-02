@@ -5,7 +5,7 @@ describe "POST Create User request" do
     user_params
   end
 
-  it "requests to create a new user", :vcr  do
+  it "requests to create a new user", :vcr do
     headers = { "CONTENT_TYPE" => "application/json" }
 
     post "/api/v1/users", headers: headers, params: @new_user.to_json
@@ -15,7 +15,7 @@ describe "POST Create User request" do
     expect(@new_user[:user][:username]).to eq(created_user.username)
   end
 
-  it "assigns a random default profile picture when a new user is created", :vcr  do
+  it "assigns a random default profile picture when a new user is created", :vcr do
     headers = { "CONTENT_TYPE" => "application/json" }
 
     new_params = {
