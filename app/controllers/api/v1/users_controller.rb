@@ -17,7 +17,7 @@ module Api
 
       # POST /users
       def create
-        @user = User.new(user_params)
+        @user = User.new(user_create_params)
         if @user.save
           render json: UserSerializer.new(@user), status: :created
         else
@@ -49,6 +49,10 @@ module Api
       # Only allow a list of trusted parameters through.
       def user_params
         params.require(:user).permit(:username, :email, :password, :zipcode, :street_address, :bio, :likes, :dislikes, :profile_image_link, :latitude, :longitude)
+      end
+
+      def user_create_params
+        params.permit(:username, :email, :password, :zipcode)
       end
     end
   end
