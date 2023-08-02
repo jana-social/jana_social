@@ -18,7 +18,8 @@ user_1 = User.create!(
   street_address: "13575 Lavonda Ways",
   bio: "[\"Five dollar toast sriracha pop-up.\", \"Williamsburg austin mustache kombucha literally ennui pabst.\", \"Umami post-ironic direct trade.\", \"Sustainable diy park seitan pop-up selvage farm-to-table cold-pressed.\", \"Roof yolo blog.\"]",
   likes: "Gentrify roof hoodie mlkshk skateboard.",
-  dislikes: "Lo-fi irony you probably haven't heard of them fingerstache tofu."
+  dislikes: "Lo-fi irony you probably haven't heard of them fingerstache tofu.",
+  profile_image_link: "http://cummings-murphy.test/kim_hoppe"
 )
 
 user_2 = User.create!(
