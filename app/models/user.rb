@@ -64,6 +64,11 @@ class User < ApplicationRecord
     potential_friends.near(self, distance)
   end
 
+  # returns all events within a certain distance of the current user
+  def events_nearby(distance)
+    Event.near(self, distance)
+  end
+
   private
 
   def address
