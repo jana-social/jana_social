@@ -54,7 +54,33 @@ RSpec.describe "Find Friends API", type: :request do
     end
 
     describe "sad path" do
-      
+      it "returns an error if no search radius is provided" do
+        get "/api/v1/users/#{@user1.id}/find_friends"
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+      end
+
+      it "returns an error if search radius is 0" do
+        get "/api/v1/users/#{@user1.id}/find_friends?distance=0"
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+      end
+
+      it "returns an error if search radius is negative" do
+        get "/api/v1/users/#{@user1.id}/find_friends?distance=-50"
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+      end
+
+      it "returns an error if search radius is not an number" do
+        get "/api/v1/users/#{@user1.id}/find_friends?distance=apple"
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+      end
     end
   end
 end
