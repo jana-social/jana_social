@@ -16,10 +16,6 @@ class User < ApplicationRecord
   geocoded_by :address
   has_secure_password
 
-  def nearby_users(distance)
-    User.near(self, distance)
-  end
-
   def self.search_by_email(email)
     find_by(:email == email)
   end
