@@ -20,7 +20,7 @@ user_1 = User.create!(
   bio: "I am Billy!",
   likes: ["walks", "beaches", "beach-walks"],
   dislikes: ["sand", "water", "legs"],
-  profile_image_link: "https://example.com/profiles/billy.jpg",
+  profile_image_link: "https://unsplash.com/photos/aQSPWSxCweY",
   latitude: nil,
   longitude: nil
 )
