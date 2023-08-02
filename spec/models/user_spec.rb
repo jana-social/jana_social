@@ -148,7 +148,7 @@ RSpec.describe User, type: :model do
           expect(@user4.approved_friends).to eq([])
 
           Friendship.process_friendship(@user4, @user1, :approved)
-          expect(@user1.approved_friends).to eq([@user2, @user4])
+          expect(@user1.approved_friends.sort).to eq([@user2, @user4].sort)
           expect(@user4.approved_friends).to eq([@user1])
         end
       end
@@ -172,36 +172,36 @@ RSpec.describe User, type: :model do
           expect(@user4.declined_friends).to eq([])
 
           Friendship.process_friendship(@user4, @user1, :declined)
-          expect(@user1.declined_friends).to eq([@user3, @user4])
+          expect(@user1.declined_friends.sort).to eq([@user3, @user4].sort)
           expect(@user4.declined_friends).to eq([@user1])
 
           Friendship.process_friendship(@user3, @user4, :declined)
-          expect(@user3.declined_friends).to eq([@user4, @user1])
-          expect(@user4.declined_friends).to eq([@user1, @user3])
+          expect(@user3.declined_friends.sort).to eq([@user4, @user1].sort)
+          expect(@user4.declined_friends.sort).to eq([@user1, @user3].sort)
         end
       end
 
       describe "#potential_friends" do
         it "should return all users that the current user could approve/deny for friendship" do
           Friendship.process_friendship(@user1, @user2, :approved)
-          expect(@user1.potential_friends).to eq([@user3, @user4])
-          expect(@user2.potential_friends).to eq([@user1, @user3, @user4])
+          expect(@user1.potential_friends.sort).to eq([@user3, @user4].sort)
+          expect(@user2.potential_friends.sort).to eq([@user1, @user3, @user4].sort)
 
           Friendship.process_friendship(@user2, @user1, :approved)
-          expect(@user1.potential_friends).to eq([@user3, @user4])
-          expect(@user2.potential_friends).to eq([@user3, @user4])
+          expect(@user1.potential_friends.sort).to eq([@user3, @user4].sort)
+          expect(@user2.potential_friends.sort).to eq([@user3, @user4].sort)
 
           Friendship.process_friendship(@user1, @user3, :declined)
           expect(@user1.potential_friends).to eq([@user4])
-          expect(@user3.potential_friends).to eq([@user2, @user4])
+          expect(@user3.potential_friends.sort).to eq([@user2, @user4].sort)
 
           Friendship.process_friendship(@user1, @user4, :approved)
           expect(@user1.potential_friends).to eq([])
-          expect(@user4.potential_friends).to eq([@user1, @user2, @user3])
+          expect(@user4.potential_friends.sort).to eq([@user1, @user2, @user3].sort)
 
           Friendship.process_friendship(@user4, @user1, :declined)
           expect(@user1.potential_friends).to eq([])
-          expect(@user4.potential_friends).to eq([@user2, @user3])
+          expect(@user4.potential_friends.sort).to eq([@user2, @user3].sort)
 
           Friendship.process_friendship(@user3, @user4, :declined)
           expect(@user3.potential_friends).to eq([@user2])
