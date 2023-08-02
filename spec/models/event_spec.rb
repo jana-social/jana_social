@@ -4,6 +4,17 @@ RSpec.describe Event, type: :model do
   describe "validations" do
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:zipcode) }
+    it { should validate_presence_of(:latitude) }
+    it { should validate_presence_of(:longitude) }
+
+    before(:each) do
+      validation_data
+    end
+
+    it { should allow_value("80203").for(:zipcode) }
+    it { should allow_value("80203-0121").for(:zipcode) }
+    it { should_not allow_value("8020").for(:zipcode) }
+    it { should_not allow_value("ABC12").for(:zipcode) }
   end
 
   describe "relationships" do
@@ -33,6 +44,54 @@ RSpec.describe Event, type: :model do
 
     it "should not geocode the address without a zipcode" do
       expect { Event.create!(title: "Beach Trip", user_id: @user3.id) }.to raise_error(ActiveRecord::RecordInvalid)
+    end
+
+    it "should not geocode the address with a four digit zipcode" do
+      validation_data
+
+      expect do
+        Event.create!(
+          title: "Drive-In Movie",
+          street_address: nil,
+          description: "Lorem Ipsum",
+          zipcode: "8020",
+          date_time: "2023-10-5 4:30:00",
+          private_status: false,
+          user_id: @user1.id
+        )
+      end.to raise_error(ActiveRecord::RecordInvalid)
+    end
+
+    it "should not geocode the address with letters in the zipcode" do
+      validation_data
+
+      expect do
+        Event.create!(
+          title: "Drive-In Movie",
+          street_address: nil,
+          description: "Lorem Ipsum",
+          zipcode: "ABC12",
+          date_time: "2023-10-5 4:30:00",
+          private_status: false,
+          user_id: @user1.id
+        )
+      end.to raise_error(ActiveRecord::RecordInvalid)
+    end
+
+    it "should not geocode the address with an invalid street address" do
+      validation_data
+
+      expect do
+        Event.create!(
+          title: "Drive-In Movie",
+          street_address: "324 Blickford Drive",
+          description: "Lorem Ipsum",
+          zipcode: "32492",
+          date_time: "2023-10-5 4:30:00",
+          private_status: false,
+          user_id: @user1.id
+        )
+      end.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
 

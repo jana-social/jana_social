@@ -1,3 +1,22 @@
+def validation_data
+  valid_five_digit_zip = File.read("./spec/fixtures/manual_data/validation_data/valid_five_digit_zip.json")
+  valid_zip_plus_four = File.read("./spec/fixtures/manual_data/validation_data/valid_zip_plus_four.json")
+  four_digit_zip = File.read("./spec/fixtures/manual_data/validation_data/four_digit_zip.json")
+  letters_in_zip = File.read("./spec/fixtures/manual_data/validation_data/letters_in_zip.json")
+  bad_street_address = File.read("./spec/fixtures/manual_data/validation_data/bad_street_address.json")
+
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=80203,%20United%20States")
+    .to_return(status: 200, body: valid_five_digit_zip)
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=80203-0121,%20United%20States")
+    .to_return(status: 200, body: valid_zip_plus_four)
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=8020,%20United%20States")
+    .to_return(status: 200, body: four_digit_zip)
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=ABC12,%20United%20States")
+    .to_return(status: 200, body: letters_in_zip)
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=324%20Blickford%20Drive,%2032492,%20United%20States")
+    .to_return(status: 200, body: bad_street_address)
+end
+
 def user_data
   user_1_location = File.read("./spec/fixtures/manual_data/user_data/user_1.json")
   user_2_location = File.read("./spec/fixtures/manual_data/user_data/user_2.json")
@@ -44,7 +63,6 @@ def user_data
     email: "tupac@aol.com",
     password: "all_eyez_on_me"
   )
-  
 end
 
 def event_data
