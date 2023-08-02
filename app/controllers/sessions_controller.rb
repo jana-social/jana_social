@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if user
       log_in(user)
     else
-      render 'new'
+      render "new"
     end
   end
 

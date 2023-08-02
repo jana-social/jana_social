@@ -8,6 +8,17 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of(:email) }
     it { should validate_presence_of(:password) }
     it { should validate_presence_of(:zipcode) }
+    it { should validate_presence_of(:latitude) }
+    it { should validate_presence_of(:longitude) }
+
+    before(:each) do
+      validation_data
+    end
+
+    it { should allow_value("80203").for(:zipcode) }
+    it { should allow_value("80203-0121").for(:zipcode) }
+    it { should_not allow_value("8020").for(:zipcode) }
+    it { should_not allow_value("ABC12").for(:zipcode) }
   end
 
   describe "relationships" do
@@ -28,6 +39,7 @@ RSpec.describe User, type: :model do
       expect(@user3.latitude).to be_a(Float)
       expect(@user3.longitude).to be_a(Float)
     end
+
     it "should geocode the address with only a zipcode" do
       @user4.valid?
 
@@ -36,7 +48,57 @@ RSpec.describe User, type: :model do
     end
 
     it "should not geocode the address without a zipcode" do
-      expect { User.create!(username: "Mrs. Test") }.to raise_error(ActiveRecord::RecordInvalid)
+      expect do
+        User.create!(
+          username: "Mrs. Test",
+          zipcode: nil,
+          street_address: "505 E Colfax Ave",
+          email: "foo@gmail.com",
+          password: "test123"
+        )
+      end.to raise_error(ActiveRecord::RecordInvalid)
+    end
+
+    it "should not geocode the address with a four digit zipcode" do
+      validation_data
+
+      expect do
+        User.create!(
+          username: "Mrs. Test",
+          zipcode: "8020",
+          street_address: nil,
+          email: "foo@gmail.com",
+          password: "test123"
+        )
+      end.to raise_error(ActiveRecord::RecordInvalid)
+    end
+
+    it "should not geocode the address with letters in the zipcode" do
+      validation_data
+
+      expect do
+        User.create!(
+          username: "Mrs. Test",
+          zipcode: "ABC12",
+          street_address: nil,
+          email: "foo@gmail.com",
+          password: "test123"
+        )
+      end.to raise_error(ActiveRecord::RecordInvalid)
+    end
+
+    it "should not geocode the address with an invalid street address" do
+      validation_data
+
+      expect do
+        User.create!(
+          username: "Mrs. Test",
+          zipcode: "32492",
+          street_address: "324 Blickford Drive",
+          email: "foo@gmail.com",
+          password: "test123"
+        )
+      end.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
 
@@ -86,7 +148,7 @@ RSpec.describe User, type: :model do
           expect(@user4.approved_friends).to eq([])
 
           Friendship.process_friendship(@user4, @user1, :approved)
-          expect(@user1.approved_friends).to eq([@user2, @user4])
+          expect(@user1.approved_friends.sort).to eq([@user2, @user4].sort)
           expect(@user4.approved_friends).to eq([@user1])
         end
       end
@@ -110,36 +172,36 @@ RSpec.describe User, type: :model do
           expect(@user4.declined_friends).to eq([])
 
           Friendship.process_friendship(@user4, @user1, :declined)
-          expect(@user1.declined_friends).to eq([@user3, @user4])
+          expect(@user1.declined_friends.sort).to eq([@user3, @user4].sort)
           expect(@user4.declined_friends).to eq([@user1])
 
           Friendship.process_friendship(@user3, @user4, :declined)
-          expect(@user3.declined_friends).to eq([@user4, @user1])
-          expect(@user4.declined_friends).to eq([@user1, @user3])
+          expect(@user3.declined_friends.sort).to eq([@user4, @user1].sort)
+          expect(@user4.declined_friends.sort).to eq([@user1, @user3].sort)
         end
       end
 
       describe "#potential_friends" do
         it "should return all users that the current user could approve/deny for friendship" do
           Friendship.process_friendship(@user1, @user2, :approved)
-          expect(@user1.potential_friends).to eq([@user3, @user4])
-          expect(@user2.potential_friends).to eq([@user1, @user3, @user4])
+          expect(@user1.potential_friends.sort).to eq([@user3, @user4].sort)
+          expect(@user2.potential_friends.sort).to eq([@user1, @user3, @user4].sort)
 
           Friendship.process_friendship(@user2, @user1, :approved)
-          expect(@user1.potential_friends).to eq([@user3, @user4])
-          expect(@user2.potential_friends).to eq([@user3, @user4])
+          expect(@user1.potential_friends.sort).to eq([@user3, @user4].sort)
+          expect(@user2.potential_friends.sort).to eq([@user3, @user4].sort)
 
           Friendship.process_friendship(@user1, @user3, :declined)
           expect(@user1.potential_friends).to eq([@user4])
-          expect(@user3.potential_friends).to eq([@user2, @user4])
+          expect(@user3.potential_friends.sort).to eq([@user2, @user4].sort)
 
           Friendship.process_friendship(@user1, @user4, :approved)
           expect(@user1.potential_friends).to eq([])
-          expect(@user4.potential_friends).to eq([@user1, @user2, @user3])
+          expect(@user4.potential_friends.sort).to eq([@user1, @user2, @user3].sort)
 
           Friendship.process_friendship(@user4, @user1, :declined)
           expect(@user1.potential_friends).to eq([])
-          expect(@user4.potential_friends).to eq([@user2, @user3])
+          expect(@user4.potential_friends.sort).to eq([@user2, @user3].sort)
 
           Friendship.process_friendship(@user3, @user4, :declined)
           expect(@user3.potential_friends).to eq([@user2])

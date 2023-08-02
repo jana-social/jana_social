@@ -5,7 +5,9 @@ class Event < ApplicationRecord
   before_validation :geocode
 
   validates :title, presence: true
-  validates :zipcode, presence: true
+  validates :zipcode, presence: true, format: { with: /\A\d{5}(-\d{4})?\z/, message: "must be a valid zipcode" }
+  validates :latitude, presence: true
+  validates :longitude, presence: true
 
   geocoded_by :address
 
