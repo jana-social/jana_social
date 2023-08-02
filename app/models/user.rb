@@ -13,6 +13,10 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates :zipcode, presence: true
 
+  before_create do
+    self.profile_image_link = PhotoFacade.new.get_photo.url
+  end
+
   geocoded_by :address
   has_secure_password
 
@@ -25,4 +29,8 @@ class User < ApplicationRecord
   def address
     [street_address, "#{zipcode}, United States"].compact.join(", ") if zipcode.present?
   end
+
+  # def unsplash_photo
+  #   @photo = PhotoFacade.new.get_photo
+  # end
 end

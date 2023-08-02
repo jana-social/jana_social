@@ -18,8 +18,6 @@ module Api
       # POST /users
       def create
         @user = User.new(user_params)
-        @photo = PhotoFacade.new.get_photo
-        @user.update(profile_image_link: @photo.url)
         if @user.save
           render json: UserSerializer.new(@user), status: :created
         else
@@ -27,11 +25,8 @@ module Api
         end
       end
 
-      # if @user.update(user_params)
-      # if @user.update(username: params[:user][:username])
       # PATCH/PUT /users/1
       def update
-        # require 'pry'; binding.pry
         if @user.update(user_params)
           render json: UserSerializer.new(@user), status: :accepted
         else
