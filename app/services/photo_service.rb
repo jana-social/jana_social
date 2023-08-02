@@ -1,4 +1,4 @@
-class PhotoService 
+class PhotoService
   def conn
     Faraday.new(url: "https://api.unsplash.com")
   end

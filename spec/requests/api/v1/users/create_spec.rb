@@ -27,7 +27,7 @@ describe "POST Create User request" do
         street_address: "4505 Tennyson St",
         bio: Faker::Hipster.sentences(number: 2),
         likes: Faker::Hipster.sentence,
-        dislikes: Faker::Hipster.sentence,
+        dislikes: Faker::Hipster.sentence
       }
     }
 

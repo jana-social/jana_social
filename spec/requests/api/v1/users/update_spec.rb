@@ -11,7 +11,7 @@ describe "PATCH Update User request" do
 
     user1_params = {
       user: {
-        username: new_username,
+        username: new_username
       }
     }
 

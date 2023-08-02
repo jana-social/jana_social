@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "photo service" do 
+RSpec.describe "photo service" do
   it "returns a random photo", :vcr do
     search = PhotoService.new.random_photo
 
