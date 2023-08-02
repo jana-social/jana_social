@@ -44,7 +44,6 @@ def user_data
     email: "tupac@aol.com",
     password: "all_eyez_on_me"
   )
-
 end
 
 def event_data

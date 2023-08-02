@@ -27,32 +27,32 @@ class User < ApplicationRecord
 
   # returns all users that the current user has an approved friendship with
   def approved_friends
-    approved_friendships_as_user = User.where(id: Friendship.where(user_id: self.id, status: "approved").pluck(:friend_id))
-    approved_friendships_as_friend = User.where(id: Friendship.where(friend_id: self.id, status: "approved").pluck(:user_id))
+    approved_friendships_as_user = User.where(id: Friendship.where(user_id: id, status: "approved").pluck(:friend_id))
+    approved_friendships_as_friend = User.where(id: Friendship.where(friend_id: id, status: "approved").pluck(:user_id))
     (approved_friendships_as_user + approved_friendships_as_friend).uniq
   end
 
   # returns all users that the current user has a declined friendship with
   def declined_friends
-    declined_friendships_as_user = User.where(id: Friendship.where(user_id: self.id, status: "declined").pluck(:friend_id))
-    declined_friendships_as_friend = User.where(id: Friendship.where(friend_id: self.id, status: "declined").pluck(:user_id))
+    declined_friendships_as_user = User.where(id: Friendship.where(user_id: id, status: "declined").pluck(:friend_id))
+    declined_friendships_as_friend = User.where(id: Friendship.where(friend_id: id, status: "declined").pluck(:user_id))
     (declined_friendships_as_user + declined_friendships_as_friend).uniq
   end
 
   # returns all users that the current user could approve or deny for friendship
   def potential_friends
-    my_pending_approvals = Friendship.where(user_id: self.id, status: "pending").pluck(:friend_id)
-    declined_friendships_as_user = Friendship.where(user_id: self.id, status: "declined").pluck(:friend_id)
-    declined_friendships_as_friend = Friendship.where(friend_id: self.id, status: "declined").pluck(:user_id)
-    approved_friendships_as_user = Friendship.where(user_id: self.id, status: "approved").pluck(:friend_id)
-    approved_friendships_as_friend = Friendship.where(friend_id: self.id, status: "approved").pluck(:user_id)
+    my_pending_approvals = Friendship.where(user_id: id, status: "pending").pluck(:friend_id)
+    declined_friendships_as_user = Friendship.where(user_id: id, status: "declined").pluck(:friend_id)
+    declined_friendships_as_friend = Friendship.where(friend_id: id, status: "declined").pluck(:user_id)
+    approved_friendships_as_user = Friendship.where(user_id: id, status: "approved").pluck(:friend_id)
+    approved_friendships_as_friend = Friendship.where(friend_id: id, status: "approved").pluck(:user_id)
 
     excluded_users = my_pending_approvals +
-                    declined_friendships_as_user +
-                    declined_friendships_as_friend +
-                    approved_friendships_as_user +
-                    approved_friendships_as_friend +
-                    [self.id]
+                     declined_friendships_as_user +
+                     declined_friendships_as_friend +
+                     approved_friendships_as_user +
+                     approved_friendships_as_friend +
+                     [id]
 
     User.where.not(id: excluded_users)
   end
