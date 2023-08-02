@@ -11,7 +11,10 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
   validates :password_digest, presence: true
-  validates :zipcode, presence: true
+  validates :zipcode, presence: true, format: { with: /\A\d{5}(-\d{4})?\z/, message: "must be a valid zipcode" }
+  validates :latitude, presence: true
+  validates :longitude, presence: true
+
 
   geocoded_by :address
   has_secure_password
