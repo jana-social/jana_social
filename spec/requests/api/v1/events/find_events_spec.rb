@@ -34,28 +34,28 @@ RSpec.describe "Find Events API", type: :request do
 
     describe "sad path" do
       it "returns an error if no search radius is provided" do
-        get "/api/v1/users/#{@user1}/find_events"
+        get "/api/v1/users/#{@user1.id}/find_events"
 
         expect(response).to_not be_successful
         expect(response.status).to eq(400)
       end
 
       it "returns an error if search radius is 0" do
-        get "/api/v1/users/#{@user1}/find_events?distance=0"
+        get "/api/v1/users/#{@user1.id}/find_events?distance=0"
 
         expect(response).to_not be_successful
         expect(response.status).to eq(400)
       end
 
       it "returns an error if search radius is negative" do
-        get "/api/v1/users/#{@user1}/find_events?distance=-50"
+        get "/api/v1/users/#{@user1.id}/find_events?distance=-50"
 
         expect(response).to_not be_successful
         expect(response.status).to eq(400)
       end
 
       it "returns an error if search radius is not a number" do
-        get "/api/v1/users/#{@user1}/find_events?distance=abc"
+        get "/api/v1/users/#{@user1.id}/find_events?distance=abc"
 
         expect(response).to_not be_successful
         expect(response.status).to eq(400)
