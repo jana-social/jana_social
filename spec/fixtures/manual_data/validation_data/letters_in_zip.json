@@ -1,0 +1,31 @@
+[
+  {
+      "place_id": 241909331,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 683472588,
+      "boundingbox": [
+          "43.0080708",
+          "43.009058",
+          "-83.6657628",
+          "-83.6652069"
+      ],
+      "lat": "43.0084379",
+      "lon": "-83.6654861183072",
+      "display_name": "WJRT-TV (ABC12) Studios, Lapeer Road, Flint, Genesee County, Michigan, 48423, United States",
+      "class": "amenity",
+      "type": "studio",
+      "importance": 0.6888954033313951,
+      "address": {
+          "amenity": "WJRT-TV (ABC12) Studios",
+          "road": "Lapeer Road",
+          "city": "Flint",
+          "county": "Genesee County",
+          "state": "Michigan",
+          "ISO3166-2-lvl4": "US-MI",
+          "postcode": "48423",
+          "country": "United States",
+          "country_code": "us"
+      }
+  }
+]

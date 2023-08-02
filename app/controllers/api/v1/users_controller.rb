@@ -51,6 +51,19 @@ module Api
       # Only allow a list of trusted parameters through.
       def user_params
         params.require(:user).permit(:username, :email, :password, :zipcode, :street_address, :bio, :likes, :dislikes, :profile_image_link, :latitude, :longitude)
+        params.require(:user).permit(
+          :username,
+          :email,
+          :password,
+          :zipcode,
+          :street_address,
+          :bio,
+          :likes,
+          :dislikes,
+          :profile_image_link,
+          :latitude,
+          :longitude
+        )
       end
     end
   end
