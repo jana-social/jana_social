@@ -37,4 +37,4 @@ event_1 = Event.create!(
   user_id: 1
 )
 
-rake db:seed RAILS_ENV=production
+# rake db:seed RAILS_ENV=production
