@@ -24,6 +24,19 @@ user_1 = User.create!(
   longitude: -74.0056
 )
 
+user_2 = User.create!(
+  username: "Joey",
+  email: "joey@gmail_joey.com",
+  password: "test",
+  zipcode: "48756",
+  street_address: nil,
+  bio: "I am not Billy!",
+  likes: "Joey enjoys fun",
+  dislikes: "Joey does not enjoy Boston, Texas",
+  profile_image_link: "https://example.com/profiles/joey.jpg",
+  latitude: 40.7185,
+  longitude: -74.0056
+)
 
 event_1 = Event.create!(
   title: "Movies For People Who Don't Like Movies",
@@ -37,6 +50,26 @@ event_1 = Event.create!(
   user_id: 1
 )
 
-# rake db:seed RAILS_ENV=production
-# rake db:seed RAILS_ENV=production
+event_2 = Event.create!(
+  title: "Movies For People Who Don't Like Movies",
+  description: "It's a walk!",
+  street_address: nil,
+  zipcode: "23423",
+  date_time: "2023-07-29 13:21:50",
+  private_status: false,
+  latitude: nil,
+  longitude: nil,
+  user_id: 1
+)
 
+event_3 = Event.create!(
+  title: "Anotha One",
+  description: "It's a walk!",
+  street_address: nil,
+  zipcode: "23423",
+  date_time: "2023-07-29 13:21:50",
+  private_status: false,
+  latitude: nil,
+  longitude: nil,
+  user_id: 1
+)
