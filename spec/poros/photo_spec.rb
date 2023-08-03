@@ -1,10 +1,10 @@
 require "rails_helper"
 
-RSpec.describe Photo do 
-  it "exists and has attributes" do 
+RSpec.describe Photo do
+  it "exists and has attributes" do
     data = {
-      :urls=> {
-        :raw=>"https://images.unsplash.com/photo-1690184432588-81068877d852?ixid=M3w0ODE0Nzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA1ODExMzF8&ixlib=rb-4.0.3",
+      urls: {
+        thumb: "https://images.unsplash.com/photo-1690184432588-81068877d852?ixid=M3w0ODE0Nzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA1ODExMzF8&ixlib=rb-4.0.3"
       }
     }
 

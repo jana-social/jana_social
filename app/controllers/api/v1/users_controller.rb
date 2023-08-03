@@ -17,8 +17,9 @@ module Api
 
       # POST /users
       def create
-        @user = User.new(user_params)
-
+        @user = User.new(user_create_params)
+        @photo = PhotoFacade.new.get_photo
+        @user.update(profile_image_link: @photo.url)
         if @user.save
           render json: UserSerializer.new(@user), status: :created
         else
@@ -49,7 +50,23 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def user_params
-        params.permit(:username, :email, :password_digest, :zipcode, :street_address, :bio, :likes, :dislikes, :profile_image_link, :latitude, :longitude)
+        params.require(:user).permit(
+          :username,
+          :email,
+          :password,
+          :zipcode,
+          :street_address,
+          :bio,
+          :likes,
+          :dislikes,
+          :profile_image_link,
+          :latitude,
+          :longitude
+        )
+      end
+
+      def user_create_params
+        params.permit(:username, :email, :password, :zipcode)
       end
     end
   end

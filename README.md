@@ -54,38 +54,86 @@ Success Response (200 OK):
 ```json
 Status: 200 OK
 
-{"data":
-  [
-    {"id":"1",
-    "type":"user",
-    "attributes":
+{
+  "data": [
       {
-        "username":"schroederJerde",
-        "email":"schroederJerde@gmail.com",
-        "zipcode":"80301",
-        "street_address":"123 Main Street, New York, NY",
-        "bio":"Lorem ipsum dolor sit amet",
-        "likes":"consectetur adipiscing elit",
-        "dislikes":"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
-        "latitude":"40.712776",
-        "longitude":"-74.005974"
+        "id": "1",
+        "type": "user",
+        "attributes": {
+          "username": "Sweet Bread",
+          "email": "stefanie@jaskolski-sanford.example",
+          "zipcode": "01417",
+          "street_address": "13575 Lavonda Ways",
+          "bio": "[\"Five dollar toast sriracha pop-up.\", \"Williamsburg austin mustache kombucha literally ennui pabst.\", \"Umami post-ironic direct trade.\", \"Sustainable diy park seitan pop-up selvage farm-to-table cold-pressed.\", \"Roof yolo blog.\"]",
+          "likes": "Gentrify roof hoodie mlkshk skateboard.",
+          "dislikes": "Lo-fi irony you probably haven't heard of them fingerstache tofu.",
+          "profile_image_link": "https://unsplash.com/photos/CNegXS-nQRU",
+          "latitude": 9.191590386771395,
+          "longitude": -29.227836572765966
+        }
+      },
+    {
+      "id": "2",
+      "type": "user",
+      "attributes": {
+        "username": "Doughnut",
+        "email": "carlton.padberg@bogisich.example",
+        "zipcode": "24601-5905",
+        "street_address": "9747 Agripina Mews",
+        "bio": "[\"Freegan diy fanny pack.\", \"Ethical slow-carb photo booth cardigan.\", \"Seitan williamsburg viral deep v tattooed.\", \"Waistcoat wolf ramps church-key.\", \"Roof cleanse chia pop-up wes anderson.\"]",
+        "likes": "Tattooed hammock street keytar.",
+        "dislikes": "Muggle magic everyday selfies humblebrag messenger bag organic listicle swag.",
+        "profile_image_link": "https://unsplash.com/photos/eci9mjEShIs",
+        "latitude": -34.157539767042294,
+        "longitude": -23.89193962132606
       }
     },
-    {"id":"2",
-    "type":"user",
-    "attributes":
-      {
-        "username":"bustarhymes",
-        "email":"bustarhymes@gmail.com",
-        "zipcode":"80303",
-        "street_address":"123 Main Street, Boulder, CO",
-        "bio":"Lorem ipsum dolor sit amet",
-        "likes":"consectetur adipiscing elit",
-        "dislikes":"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
-        "latitude":"-122.3951096",
-        "longitude":"37.7941013"
+    {
+      "id": "3",
+      "type": "user",
+      "attributes": {
+        "username": "Sundae",
+        "email": "nicholle_stroman@feeney-mraz.test",
+        "zipcode": "42472-6277",
+        "street_address": "93085 Thompson Ramp",
+        "bio": "[\"Distillery cardigan ennui fanny pack ethical tilde taxidermy yr.\", \"Plaid franzen iphone cred.\", \"Squid gentrify wayfarers ethical austin.\", \"Cliche migas kinfolk try-hard hoodie.\", \"Fashion axe helvetica yuccie.\"]",
+        "likes": "Plaid fashion axe swag carry.",
+        "dislikes": "Kinfolk umami pitchfork biodiesel deep v.",
+        "profile_image_link": "https://unsplash.com/photos/z_eoi3ppf5U",
+        "latitude": 56.575376118625,
+        "longitude": -131.71707083834286
+      }
+    },
+    {
+    "id": "4",
+    "type": "user",
+    "attributes": {
+      "username": "Cheesecake",
+      "email": "clarence.ullrich@bailey.test",
+      "zipcode": "68339-1504",
+      "street_address": "85203 Janett Fork",
+      "bio": "[\"Iphone pickled diy.\", \"Food truck put a bird on it distillery readymade chartreuse meh meditation.\", \"Cliche master mlkshk occupy ramps vice narwhal church-key.\", \"Keffiyeh mixtape tousled.\", \"Forage typewriter shabby chic gentrify.\"]",
+      "likes": "Stumptown skateboard aesthetic green juice.",
+      "dislikes": "Migas sriracha green juice yolo jean shorts narwhal muggle magic ramps kickstarter.",
+      "profile_image_link": "https://unsplash.com/photos/Fm5VRMqvy4M",
+      "latitude": -82.1685670150713,
+      "longitude": 50.33235642661597
+      }
+    },
+    {
+      "id": "5",
+      "type": "user",
+      "attributes": {
+        "username": "Cake Pop",
+        "email": "jeremiah@grimes.example",
+        "zipcode": "79859-1323",
+        "street_address": "1744 Arden Walk",
+        "bio": "[\"Vice leggings post-ironic kombucha organic cronut try-hard master.\", \"Typewriter tilde gentrify meditation.\", \"Cronut master intelligentsia.\", \"Park listicle photo booth trust fund craft beer dreamcatcher seitan.\", \"Chia kombucha craft beer green juice umami tousled flexitarian.\"]",
+        "likes": "Mixtape 90's muggle magic selfies godard asymmetrical fashion axe schlitz.",
+        "dislikes": "Williamsburg authentic helvetica polaroid blue bottle waistcoat brooklyn five dollar toast.",
+        "profile_image_link": "https://unsplash.com/photos/TZFshUFzWRQ",
+        "latitude": 13.284941256302815,
+        "longitude": -117.97901844759286
       }
     }
   ]
@@ -105,22 +153,22 @@ GET /api/v1/users/1 HTTP/1.1
 Content-Type: application/vnd.api+json
 Accept: application/vnd.api+json
 
-{"data":
+{
+  "data":
   {
-    "id":"1",
-    "type":"user",
-    "attributes":
-    {
-      "username":"schroederJerde",
-      "email":"schroederJerde@gmail.com",
-      "zipcode":"80301",
-      "street_address":"123 Main Street, New York, NY",
-      "bio":"Lorem ipsum dolor sit amet",
-      "likes":"consectetur adipiscing elit",
-      "dislikes":"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      "profile_image_link":"https://images.unsplash.com/photo-1543807535-eceef0bc6599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
-      "latitude":"40.712776",
-      "longitude":"-74.005974"
+    "id": "1",
+    "type": "user",
+    "attributes": {
+      "username": "Sweet Bread",
+      "email": "stefanie@jaskolski-sanford.example",
+      "zipcode": "01417",
+      "street_address": "13575 Lavonda Ways",
+      "bio": "[\"Five dollar toast sriracha pop-up.\", \"Williamsburg austin mustache kombucha literally ennui pabst.\", \"Umami post-ironic direct trade.\", \"Sustainable diy park seitan pop-up selvage farm-to-table cold-pressed.\", \"Roof yolo blog.\"]",
+      "likes": "Gentrify roof hoodie mlkshk skateboard.",
+      "dislikes": "Lo-fi irony you probably haven't heard of them fingerstache tofu.",
+      "profile_image_link": "https://unsplash.com/photos/CNegXS-nQRU",
+      "latitude": 9.191590386771395,
+      "longitude": -29.227836572765966
     }
   }
 }
@@ -143,6 +191,9 @@ Status: 404 Not Found
   }
 }
 ```
+#### Note on Authenticating Users
+Current method searches by email and passes password as params, this will be refactored in a later update.
+
 ### Creating Users
 
 `POST /api/v1/users`
