@@ -38,7 +38,8 @@ def user_data
     .to_return(status: 200, body: user_4_location)
 
   user_photo = File.read("./spec/fixtures/manual_data/user_data/user_profile_photo.json")
-    stub_request(:get, "https://api.unsplash.com/photos/random/?client_id=KXGPdzW7pghAeWUVP5oxhZcLCiDad1VPN_tBNIC8p80")
+
+  stub_request(:get, "https://api.unsplash.com/photos/random/?client_id=KXGPdzW7pghAeWUVP5oxhZcLCiDad1VPN_tBNIC8p80")
     .to_return(status: 200, body: user_photo)
 
   # Complete user data
@@ -135,7 +136,7 @@ def user_params_data
     username: Faker::Dessert.variety,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    zipcode: "80203"#,
+    zipcode: "80203"
     ## Could figure out order of operations for geocoding by zip and address, call on line 144 not working with
     ## commented code below commented in
     # street_address: "505 E Colfax Ave",
@@ -152,7 +153,8 @@ def user_params_data
     .to_return(status: 200, body: user_1_location)
 
   user_photo = File.read("./spec/fixtures/manual_data/user_data/user_profile_photo.json")
-    stub_request(:get, "https://api.unsplash.com/photos/random/?client_id=KXGPdzW7pghAeWUVP5oxhZcLCiDad1VPN_tBNIC8p80")
+
+  stub_request(:get, "https://api.unsplash.com/photos/random/?client_id=KXGPdzW7pghAeWUVP5oxhZcLCiDad1VPN_tBNIC8p80")
     .to_return(status: 200, body: user_photo)
 end
 

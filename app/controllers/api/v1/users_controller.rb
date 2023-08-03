@@ -25,14 +25,6 @@ module Api
         else
           render json: @user.errors, status: :unprocessable_entity
         end
-
-
-        # @user = User.new(user_create_params)
-        # if @user.save
-        #   render json: UserSerializer.new(@user), status: :created
-        # else
-        #   render json: @user.errors, status: :unprocessable_entity
-        # end
       end
 
       # PATCH/PUT /users/1
