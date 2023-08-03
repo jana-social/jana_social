@@ -2,6 +2,10 @@ require "rails_helper"
 
 RSpec.describe User, type: :model do
   describe "validations" do
+    before(:each) do
+      validation_data
+    end
+
     it { should validate_presence_of(:username) }
     it { should validate_uniqueness_of(:username) }
     it { should validate_presence_of(:email) }
@@ -10,10 +14,6 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:zipcode) }
     it { should validate_presence_of(:latitude) }
     it { should validate_presence_of(:longitude) }
-
-    before(:each) do
-      validation_data
-    end
 
     it { should allow_value("80203").for(:zipcode) }
     it { should allow_value("80203-0121").for(:zipcode) }
@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
       user_data
     end
 
-    it "should geocode the address with a street address and zipcode" do
+    it "should geocode the address with a street address and zipcode", :vcr do
       @user3.valid?
 
       expect(@user3.latitude).to be_a(Float)
