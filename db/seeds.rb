@@ -10,6 +10,7 @@ User.destroy_all
 Event.destroy_all
 EventUser.destroy_all
 
+# <<<<<<<<< Temporary merge branch 1
 user_1 = User.create!(
   username: "Sweet Bread",
   email: "stefanie@jaskolski-sanford.example",
@@ -48,11 +49,14 @@ user_4 = User.create!(
   username: "Cheesecake",
   email: "clarence.ullrich@bailey.test",
   password: "test",
-  zipcode: "68339-1504",
-  street_address: "85203 Janett Fork",
-  bio: "[\"Iphone pickled diy.\", \"Food truck put a bird on it distillery readymade chartreuse meh meditation.\", \"Cliche master mlkshk occupy ramps vice narwhal church-key.\", \"Keffiyeh mixtape tousled.\", \"Forage typewriter shabby chic gentrify.\"]",
-  likes: "Stumptown skateboard aesthetic green juice.",
-  dislikes: "Migas sriracha green juice yolo jean shorts narwhal muggle magic ramps kickstarter."
+  zipcode: "32492",
+  street_address: nil,
+  bio: "I am Billy!",
+  likes: ["walks", "beaches", "beach-walks"],
+  dislikes: ["sand", "water", "legs"],
+  profile_image_link: "https://unsplash.com/photos/aQSPWSxCweY",
+  latitude: nil,
+  longitude: nil
 )
 
 user_5 = User.create!(
@@ -69,11 +73,14 @@ user_5 = User.create!(
 event_1 = Event.create!(
   title: "Movies For People Who Don't Like Movies",
   description: "It's a walk!",
-  street_address: "342 Stringer Ln",
+  street_address: nil,
   zipcode: "23423",
   date_time: "2023-07-29 13:21:50",
   private_status: true,
-  latitude: 34.0522,
-  longitude: -118.2437,
+  latitude: nil,
+  longitude: nil,
   user_id: 1
 )
+
+# rake db:seed RAILS_ENV=production
+

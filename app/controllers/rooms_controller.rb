@@ -1,5 +1,3 @@
-# module Api
-#   module V1
 class RoomsController < ApplicationController
   def index
     @current_user = current_user
@@ -9,5 +7,3 @@ class RoomsController < ApplicationController
     redirect_to "/signin" unless @current_user
   end
 end
-#   end
-# end

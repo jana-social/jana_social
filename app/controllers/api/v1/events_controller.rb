@@ -26,19 +26,21 @@ class Api::V1::EventsController < ApplicationController
 
   def delete
     event = Event.find(params[:id])
-    # event.event_users.each do |eu|
-    #   eu.destroy
-    # end
+
     event.destroy
   end
 
   private
 
   def event_params
-    params.permit(:title, :description,
-                  :street_address,
-                  :zipcode,
-                  :date_time,
-                  :private_status, :user_id)
+    params.permit(
+      :title,
+      :description,
+      :street_address,
+      :zipcode,
+      :date_time,
+      :private_status,
+      :user_id
+    )
   end
 end

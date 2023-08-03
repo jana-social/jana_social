@@ -11,7 +11,9 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
   validates :password_digest, presence: true
-  validates :zipcode, presence: true
+  validates :zipcode, presence: true, format: { with: /\A\d{5}(-\d{4})?\z/, message: "must be a valid zipcode" }
+  validates :latitude, presence: true
+  validates :longitude, presence: true
 
   before_create do
     self.profile_image_link = PhotoFacade.new.get_photo.url
@@ -21,7 +23,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def self.search_by_email(email)
-    find_by(:email == email)
+    find_by(email == :email)
   end
 
   # returns all users that have a pending friendship with that user (and are waiting for that user to respond)
@@ -64,6 +66,11 @@ class User < ApplicationRecord
   # returns all user within a certain distance that the current user could approve or deny for friendship
   def potential_friends_nearby(distance)
     potential_friends.near(self, distance)
+  end
+
+  # returns all events within a certain distance of the current user
+  def events_nearby(distance)
+    Event.near(self, distance)
   end
 
   private
