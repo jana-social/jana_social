@@ -15,6 +15,11 @@ def validation_data
     .to_return(status: 200, body: letters_in_zip)
   stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=324%20Blickford%20Drive,%2032492,%20United%20States")
     .to_return(status: 200, body: bad_street_address)
+
+  user_photo = File.read("./spec/fixtures/manual_data/user_data/user_profile_photo.json")
+
+  stub_request(:get, "https://api.unsplash.com/photos/random/?client_id=KXGPdzW7pghAeWUVP5oxhZcLCiDad1VPN_tBNIC8p80")
+    .to_return(status: 200, body: user_photo)
 end
 
 def user_data
@@ -31,6 +36,11 @@ def user_data
     .to_return(status: 200, body: user_3_location)
   stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=90210,%20United%20States")
     .to_return(status: 200, body: user_4_location)
+
+  user_photo = File.read("./spec/fixtures/manual_data/user_data/user_profile_photo.json")
+
+  stub_request(:get, "https://api.unsplash.com/photos/random/?client_id=KXGPdzW7pghAeWUVP5oxhZcLCiDad1VPN_tBNIC8p80")
+    .to_return(status: 200, body: user_photo)
 
   # Complete user data
   @user1 = User.create!(
@@ -121,25 +131,31 @@ def event_data
   )
 end
 
-def user_params
+def user_params_data
   @new_user = {
-    user: {
-      username: Faker::Dessert.variety,
-      email: Faker::Internet.email,
-      password: Faker::Internet.password,
-      zipcode: "80203",
-      street_address: "505 E Colfax Ave",
-      bio: Faker::Hipster.sentences(number: 5),
-      likes: Faker::Hipster.sentence,
-      dislikes: Faker::Hipster.sentence,
-      profile_image_link: Faker::Internet.url
-    }
+    username: Faker::Dessert.variety,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password,
+    zipcode: "80203"
+    ## Could figure out order of operations for geocoding by zip and address, call on line 144 not working with
+    ## commented code below commented in
+    # street_address: "505 E Colfax Ave",
+    # bio: Faker::Hipster.sentences(number: 5),
+    # likes: Faker::Hipster.sentence,
+    # dislikes: Faker::Hipster.sentence,
+    # profile_image_link: "http://random.org/example"
   }
 
   user_1_location = File.read("./spec/fixtures/manual_data/user_data/user_1.json")
 
-  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=505%20E%20Colfax%20Ave,%2080203,%20United%20States")
+  # stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=505%20E%20Colfax%20Ave,%2080203,%20United%20States")
+  stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=80203,%20United%20States")
     .to_return(status: 200, body: user_1_location)
+
+  user_photo = File.read("./spec/fixtures/manual_data/user_data/user_profile_photo.json")
+
+  stub_request(:get, "https://api.unsplash.com/photos/random/?client_id=KXGPdzW7pghAeWUVP5oxhZcLCiDad1VPN_tBNIC8p80")
+    .to_return(status: 200, body: user_photo)
 end
 
 def event_params

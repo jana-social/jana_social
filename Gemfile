@@ -48,9 +48,8 @@ gem 'jsonapi-serializer'
 # Complete Ruby geocoding solution.
 gem 'geocoder'
 
-#AWS gem: 
+#AWS gem:
 gem 'aws-sdk-s3'
-
 
 group :test do
   gem 'capybara'
@@ -69,7 +68,6 @@ group :development, :test do
   gem 'faker'
   gem "factory_bot_rails"
   gem 'rspec-rails'
-  
 end
 
 group :development do
