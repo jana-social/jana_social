@@ -18,11 +18,21 @@ module Api
       # POST /users
       def create
         @user = User.new(user_create_params)
+        @photo = PhotoFacade.new.get_photo
+        @user.update(profile_image_link: @photo.url)
         if @user.save
           render json: UserSerializer.new(@user), status: :created
         else
           render json: @user.errors, status: :unprocessable_entity
         end
+
+
+        # @user = User.new(user_create_params)
+        # if @user.save
+        #   render json: UserSerializer.new(@user), status: :created
+        # else
+        #   render json: @user.errors, status: :unprocessable_entity
+        # end
       end
 
       # PATCH/PUT /users/1
