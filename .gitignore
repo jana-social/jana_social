@@ -33,4 +33,4 @@
 # Ignore application configuration
 /config/application.yml
 /config/credentials.yml.enc
-/config/skylight.yml
+# /config/skylight.yml
