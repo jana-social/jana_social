@@ -15,6 +15,10 @@ class User < ApplicationRecord
   validates :latitude, presence: true
   validates :longitude, presence: true
 
+  before_create do
+    self.profile_image_link = PhotoFacade.new.get_photo.url
+  end
+
   geocoded_by :address
   has_secure_password
 
