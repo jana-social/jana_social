@@ -41,6 +41,7 @@ gem 'faraday'
 
 # Simple Rails app configuration using ENV and a single YAML file
 gem 'figaro'
+gem 'skylight'
 
 # A fast JSON:API serializer for Ruby Objects.
 gem 'jsonapi-serializer'
@@ -48,7 +49,7 @@ gem 'jsonapi-serializer'
 # Complete Ruby geocoding solution.
 gem 'geocoder'
 
-#AWS gem: 
+#AWS gem:
 gem 'aws-sdk-s3'
 
 
@@ -69,7 +70,7 @@ group :development, :test do
   gem 'faker'
   gem "factory_bot_rails"
   gem 'rspec-rails'
-  
+
 end
 
 group :development do
