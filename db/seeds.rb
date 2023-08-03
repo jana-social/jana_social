@@ -10,21 +10,56 @@ User.destroy_all
 Event.destroy_all
 EventUser.destroy_all
 
-# <<<<<<<<< Temporary merge branch 1
 user_1 = User.create!(
-  username: "Billy Villian",
-  email: "billsvills@gmail.com",
+  username: "Sweet Bread",
+  email: "stefanie@jaskolski-sanford.example",
   password: "test",
-  zipcode: "32492",
-  street_address: nil,
-  bio: "I am Billy!",
-  likes: ["walks", "beaches", "beach-walks"],
-  dislikes: ["sand", "water", "legs"],
-  profile_image_link: "https://unsplash.com/photos/aQSPWSxCweY",
-  latitude: nil,
-  longitude: nil
+  zipcode: "80301",
+  street_address: "1800 28th St",
+  bio: "[\"Five dollar toast sriracha pop-up.\", \"Williamsburg austin mustache kombucha literally ennui pabst.\", \"Umami post-ironic direct trade.\", \"Sustainable diy park seitan pop-up selvage farm-to-table cold-pressed.\", \"Roof yolo blog.\"]",
+  likes: "Gentrify roof hoodie mlkshk skateboard.",
+  dislikes: "Lo-fi irony you probably haven't heard of them fingerstache tofu."
 )
 
+user_2 = User.create!(
+  username: "Doughnut",
+  email: "carlton.padberg@bogisich.example",
+  password: "test",
+  zipcode: "80301",
+  bio: "[\"Freegan diy fanny pack.\", \"Ethical slow-carb photo booth cardigan.\", \"Seitan williamsburg viral deep v tattooed.\", \"Waistcoat wolf ramps church-key.\", \"Roof cleanse chia pop-up wes anderson.\"]",
+  likes: "Tattooed hammock street keytar.",
+  dislikes: "Muggle magic everyday selfies humblebrag messenger bag organic listicle swag."
+)
+
+user_3 = User.create!(
+  username: "Sundae",
+  email: "nicholle_stroman@feeney-mraz.test",
+  password: "test",
+  zipcode: "80303",
+  bio: "[\"Distillery cardigan ennui fanny pack ethical tilde taxidermy yr.\", \"Plaid franzen iphone cred.\", \"Squid gentrify wayfarers ethical austin.\", \"Cliche migas kinfolk try-hard hoodie.\", \"Fashion axe helvetica yuccie.\"]",
+  likes: "Plaid fashion axe swag carry.",
+  dislikes: "Kinfolk umami pitchfork biodiesel deep v."
+)
+
+user_4 = User.create!(
+  username: "Cheesecake",
+  email: "clarence.ullrich@bailey.test",
+  password: "test",
+  zipcode: "80238",
+  bio: "I am Billy!",
+  likes: ["walks", "beaches", "beach-walks"],
+  dislikes: ["sand", "water", "legs"]
+)
+
+user_5 = User.create!(
+  username: "Cake Pop",
+  email: "jeremiah@grimes.example",
+  password: "test",
+  zipcode: "79859-1323",
+  bio: "[\"Vice leggings post-ironic kombucha organic cronut try-hard master.\", \"Typewriter tilde gentrify meditation.\", \"Cronut master intelligentsia.\", \"Park listicle photo booth trust fund craft beer dreamcatcher seitan.\", \"Chia kombucha craft beer green juice umami tousled flexitarian.\"]",
+  likes: "Mixtape 90's muggle magic selfies godard asymmetrical fashion axe schlitz.",
+  dislikes: "Williamsburg authentic helvetica polaroid blue bottle waistcoat brooklyn five dollar toast."
+)
 
 event_1 = Event.create!(
   title: "Movies For People Who Don't Like Movies",
@@ -37,6 +72,3 @@ event_1 = Event.create!(
   longitude: nil,
   user_id: 1
 )
-
-# rake db:seed RAILS_ENV=production
-
