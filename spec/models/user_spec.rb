@@ -105,6 +105,7 @@ RSpec.describe User, type: :model do
   describe "instance methods" do
     before(:each) do
       user_data
+      event_data
     end
 
     context "public methods" do
@@ -240,6 +241,17 @@ RSpec.describe User, type: :model do
           Friendship.process_friendship(@user3, @user4, :approved)
 
           expect(@user4.potential_friends_nearby(250)).to eq([@user3])
+        end
+      end
+
+      describe "#events_nearby" do
+        it "should return all events within a distance radius" do
+          expect(@user1.events_nearby(50)).to eq([@event3])
+          expect(@user2.events_nearby(50)).to eq([@event3])
+          expect(@user3.events_nearby(50)).to eq([@event1])
+          expect(@user4.events_nearby(50)).to eq([])
+          expect(@user4.events_nearby(250)).to eq([@event4, @event1])
+          expect(@user4.events_nearby(5000)).to eq([@event4, @event1, @event2, @event3])
         end
       end
     end
