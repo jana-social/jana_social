@@ -25,7 +25,7 @@ user_2 = User.create!(
   username: "Doughnut",
   email: "carlton.padberg@bogisich.example",
   password: "test",
-  zipcode: "24601-5905",
+  zipcode: "80301",
   bio: "[\"Freegan diy fanny pack.\", \"Ethical slow-carb photo booth cardigan.\", \"Seitan williamsburg viral deep v tattooed.\", \"Waistcoat wolf ramps church-key.\", \"Roof cleanse chia pop-up wes anderson.\"]",
   likes: "Tattooed hammock street keytar.",
   dislikes: "Muggle magic everyday selfies humblebrag messenger bag organic listicle swag."
@@ -35,7 +35,7 @@ user_3 = User.create!(
   username: "Sundae",
   email: "nicholle_stroman@feeney-mraz.test",
   password: "test",
-  zipcode: "42472-6277",
+  zipcode: "80303",
   bio: "[\"Distillery cardigan ennui fanny pack ethical tilde taxidermy yr.\", \"Plaid franzen iphone cred.\", \"Squid gentrify wayfarers ethical austin.\", \"Cliche migas kinfolk try-hard hoodie.\", \"Fashion axe helvetica yuccie.\"]",
   likes: "Plaid fashion axe swag carry.",
   dislikes: "Kinfolk umami pitchfork biodiesel deep v."
@@ -45,8 +45,7 @@ user_4 = User.create!(
   username: "Cheesecake",
   email: "clarence.ullrich@bailey.test",
   password: "test",
-  zipcode: "32492",
-  street_address: nil,
+  zipcode: "80238",
   bio: "I am Billy!",
   likes: ["walks", "beaches", "beach-walks"],
   dislikes: ["sand", "water", "legs"]
