@@ -17,8 +17,9 @@ Rails.application.routes.draw do
 
       get '/search', to: 'search#find'
       post '/login', to: 'sessions#create'
+      patch "/users/id", to: "users#update", as: :users_update_path
 
-      resources :users, only: %i[index show create update destroy] do
+      resources :users, only: %i[index show create destroy] do
         resources :events, only: %i[create update]
         get "friendships", to: "users/friendships#index", on: :member
         get "find_friends", to: "users/search_friends#index", on: :member
