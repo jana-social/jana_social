@@ -41,6 +41,7 @@ gem 'faraday'
 
 # Simple Rails app configuration using ENV and a single YAML file
 gem 'figaro'
+gem 'skylight'
 
 # A fast JSON:API serializer for Ruby Objects.
 gem 'jsonapi-serializer'
