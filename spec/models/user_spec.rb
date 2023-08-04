@@ -102,6 +102,14 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "class methods" do
+    it "should return a user by email" do
+      user_data
+
+      expect(User.search_by_email(@user1.email)).to eq(@user1)
+    end
+  end
+
   describe "instance methods" do
     before(:each) do
       user_data
