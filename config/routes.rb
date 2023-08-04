@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "/users/:id/events/hosting", to: "users/events#hosting"
       get "/users/:id/events/attending", to: "users/events#attending"
+      get "/users/:id/events/:id", to: "users/events#show"
       delete "/users/:user_id/events/:id", to: "events#delete"
 
       get '/search', to: 'search#find'
