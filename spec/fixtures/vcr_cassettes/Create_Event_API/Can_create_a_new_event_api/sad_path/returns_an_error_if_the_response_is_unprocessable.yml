@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=,%2023423,%20United%20States
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 04 Aug 2023 03:22:58 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjI2ODkzOTk1NywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjg0NDkwODE2NSwiYm91bmRpbmdib3giOlsiMTQuNDgzMTYwMyIsIjE0LjQ4NTMzMTciLCIxMjEuMDIxOTE4IiwiMTIxLjAyMjI0MyJdLCJsYXQiOiIxNC40ODQwNTc5IiwibG9uIjoiMTIxLjAyMjAzMjYiLCJkaXNwbGF5X25hbWUiOiJVbml0ZWQgU3RhdGVzLCBDaGF0ZWF1IFZpbGxlLCBEb24gQm9zY28sIFBhcmHDsWFxdWUsIFNvdXRoZXJuIE1hbmlsYSBEaXN0cmljdCwgTWV0cm8gTWFuaWxhLCAxNzAwLCBQaGlsaXBwaW5lcyIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJyZXNpZGVudGlhbCIsImltcG9ydGFuY2UiOjAuMzAwMDA5OTk5OTk5OTk5OTQsImFkZHJlc3MiOnsicm9hZCI6IlVuaXRlZCBTdGF0ZXMiLCJuZWlnaGJvdXJob29kIjoiQ2hhdGVhdSBWaWxsZSIsInF1YXJ0ZXIiOiJEb24gQm9zY28iLCJjaXR5IjoiUGFyYcOxYXF1ZSIsInN0YXRlX2Rpc3RyaWN0IjoiU291dGhlcm4gTWFuaWxhIERpc3RyaWN0IiwicmVnaW9uIjoiTWV0cm8gTWFuaWxhIiwiSVNPMzE2Ni0yLWx2bDMiOiJQSC0wMCIsInBvc3Rjb2RlIjoiMTcwMCIsImNvdW50cnkiOiJQaGlsaXBwaW5lcyIsImNvdW50cnlfY29kZSI6InBoIn19LHsicGxhY2VfaWQiOjExMjI0NzgxOSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjI3NDIzMTgxLCJib3VuZGluZ2JveCI6WyIxNC40ODUzMzE3IiwiMTQuNDg4MjYxNCIsIjEyMS4wMjA2NzMxIiwiMTIxLjAyMjA4MiJdLCJsYXQiOiIxNC40ODY2OTE0IiwibG9uIjoiMTIxLjAyMTQxNjEiLCJkaXNwbGF5X25hbWUiOiJVbml0ZWQgU3RhdGVzLCBFYXN0ZXJuIDcgVmlsbGFnZSwgUGFyYcOxYXF1ZSwgU291dGhlcm4gTWFuaWxhIERpc3RyaWN0LCBNZXRybyBNYW5pbGEsIDE3MDAsIFBoaWxpcHBpbmVzIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InJlc2lkZW50aWFsIiwiaW1wb3J0YW5jZSI6MC4zMDAwMDk5OTk5OTk5OTk5NCwiYWRkcmVzcyI6eyJyb2FkIjoiVW5pdGVkIFN0YXRlcyIsInJlc2lkZW50aWFsIjoiRWFzdGVybiA3IFZpbGxhZ2UiLCJjaXR5IjoiUGFyYcOxYXF1ZSIsInN0YXRlX2Rpc3RyaWN0IjoiU291dGhlcm4gTWFuaWxhIERpc3RyaWN0IiwicmVnaW9uIjoiTWV0cm8gTWFuaWxhIiwiSVNPMzE2Ni0yLWx2bDMiOiJQSC0wMCIsInBvc3Rjb2RlIjoiMTcwMCIsImNvdW50cnkiOiJQaGlsaXBwaW5lcyIsImNvdW50cnlfY29kZSI6InBoIn19LHsicGxhY2VfaWQiOjI3NzAyNzQyNiwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwczovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjkwMTA1NzI3MSwiYm91bmRpbmdib3giOlsiMTQuNDgyOTQxMSIsIjE0LjQ4MzE2MDMiLCIxMjEuMDIxODkwMyIsIjEyMS4wMjE5MTgiXSwibGF0IjoiMTQuNDgyOTQxMSIsImxvbiI6IjEyMS4wMjE4OTAzIiwiZGlzcGxheV9uYW1lIjoiVW5pdGVkIFN0YXRlcywgQmV0dGVyIExpdmluZywgRG9uIEJvc2NvLCBQYXJhw7FhcXVlLCBTb3V0aGVybiBNYW5pbGEgRGlzdHJpY3QsIE1ldHJvIE1hbmlsYSwgMTcwMCwgUGhpbGlwcGluZXMiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoic2VydmljZSIsImltcG9ydGFuY2UiOjAuMjc1MDA5OTk5OTk5OTk5OSwiYWRkcmVzcyI6eyJyb2FkIjoiVW5pdGVkIFN0YXRlcyIsIm5laWdoYm91cmhvb2QiOiJCZXR0ZXIgTGl2aW5nIiwicXVhcnRlciI6IkRvbiBCb3NjbyIsImNpdHkiOiJQYXJhw7FhcXVlIiwic3RhdGVfZGlzdHJpY3QiOiJTb3V0aGVybiBNYW5pbGEgRGlzdHJpY3QiLCJyZWdpb24iOiJNZXRybyBNYW5pbGEiLCJJU08zMTY2LTItbHZsMyI6IlBILTAwIiwicG9zdGNvZGUiOiIxNzAwIiwiY291bnRyeSI6IlBoaWxpcHBpbmVzIiwiY291bnRyeV9jb2RlIjoicGgifX1d
+  recorded_at: Fri, 04 Aug 2023 03:22:58 GMT
+recorded_with: VCR 6.2.0

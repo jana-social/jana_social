@@ -27,4 +27,24 @@ RSpec.describe "Update Event API" do
       expect(Event.count).to eq(4)
     end
   end
+
+  describe "sad path" do
+    it "returns an error if the response is unprocessable", :vcr do
+      event_params = {
+        title: "",
+        description: "Hoooosier",
+        street_address: "",
+        zipcode: "23423",
+        date_time: "",
+        private_status: false,
+        user_id: nil
+      }
+
+      headers = { "CONTENT_TYPE" => "application/json" }
+      post "/api/v1/users/#{@user1.id}/events", headers: headers, params: JSON.generate(event_params)
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
+  end
 end
