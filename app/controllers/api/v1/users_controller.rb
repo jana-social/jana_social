@@ -35,6 +35,7 @@ module Api
           render json: @user.errors, status: :unprocessable_entity
         end
       end
+      
 
       # DELETE /users/1
       def destroy
@@ -67,6 +68,20 @@ module Api
 
       def user_create_params
         params.permit(:username, :email, :password, :zipcode)
+      end
+
+      def upload_to_s3(file, file_path)
+        Aws.config.update(access_key_id: ENV["ACCESS_KEY"], secret_access_key: ENV["SECRET_ACCESS_KEY"])
+        s3 = Aws::S3::Resource.new(region: 'your-aws-region')
+        bucket_name = ENV["BUCKET_NAME"]
+
+        bucket = s3.bucket(bucket_name)
+
+        obj = bucket.object(file_path)
+        obj.upload_file(file.tempfile, acl: "public-read")
+
+        # Return the public URL of the uploaded file
+        obj.public_url
       end
     end
   end

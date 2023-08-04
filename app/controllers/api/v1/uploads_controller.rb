@@ -9,16 +9,19 @@ module Api
         Aws.config.update(access_key_id: ENV["ACCESS_KEY"], secret_access_key: ENV["SECRET_ACCESS_KEY"])
         bucket = Aws::S3::Resource.new.bucket(ENV["BUCKET_NAME"])
 
-        file = bucket.object(params[:file].original_filename)
+        file = params[:file]
+        file_path = "uploads/#{SecureRandom.uuid}/#{file.original_filename}"
 
-        file.upload_file(params[:file], acl: "public-read")
-
-        Upload.create(link: file.public_url)
-
-        redirect_to api_v1_uploads_path
-      end
-
-      def new
+        file_obj = bucket.object(file_path)
+        file_obj.upload_file(file.tempfile, acl: "public-read")
+        
+        @user = User.find(params[:id])
+      
+        if @user.update(profile_image_link: file_obj.public_url)
+          render json: UserSerializer.new(@user), status: :accepted
+        else
+          render json: @user.errors, status: :unprocessable_entity
+        end
       end
     end
   end
