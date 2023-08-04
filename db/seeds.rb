@@ -72,3 +72,63 @@ event_1 = Event.create!(
   longitude: nil,
   user_id: 1
 )
+
+event_2 = Event.create!(
+  title: "Movies For People Who Don't Like Movies",
+  description: "It's a walk!",
+  street_address: nil,
+  zipcode: "23423",
+  date_time: "2023-07-29 13:21:50",
+  private_status: false,
+  latitude: nil,
+  longitude: nil,
+  user_id: 2
+)
+
+event_3 = Event.create!(
+  title: "Anotha One",
+  description: "It's a walk!",
+  street_address: nil,
+  zipcode: "23423",
+  date_time: "2023-07-29 13:21:50",
+  private_status: false,
+  latitude: nil,
+  longitude: nil,
+  user_id: 3
+)
+
+event_user_1 = EventUser.create!(
+  user_id: 2,
+  event_id: 1,
+  status: 2
+)
+
+event_user_2 = EventUser.create!(
+  user_id: 3,
+  event_id: 1,
+  status: 2
+)
+
+event_user_3 = EventUser.create!(
+  user_id: 4,
+  event_id: 1,
+  status: 2
+)
+
+event_user_4 = EventUser.create!(
+  user_id: 5,
+  event_id: 1,
+  status: 2
+)
+
+event_user_5 = EventUser.create!(
+  user_id: 1,
+  event_id: 2,
+  status: 2
+)
+
+event_user_6 = EventUser.create!(
+  user_id: 1,
+  event_id: 3,
+  status: 2
+)
