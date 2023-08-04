@@ -2,7 +2,7 @@
 
 [Render deployment for BE](https://jana-social-be.onrender.com) <br>
 [Render deployment for FE](https://jana-social-fe.onrender.com/) <br>
-[DB schema](https://erd.dbdesigner.net/designer/schema/1690390259-jana_social) <br>
+[DB schema](https://dbdiagram.io/d/645986badca9fb07c4b9e033) <br>
 [Full team Miro board](https://miro.com/app/board/uXjVMz_g040=/) <br>
 [Users team Miro board](https://miro.com/app/board/uXjVMz5BkDM=/) <br>
 [Events team Miro board](https://miro.com/app/board/uXjVMz4nZmc=/)
@@ -27,11 +27,21 @@
 <h3> Location/Friends Team </h3>
 
  - Myles Nottingham: [GitHub](https://github.com/MylesNottingham) | [LinkedIn](https://www.linkedin.com/in/mylesnottingham/)
- - Blaine Glasgow: [GitHub](https://github.com/GlowMunch) | LinkedIn
+ - Blaine Glasgow: [GitHub](https://github.com/GlowMunch) | [LinkedIn](https://www.linkedin.com/in/blaine-glasgow-134a9017a/)
  - Amy Spears: [GitHub](https://github.com/Amspears007) | [LinkedIn](https://www.linkedin.com/in/amy-marie-spears-900997105/)
  - Steven Stackhouse: [GitHub](https://github.com/stackmm) | [LinkedIn](https://www.linkedin.com/in/steven-stackhouse/)
 
  ---
+
+  <h3> How to install the project?</h3>
+
+- Fork and clone this repo
+- Run `bundle install`
+- Run `rails db:{create,migrate,seed}`
+- User will need to sign up for a unsplash api key and create account [here](https://unsplash.com/documentation#creating-a-developer-account)
+- `bundle exec rspec` to run the test suite
+
+---
 
 # API JSON CONTRACT
 
