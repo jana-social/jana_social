@@ -1,4 +1,4 @@
-class RoomSerializer
-  include JSONAPI::Serializer
-  attributes :name
-end
+# class RoomSerializer
+#   include JSONAPI::Serializer
+#   attributes :name
+# end
