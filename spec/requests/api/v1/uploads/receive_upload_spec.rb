@@ -4,25 +4,23 @@ RSpec.describe "Uploads API", type: :request do
 
   describe "POST /api/v1/uploads" do
     describe "happy path" do
+      before :each do
+        user_data
+      end
+
       it "returns user info with updated AWS profile image link" do
-        file_info = "{\"tempfile\":\"#\\u003cFile:0x0000000115838608\\u003e\",\"content_type\":\"image/jpeg\",\"original_filename\":\"shelby-hughes-chonkchilla.jpg\",\"headers\":\"content-disposition: form-data; name=\\\"file\\\"; filename=\\\"shelby-hughes-chonkchilla.jpg\\\"\\r\\ncontent-type: image/jpeg\\r\\ncontent-length: 236098\\r\\n\"}"
+        
+        file = fixture_file_upload("spec/fixtures/files/shelby-hughes-chonkchilla.jpg", "image/jpeg")
 
-        file_data = JSON.parse(file_info)
-        file = ActionDispatch::Http::UploadedFile.new(
-          tempfile: "/spec/fixtures/files/shelby-hughes-chonkchilla.jpg",
-          type: file_data['content_type'],
-          filename: file_data['original_filename']
-          )
-          
-  require 'pry'; binding.pry
-        post "/api/v1/uploads", params: { id: "1", file: file }
 
-        expect(response).to be_successful
-        expect(response.status).to eq(200)
-        updated_user = JSON.parse(response.body, symbolize_names: true)
+        post "/api/v1/uploads", params: { id: User.first.id, file: file }
 
-        expect(updated_user[:data]).to eq(1)
-        expect(updated_user[:data][:profile_image_link]).to eq("")
+        # require 'pry'; binding.pry
+
+        expect(response).to have_http_status(:ok)
+        expect(JSON.parse(response.body)).to have_key("data")
+        expect(JSON.parse(response.body)["data"]).to have_key("profile_image_link")
+        expect(User.first.profile_image_link).to eq(JSON.parse(response.body)[:data][:profile_image_link])
         
       end
     end

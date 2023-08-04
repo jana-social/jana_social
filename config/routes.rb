@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # patch "/api/v1/users/:id", to: "/api/v1/users#update", as: :api_v1_users_update
+
   root 'application#welcome'
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
 
       get '/search', to: 'search#find'
       post '/login', to: 'sessions#create'
-      patch "/users/:id", to: "users#update", as: :users_update_path
+      patch "/users/:id", to: "users#update", as: :users_update
       put "/users/:id", to: "users#update"
 
       resources :users, only: %i[index show create destroy] do
