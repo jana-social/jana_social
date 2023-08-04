@@ -29,15 +29,6 @@ module Api
 
       # PATCH/PUT /users/1
       def update
-        @user = User.find(params[:id])
-        if params[:file].present?
-          file = params[:file]
-          file_path = "uploads/#{SecureRandom.uuid}/#{file.original_filename}"
-          file_url = upload_to_s3(file, file_path)
-          # require 'pry'; binding.pry
-          @user.update(profile_image_link: file_url)
-        end
-      
         if @user.update(user_params)
           render json: UserSerializer.new(@user), status: :accepted
         else

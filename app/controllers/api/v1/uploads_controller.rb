@@ -11,20 +11,17 @@ module Api
 
         file = params[:file]
         file_path = "uploads/#{SecureRandom.uuid}/#{file.original_filename}"
-        # require 'pry'; binding.pry
+
         file_obj = bucket.object(file_path)
         file_obj.upload_file(file.tempfile, acl: "public-read")
         
-        user_id = params[:id]
-        # require 'pry'; binding.pry
-        render json: { data: { profile_image_link: file_obj.public_url } }, status: :ok
-        # redirect_to api_v1_user_update_path(user_id: user_id)
-    
-      rescue StandardError => e
-        render json: { error: "Failed to upload file: #{e.message}" }, status: :unprocessable_entity
-      end
+        @user = User.find(params[:id])
       
-      def new
+        if @user.update(profile_image_link: file_obj.public_url)
+          render json: UserSerializer.new(@user), status: :accepted
+        else
+          render json: @user.errors, status: :unprocessable_entity
+        end
       end
     end
   end
