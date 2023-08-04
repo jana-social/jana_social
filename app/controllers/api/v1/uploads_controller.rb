@@ -9,16 +9,17 @@ module Api
         Aws.config.update(access_key_id: ENV["ACCESS_KEY"], secret_access_key: ENV["SECRET_ACCESS_KEY"])
         bucket = Aws::S3::Resource.new.bucket(ENV["BUCKET_NAME"])
 
-        file = params[:file] # The file parameter will be an instance of ActionDispatch::Http::UploadedFile
-
-        # Upload the file to AWS S3 bucket
+        file = params[:file]
         file_path = "uploads/#{SecureRandom.uuid}/#{file.original_filename}"
+        # require 'pry'; binding.pry
         file_obj = bucket.object(file_path)
         file_obj.upload_file(file.tempfile, acl: "public-read")
-
-        photo = Upload.create(link: file_obj.public_url)
-
-        render json: { data: { profile_image_link: photo.link } }, status: :ok
+        
+        user_id = params[:id]
+        # require 'pry'; binding.pry
+        render json: { data: { profile_image_link: file_obj.public_url } }, status: :ok
+        # redirect_to api_v1_user_update_path(user_id: user_id)
+    
       rescue StandardError => e
         render json: { error: "Failed to upload file: #{e.message}" }, status: :unprocessable_entity
       end
