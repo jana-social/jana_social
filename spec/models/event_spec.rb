@@ -101,9 +101,9 @@ RSpec.describe Event, type: :model do
       event_data
     end
 
-    context "public methods" do
-      pending "add some examples to (or delete) #{__FILE__}"
-    end
+    # context "public methods" do
+    #   pending "add some examples to (or delete) #{__FILE__}"
+    # end
 
     context "private methods" do
       describe "#address" do
