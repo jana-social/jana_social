@@ -13,15 +13,20 @@ class Api::V1::EventsController < ApplicationController
 
   def create
     event = Event.new(event_params)
-    return unless event.save
-
-    render json: EventShowSerializer.new(event), status: :created
+    if event.save
+      render json: EventShowSerializer.new(event), status: :created
+    else
+      render json: event.errors, status: :unprocessable_entity
+    end
   end
 
   def update
     event = Event.find(params[:id])
-    event.update(event_params)
-    render json: EventShowSerializer.new(event), status: :accepted
+    if event.update(event_params)
+      render json: EventShowSerializer.new(event), status: :accepted
+    else
+      render json: event.erros, status: :unprocessable_entity
+    end
   end
 
   def delete
